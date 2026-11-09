@@ -1,8 +1,12 @@
 # RoadLab + Relay
 
-A small **offline driving-perception evaluation platform**. RoadLab evaluates binary road segmentation; Relay is a PostgreSQL-backed, at-least-once job queue implemented in Go. This is not a self-driving system or vehicle controller.
+RoadLab tests how well an AI model identifies the road in an image. It compares the model’s predictions with labeled answers, calculates scores, and shows where the model made mistakes.
 
-The synthetic demo works without KITTI or a trained model. Every synthetic evaluation is marked **synthetic demo** in its job, result, and dashboard. These scores demonstrate software behavior, not driving performance.
+Relay manages those tests in the background. It saves jobs, assigns them to workers, and retries them if a worker crashes. If work runs more than once, it ensures only the current worker’s result is accepted.
+
+You can try the project using generated images and a simple demo predictor—no dataset download or trained model is needed. These runs are clearly labeled **synthetic demo**. They show that the software works, not how well it performs on real roads.
+
+This project tests models; it does not drive or control a vehicle.
 
 ## Why one repository?
 
