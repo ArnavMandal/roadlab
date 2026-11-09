@@ -1,0 +1,211 @@
+{
+  "kind": "evaluation",
+  "label": "synthetic demo",
+  "synthetic_demo": true,
+  "dataset_sha256": "8277a6c994eecc85bd0b4bec1b5a110ddcb39e0f775ecc0b797380273e3528eb",
+  "metric_config": {
+    "version": "road-micro-v1",
+    "threshold": 0.5,
+    "space": "resized-image",
+    "empty_union": 1,
+    "undefined_precision_recall": null
+  },
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "counts": {
+    "tp": 10344,
+    "fp": 246,
+    "fn": 4016,
+    "tn": 29938
+  },
+  "metrics": {
+    "iou": 0.7082021087224428,
+    "dice": 0.8291783567134269,
+    "precision": 0.976770538243626,
+    "recall": 0.7203342618384401
+  },
+  "mean_image_iou": 0.7084674477171751,
+  "images": [
+    {
+      "id": "synthetic_018",
+      "counts": {
+        "tp": 1758,
+        "fp": 7,
+        "fn": 636,
+        "tn": 5023
+      },
+      "metrics": {
+        "iou": 0.73219491878384,
+        "dice": 0.8453955277710988,
+        "precision": 0.9960339943342776,
+        "recall": 0.7343358395989975
+      },
+      "artifacts": {
+        "original": "0000_original.png",
+        "ground_truth": "0000_ground_truth.png",
+        "prediction": "0000_prediction.png",
+        "gt_overlay": "0000_gt_overlay.png",
+        "overlay": "0000_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_019",
+      "counts": {
+        "tp": 1731,
+        "fp": 34,
+        "fn": 663,
+        "tn": 4996
+      },
+      "metrics": {
+        "iou": 0.7129324546952224,
+        "dice": 0.8324116374128396,
+        "precision": 0.9807365439093484,
+        "recall": 0.7230576441102757
+      },
+      "artifacts": {
+        "original": "0001_original.png",
+        "ground_truth": "0001_ground_truth.png",
+        "prediction": "0001_prediction.png",
+        "gt_overlay": "0001_gt_overlay.png",
+        "overlay": "0001_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_020",
+      "counts": {
+        "tp": 1683,
+        "fp": 82,
+        "fn": 708,
+        "tn": 4951
+      },
+      "metrics": {
+        "iou": 0.6805499393449251,
+        "dice": 0.8099133782483157,
+        "precision": 0.9535410764872522,
+        "recall": 0.7038895859473023
+      },
+      "artifacts": {
+        "original": "0002_original.png",
+        "ground_truth": "0002_ground_truth.png",
+        "prediction": "0002_prediction.png",
+        "gt_overlay": "0002_gt_overlay.png",
+        "overlay": "0002_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_021",
+      "counts": {
+        "tp": 1683,
+        "fp": 82,
+        "fn": 710,
+        "tn": 4949
+      },
+      "metrics": {
+        "iou": 0.68,
+        "dice": 0.8095238095238095,
+        "precision": 0.9535410764872522,
+        "recall": 0.703301295445048
+      },
+      "artifacts": {
+        "original": "0003_original.png",
+        "ground_truth": "0003_ground_truth.png",
+        "prediction": "0003_prediction.png",
+        "gt_overlay": "0003_gt_overlay.png",
+        "overlay": "0003_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_022",
+      "counts": {
+        "tp": 1731,
+        "fp": 34,
+        "fn": 663,
+        "tn": 4996
+      },
+      "metrics": {
+        "iou": 0.7129324546952224,
+        "dice": 0.8324116374128396,
+        "precision": 0.9807365439093484,
+        "recall": 0.7230576441102757
+      },
+      "artifacts": {
+        "original": "0004_original.png",
+        "ground_truth": "0004_ground_truth.png",
+        "prediction": "0004_prediction.png",
+        "gt_overlay": "0004_gt_overlay.png",
+        "overlay": "0004_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_023",
+      "counts": {
+        "tp": 1758,
+        "fp": 7,
+        "fn": 636,
+        "tn": 5023
+      },
+      "metrics": {
+        "iou": 0.73219491878384,
+        "dice": 0.8453955277710988,
+        "precision": 0.9960339943342776,
+        "recall": 0.7343358395989975
+      },
+      "artifacts": {
+        "original": "0005_original.png",
+        "ground_truth": "0005_ground_truth.png",
+        "prediction": "0005_prediction.png",
+        "gt_overlay": "0005_gt_overlay.png",
+        "overlay": "0005_overlay.png"
+      }
+    }
+  ],
+  "worst_ids": [
+    "synthetic_021",
+    "synthetic_020",
+    "synthetic_019",
+    "synthetic_022",
+    "synthetic_018",
+    "synthetic_023"
+  ],
+  "provenance": {
+    "model": {
+      "name": "demo",
+      "kind": "demo",
+      "architecture": "demo-v1",
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      }
+    },
+    "model_manifest_sha256": "fe6ad0eb899848634922ce8b756f573c267687ad0c50e1498a71767f289fa3bf",
+    "worker_code_sha256": "19410d54524c1502a84b1c0d993e0593143b81c4581e92d9d291e6014268c2f4",
+    "python": "3.12.11",
+    "numpy": "2.2.6",
+    "device_requested": "cpu",
+    "dataset": {
+      "name": "Synthetic / internal_test",
+      "role": "internal_test",
+      "synthetic_demo": true,
+      "provenance": "RoadLab procedural fixture seed 2026; not driving data",
+      "license": "project-generated fixture",
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "split_policy": "disjoint generated sample IDs"
+    }
+  }
+}

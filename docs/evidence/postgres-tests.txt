@@ -1,0 +1,52 @@
+=== RUN   TestHTTPContractAndArtifactContainment
+2026/11/09 12:03:45 INFO claimed job_id=df10d617051b7c3ea6077a7d5e9cb502 attempt=1 attempt_token=185db08cdf6cc3383171a18f53dd969e worker=http-worker
+2026/11/09 12:03:45 INFO complete job_id=df10d617051b7c3ea6077a7d5e9cb502 attempt_token=185db08cdf6cc3383171a18f53dd969e state=succeeded
+--- PASS: TestHTTPContractAndArtifactContainment (0.08s)
+=== RUN   TestIdempotencyConcurrent
+--- PASS: TestIdempotencyConcurrent (0.03s)
+=== RUN   TestConcurrentClaims
+2026/11/09 12:03:45 INFO claimed job_id=6185ecb52c35257f70905581ec662355 attempt=1 attempt_token=a1cee69efb3fac3d7381f0056aaa2306 worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=867bba537c29dc1931ec924aad65245d attempt=1 attempt_token=259e0d30de25faaf03f741dc0bce23d8 worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=99bd61f3e4a3051829aa8dbea8951e91 attempt=1 attempt_token=366c343de57bd4bcabd17721e7d74e67 worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=7861d51037e707e41f40e8afb77d0c16 attempt=1 attempt_token=88a281d8087b68f9456f12ec3ab7433a worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=bfdf0da2deb98d975258d2035b7961dd attempt=1 attempt_token=f2a4434f86217fd31805f3197706aaaf worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=4378bedf7a8fc8ff422bbcc4a7c0f2b9 attempt=1 attempt_token=308b63bb41dd183373f7dce228b176ef worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=cb2d93dfb8667fa717db32b8eba3a330 attempt=1 attempt_token=7b4b37bb2b3ce2eae6fd709ac5424406 worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=c1ddc276214933d6a7c23153d703fb8c attempt=1 attempt_token=65536134dc0d6aed7141df8ff9dc3e29 worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=660f4a16c776846814e8b0d6d2254867 attempt=1 attempt_token=6ebbe4d24a4e8569bcd84ab3a948051c worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=c27a6243aa3bc064da4e63a67596bca6 attempt=1 attempt_token=d5daf1ca5cf729c06f7c0582ff1a8fff worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=be9af0f9982814f26d486a5415b21d66 attempt=1 attempt_token=c6a9db04604e0a6a4718f0e12e3d4c7b worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=731927a5f0de21eefe3b6b70bff5ce03 attempt=1 attempt_token=c5341fbeae384a2a8bcc589bbab575a5 worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=b4427fc6502d628023cf89bc65a4ed17 attempt=1 attempt_token=2b5ca37d9d5d6f26bd1c75738a89be9e worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=8c6dae4ce0b28fdaa3fa46473f5c71d2 attempt=1 attempt_token=150fca3d0b7c8de8abf4c302c76da5fd worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=c8ac5f8d68cebbb11372e589abff825c attempt=1 attempt_token=643cc2f01e8453d5dd159fa231fbde8e worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=894358885fbbb4b8d6cd4adeb0cd77fd attempt=1 attempt_token=965b924be62518d1e722e3f5c468ee2e worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=f0b230a4f69e1124cb2a21189e9f1e1f attempt=1 attempt_token=ed9018ce6533511d75a2bd01ca00250f worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=f97d64110e7d511d4f43b9c3775bc7d0 attempt=1 attempt_token=e19a1ac244377bf5141f9993a1a0b17b worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=b2816669b70b63b6f51f46fc1d722e19 attempt=1 attempt_token=17e3af8ce4ac704d91fc1d5af186e50c worker=parallel
+2026/11/09 12:03:45 INFO claimed job_id=c1bddba200478947d77b9024e7bbb335 attempt=1 attempt_token=9e422f9ac0aab85f9b7fc3b64f8f4e8d worker=parallel
+--- PASS: TestConcurrentClaims (0.04s)
+=== RUN   TestExpiryStaleAndRepeatCompletion
+2026/11/09 12:03:45 INFO claimed job_id=a85bcd0c3449b1fd1c27bb4c69ee93dd attempt=1 attempt_token=91c3aba1c794ab39e2baf8874c1facb8 worker=test-worker
+2026/11/09 12:03:45 INFO lease_expired job_id=a85bcd0c3449b1fd1c27bb4c69ee93dd attempt_token=91c3aba1c794ab39e2baf8874c1facb8 next_state=queued
+2026/11/09 12:03:45 INFO claimed job_id=a85bcd0c3449b1fd1c27bb4c69ee93dd attempt=2 attempt_token=ccc77da08096dbd07fbceba5c10535c8 worker=test-worker
+2026/11/09 12:03:45 INFO complete job_id=a85bcd0c3449b1fd1c27bb4c69ee93dd attempt_token=ccc77da08096dbd07fbceba5c10535c8 state=succeeded
+--- PASS: TestExpiryStaleAndRepeatCompletion (0.02s)
+=== RUN   TestHeartbeatKeepsLease
+2026/11/09 12:03:45 INFO claimed job_id=98f5083116db6a38b398bea2da4f3189 attempt=1 attempt_token=c452076728a543d54cca6bb7c8f0c16c worker=test-worker
+--- PASS: TestHeartbeatKeepsLease (2.65s)
+=== RUN   TestRetryExhaustionAndInvalid
+2026/11/09 12:03:48 INFO claimed job_id=b3f3f2fe62547cdf977beedb4a4bf5ea attempt=1 attempt_token=04746cf264e7b4c8aa183fa3b08120d3 worker=test-worker
+2026/11/09 12:03:48 INFO fail job_id=b3f3f2fe62547cdf977beedb4a4bf5ea attempt_token=04746cf264e7b4c8aa183fa3b08120d3 state=queued
+2026/11/09 12:03:48 INFO claimed job_id=b3f3f2fe62547cdf977beedb4a4bf5ea attempt=2 attempt_token=e641f6bc62c7aa7d6665a256101e03e7 worker=test-worker
+2026/11/09 12:03:48 INFO fail job_id=b3f3f2fe62547cdf977beedb4a4bf5ea attempt_token=e641f6bc62c7aa7d6665a256101e03e7 state=failed
+2026/11/09 12:03:48 INFO claimed job_id=5336521e7c821689940c0220d8ff4b4d attempt=1 attempt_token=18966b5127db68ed0424508b5b2c6ca0 worker=test-worker
+2026/11/09 12:03:48 INFO fail job_id=5336521e7c821689940c0220d8ff4b4d attempt_token=18966b5127db68ed0424508b5b2c6ca0 state=failed
+2026/11/09 12:03:48 INFO claimed job_id=8ccd054c8de07a1e82e8519271898740 attempt=1 attempt_token=49554f65e0a1380ea1d37653a6ebbe75 worker=test-worker
+2026/11/09 12:03:48 INFO lease_expired job_id=8ccd054c8de07a1e82e8519271898740 attempt_token=49554f65e0a1380ea1d37653a6ebbe75 next_state=failed
+--- PASS: TestRetryExhaustionAndInvalid (0.04s)
+=== RUN   TestReconnectPreservesJobs
+2026/11/09 12:03:48 INFO claimed job_id=8c78adeb7a2cf673a74816a6fa1f4cbb attempt=1 attempt_token=7a4e692fb6cfcf21f73f504d1dc5bd76 worker=test-worker
+--- PASS: TestReconnectPreservesJobs (0.03s)
+PASS
+ok  	roadlab/relay	4.321s

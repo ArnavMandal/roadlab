@@ -1,0 +1,109 @@
+{
+  "description": "real SIGKILL recovery; two workers; API process restart; duplicate submit; repeated completion",
+  "duplicate_id": "a67a9db466b0fe6022424dca6670f1f3",
+  "jobs": [
+    {
+      "job": {
+        "id": "a67a9db466b0fe6022424dca6670f1f3",
+        "request": {
+          "task": "fake",
+          "duration": 7,
+          "max_attempts": 3
+        },
+        "spec": {
+          "task": "fake",
+          "label": "fake queue workload",
+          "invalid": false,
+          "duration": 7,
+          "fail_until": 0,
+          "synthetic_demo": false
+        },
+        "state": "succeeded",
+        "attempt": 2,
+        "max_attempts": 3,
+        "token": "af6300e64642c88f2300da828eca9a11",
+        "lease_until": null,
+        "created_at": "2026-11-09T12:08:22.295151-05:00",
+        "updated_at": "2026-11-09T12:08:37.125499-05:00",
+        "available_at": "2026-11-09T12:08:29.137214-05:00",
+        "progress": 1,
+        "error": "",
+        "result_sha256": "e2043ae73278d93e8fe90469fba3d3a4f7c8dc8608ebe6b6dece01aec673eb1a"
+      },
+      "attempts": [
+        {
+          "token": "2858af9b4016eda478fb8ebab90b24a6",
+          "number": 1,
+          "worker": "demo-a",
+          "state": "expired",
+          "started_at": "2026-11-09T12:08:22.392262-05:00",
+          "finished_at": "2026-11-09T12:08:27.135712-05:00",
+          "error": "lease expired"
+        },
+        {
+          "token": "af6300e64642c88f2300da828eca9a11",
+          "number": 2,
+          "worker": "demo-b",
+          "state": "succeeded",
+          "started_at": "2026-11-09T12:08:30.077277-05:00",
+          "finished_at": "2026-11-09T12:08:37.125767-05:00",
+          "error": ""
+        }
+      ],
+      "result": {
+        "kind": "fake",
+        "label": "fake queue workload",
+        "job_id": "a67a9db466b0fe6022424dca6670f1f3",
+        "attempt": 2,
+        "duration": 7
+      }
+    },
+    {
+      "job": {
+        "id": "f44471e29f4f0cb2d885cf50139773ec",
+        "request": {
+          "task": "fake",
+          "duration": 7,
+          "max_attempts": 3
+        },
+        "spec": {
+          "task": "fake",
+          "label": "fake queue workload",
+          "invalid": false,
+          "duration": 7,
+          "fail_until": 0,
+          "synthetic_demo": false
+        },
+        "state": "succeeded",
+        "attempt": 1,
+        "max_attempts": 3,
+        "token": "1736d54ae1090848d80e4148e50a36fb",
+        "lease_until": null,
+        "created_at": "2026-11-09T12:08:22.50964-05:00",
+        "updated_at": "2026-11-09T12:08:29.667341-05:00",
+        "available_at": "2026-11-09T12:08:22.50964-05:00",
+        "progress": 1,
+        "error": "",
+        "result_sha256": "db55eef815a8d79232404b309ca58c0c54b2422ea6c39e7815842a7f5b611153"
+      },
+      "attempts": [
+        {
+          "token": "1736d54ae1090848d80e4148e50a36fb",
+          "number": 1,
+          "worker": "demo-b",
+          "state": "succeeded",
+          "started_at": "2026-11-09T12:08:22.584457-05:00",
+          "finished_at": "2026-11-09T12:08:29.667741-05:00",
+          "error": ""
+        }
+      ],
+      "result": {
+        "kind": "fake",
+        "label": "fake queue workload",
+        "job_id": "f44471e29f4f0cb2d885cf50139773ec",
+        "attempt": 1,
+        "duration": 7
+      }
+    }
+  ]
+}

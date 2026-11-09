@@ -1,0 +1,21 @@
+# Dependencies and build outputs
+.venv/
+node_modules/
+.next/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+bin/
+web/next-env.d.ts
+
+# Local data, checkpoints, artifacts and credentials
+storage/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Existing workspace conveniences and generated smoke-model registration
+scripts/workspace-env.sh
+docs/local-workspace.md
+registry/models/synthetic-smoke.json

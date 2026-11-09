@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16.13
+    environment:
+      POSTGRES_USER: roadlab
+      POSTGRES_PASSWORD: roadlab
+      POSTGRES_DB: roadlab
+    ports: ["127.0.0.1:54329:5432"]
+    volumes: ["relay_pg:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U roadlab -d roadlab"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+volumes:
+  relay_pg:

@@ -1,0 +1,65 @@
+{
+  "name": "Synthetic / validation",
+  "role": "validation",
+  "synthetic_demo": true,
+  "provenance": "RoadLab procedural fixture seed 2026; not driving data",
+  "license": "project-generated fixture",
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "split_policy": "disjoint generated sample IDs",
+  "examples": [
+    {
+      "id": "synthetic_012",
+      "group": "generated_012",
+      "image": "datasets/synthetic/frame_012.png",
+      "mask": "datasets/synthetic/frame_012_road.png",
+      "image_sha256": "83d2e3c76918385781196c71124a13ad19e0bd0fc56d2fa4e766c33f1a408a30",
+      "mask_sha256": "d90450ebb19189d9e6440806378dc837bea43848f5e260fa08497d1c77cad01a"
+    },
+    {
+      "id": "synthetic_013",
+      "group": "generated_013",
+      "image": "datasets/synthetic/frame_013.png",
+      "mask": "datasets/synthetic/frame_013_road.png",
+      "image_sha256": "936aad2c21c8ed9fd040548935d85efe7568aecb94459aada00a230ed203048f",
+      "mask_sha256": "a99feca5d779176a79603caded2e9b34d8228f9240e192ec1e58d0589dd3ffe1"
+    },
+    {
+      "id": "synthetic_014",
+      "group": "generated_014",
+      "image": "datasets/synthetic/frame_014.png",
+      "mask": "datasets/synthetic/frame_014_road.png",
+      "image_sha256": "a007bd437416d8301d5319ed11401f381273af471f2c34462986e049bc3c9a16",
+      "mask_sha256": "693aab9825ba1bc521d9d36aad8ba40bfa61e2a60280c6af81a34a73656220df"
+    },
+    {
+      "id": "synthetic_015",
+      "group": "generated_015",
+      "image": "datasets/synthetic/frame_015.png",
+      "mask": "datasets/synthetic/frame_015_road.png",
+      "image_sha256": "5525dd2fa96fc614d7755dae20bb4ff2b5541428bd24ce4a289e1792c1dd50d1",
+      "mask_sha256": "5e0880b08be67eb6e9438f596cc15665bb733e5e7321e9a88602c20612efb57d"
+    },
+    {
+      "id": "synthetic_016",
+      "group": "generated_016",
+      "image": "datasets/synthetic/frame_016.png",
+      "mask": "datasets/synthetic/frame_016_road.png",
+      "image_sha256": "acc484a5f341f0f68c9ab20074a94200538a4d5e6f36e18c48bd5751fd4a7295",
+      "mask_sha256": "82bbc5e43aec34be3f203d6280d45b02b4264cda2d638eb0329e20417f8c3c65"
+    },
+    {
+      "id": "synthetic_017",
+      "group": "generated_017",
+      "image": "datasets/synthetic/frame_017.png",
+      "mask": "datasets/synthetic/frame_017_road.png",
+      "image_sha256": "3a9ae615ca3d9ef61bd97d883445bf3d8b2c35f750f21fc1fe297857f5e51833",
+      "mask_sha256": "cc557d5168ca003f60cf0b15f705f058b8f31bb1c41a7f52bf403a9efc838056"
+    }
+  ]
+}

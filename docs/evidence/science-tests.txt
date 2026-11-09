@@ -1,0 +1,9 @@
+test_metrics_and_empty_cases (worker.test_science.ScienceTests.test_metrics_and_empty_cases) ... ok
+test_nearest_preserves_label_values (worker.test_science.ScienceTests.test_nearest_preserves_label_values) ... ok
+test_official_rgb_decoding (worker.test_science.ScienceTests.test_official_rgb_decoding) ... ok
+test_unet_shape_and_gradient (worker.test_science.ScienceTests.test_unet_shape_and_gradient) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.484s
+
+OK

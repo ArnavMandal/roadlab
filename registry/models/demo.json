@@ -1,0 +1,14 @@
+{
+  "name": "demo",
+  "kind": "demo",
+  "architecture": "demo-v1",
+  "checkpoint": null,
+  "checkpoint_sha256": null,
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "kind": "evaluation",
+  "label": "synthetic demo",
+  "synthetic_demo": true,
+  "dataset_sha256": "8277a6c994eecc85bd0b4bec1b5a110ddcb39e0f775ecc0b797380273e3528eb",
+  "metric_config": {
+    "version": "road-micro-v1",
+    "threshold": 0.5,
+    "space": "resized-image",
+    "empty_union": 1,
+    "undefined_precision_recall": null
+  },
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "counts": {
+    "tp": 14360,
+    "fp": 30184,
+    "fn": 0,
+    "tn": 0
+  },
+  "metrics": {
+    "iou": 0.3223778735632184,
+    "dice": 0.4875730001358142,
+    "precision": 0.3223778735632184,
+    "recall": 1.0
+  },
+  "mean_image_iou": 0.3223778735632184,
+  "images": [
+    {
+      "id": "synthetic_018",
+      "counts": {
+        "tp": 2394,
+        "fp": 5030,
+        "fn": 0,
+        "tn": 0
+      },
+      "metrics": {
+        "iou": 0.3224676724137931,
+        "dice": 0.48767569769810554,
+        "precision": 0.3224676724137931,
+        "recall": 1.0
+      },
+      "artifacts": {
+        "original": "0000_original.png",
+        "ground_truth": "0000_ground_truth.png",
+        "prediction": "0000_prediction.png",
+        "gt_overlay": "0000_gt_overlay.png",
+        "overlay": "0000_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_019",
+      "counts": {
+        "tp": 2394,
+        "fp": 5030,
+        "fn": 0,
+        "tn": 0
+      },
+      "metrics": {
+        "iou": 0.3224676724137931,
+        "dice": 0.48767569769810554,
+        "precision": 0.3224676724137931,
+        "recall": 1.0
+      },
+      "artifacts": {
+        "original": "0001_original.png",
+        "ground_truth": "0001_ground_truth.png",
+        "prediction": "0001_prediction.png",
+        "gt_overlay": "0001_gt_overlay.png",
+        "overlay": "0001_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_020",
+      "counts": {
+        "tp": 2391,
+        "fp": 5033,
+        "fn": 0,
+        "tn": 0
+      },
+      "metrics": {
+        "iou": 0.3220635775862069,
+        "dice": 0.4872134488028528,
+        "precision": 0.3220635775862069,
+        "recall": 1.0
+      },
+      "artifacts": {
+        "original": "0002_original.png",
+        "ground_truth": "0002_ground_truth.png",
+        "prediction": "0002_prediction.png",
+        "gt_overlay": "0002_gt_overlay.png",
+        "overlay": "0002_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_021",
+      "counts": {
+        "tp": 2393,
+        "fp": 5031,
+        "fn": 0,
+        "tn": 0
+      },
+      "metrics": {
+        "iou": 0.32233297413793105,
+        "dice": 0.4875216461240705,
+        "precision": 0.32233297413793105,
+        "recall": 1.0
+      },
+      "artifacts": {
+        "original": "0003_original.png",
+        "ground_truth": "0003_ground_truth.png",
+        "prediction": "0003_prediction.png",
+        "gt_overlay": "0003_gt_overlay.png",
+        "overlay": "0003_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_022",
+      "counts": {
+        "tp": 2394,
+        "fp": 5030,
+        "fn": 0,
+        "tn": 0
+      },
+      "metrics": {
+        "iou": 0.3224676724137931,
+        "dice": 0.48767569769810554,
+        "precision": 0.3224676724137931,
+        "recall": 1.0
+      },
+      "artifacts": {
+        "original": "0004_original.png",
+        "ground_truth": "0004_ground_truth.png",
+        "prediction": "0004_prediction.png",
+        "gt_overlay": "0004_gt_overlay.png",
+        "overlay": "0004_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_023",
+      "counts": {
+        "tp": 2394,
+        "fp": 5030,
+        "fn": 0,
+        "tn": 0
+      },
+      "metrics": {
+        "iou": 0.3224676724137931,
+        "dice": 0.48767569769810554,
+        "precision": 0.3224676724137931,
+        "recall": 1.0
+      },
+      "artifacts": {
+        "original": "0005_original.png",
+        "ground_truth": "0005_ground_truth.png",
+        "prediction": "0005_prediction.png",
+        "gt_overlay": "0005_gt_overlay.png",
+        "overlay": "0005_overlay.png"
+      }
+    }
+  ],
+  "worst_ids": [
+    "synthetic_020",
+    "synthetic_021",
+    "synthetic_018",
+    "synthetic_019",
+    "synthetic_022",
+    "synthetic_023"
+  ],
+  "provenance": {
+    "model": {
+      "name": "synthetic-smoke",
+      "kind": "unet",
+      "architecture": "tiny-unet-v1-width8",
+      "checkpoint": "checkpoints/synthetic-smoke.pt",
+      "checkpoint_sha256": "0fd4bc2f908fb32e941f7457137c7d43c375119eec29b4908deabfd8a43d7f61",
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "training": {
+        "train_sha256": "8c7ecbf1e080b7703964f9f055824367137ebd75e4f777549a720757db7c64bf",
+        "validation_sha256": "a5547510d022d444fdab21e825443eefe064f4ec83dbe755330926cfd41d0447",
+        "seed": 2026,
+        "epochs": 2,
+        "lr": 0.001,
+        "batch_size": 1,
+        "device": "cpu",
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.7572081287701925,
+            "validation_iou": 0.3223778735632184
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.6565424899260203,
+            "validation_iou": 0.043984030837004404
+          }
+        ],
+        "synthetic_demo": true,
+        "code_sha256": "19410d54524c1502a84b1c0d993e0593143b81c4581e92d9d291e6014268c2f4",
+        "torch": "2.10.0"
+      }
+    },
+    "model_manifest_sha256": "87ce56b0da101480ef70196ad5c7389fe7a2b7d0201e676933a4270ef5856105",
+    "worker_code_sha256": "19410d54524c1502a84b1c0d993e0593143b81c4581e92d9d291e6014268c2f4",
+    "python": "3.12.11",
+    "numpy": "2.2.6",
+    "device_requested": "cpu",
+    "dataset": {
+      "name": "Synthetic / internal_test",
+      "role": "internal_test",
+      "synthetic_demo": true,
+      "provenance": "RoadLab procedural fixture seed 2026; not driving data",
+      "license": "project-generated fixture",
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "split_policy": "disjoint generated sample IDs"
+    }
+  }
+}

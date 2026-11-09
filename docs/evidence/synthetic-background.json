@@ -1,0 +1,211 @@
+{
+  "kind": "evaluation",
+  "label": "synthetic demo",
+  "synthetic_demo": true,
+  "dataset_sha256": "8277a6c994eecc85bd0b4bec1b5a110ddcb39e0f775ecc0b797380273e3528eb",
+  "metric_config": {
+    "version": "road-micro-v1",
+    "threshold": 0.5,
+    "space": "resized-image",
+    "empty_union": 1,
+    "undefined_precision_recall": null
+  },
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "counts": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 14360,
+    "tn": 30184
+  },
+  "metrics": {
+    "iou": 0.0,
+    "dice": 0.0,
+    "precision": null,
+    "recall": 0.0
+  },
+  "mean_image_iou": 0.0,
+  "images": [
+    {
+      "id": "synthetic_018",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2394,
+        "tn": 5030
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0000_original.png",
+        "ground_truth": "0000_ground_truth.png",
+        "prediction": "0000_prediction.png",
+        "gt_overlay": "0000_gt_overlay.png",
+        "overlay": "0000_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_019",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2394,
+        "tn": 5030
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0001_original.png",
+        "ground_truth": "0001_ground_truth.png",
+        "prediction": "0001_prediction.png",
+        "gt_overlay": "0001_gt_overlay.png",
+        "overlay": "0001_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_020",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2391,
+        "tn": 5033
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0002_original.png",
+        "ground_truth": "0002_ground_truth.png",
+        "prediction": "0002_prediction.png",
+        "gt_overlay": "0002_gt_overlay.png",
+        "overlay": "0002_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_021",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2393,
+        "tn": 5031
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0003_original.png",
+        "ground_truth": "0003_ground_truth.png",
+        "prediction": "0003_prediction.png",
+        "gt_overlay": "0003_gt_overlay.png",
+        "overlay": "0003_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_022",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2394,
+        "tn": 5030
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0004_original.png",
+        "ground_truth": "0004_ground_truth.png",
+        "prediction": "0004_prediction.png",
+        "gt_overlay": "0004_gt_overlay.png",
+        "overlay": "0004_overlay.png"
+      }
+    },
+    {
+      "id": "synthetic_023",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2394,
+        "tn": 5030
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0005_original.png",
+        "ground_truth": "0005_ground_truth.png",
+        "prediction": "0005_prediction.png",
+        "gt_overlay": "0005_gt_overlay.png",
+        "overlay": "0005_overlay.png"
+      }
+    }
+  ],
+  "worst_ids": [
+    "synthetic_018",
+    "synthetic_019",
+    "synthetic_020",
+    "synthetic_021",
+    "synthetic_022",
+    "synthetic_023"
+  ],
+  "provenance": {
+    "model": {
+      "name": "all-background",
+      "kind": "all_background",
+      "architecture": "all_background-v1",
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      }
+    },
+    "model_manifest_sha256": "5b57ba8396446d63366d98fe433dcc0f71e642a7aa9398376779428ec031887b",
+    "worker_code_sha256": "19410d54524c1502a84b1c0d993e0593143b81c4581e92d9d291e6014268c2f4",
+    "python": "3.12.11",
+    "numpy": "2.2.6",
+    "device_requested": "cpu",
+    "dataset": {
+      "name": "Synthetic / internal_test",
+      "role": "internal_test",
+      "synthetic_demo": true,
+      "provenance": "RoadLab procedural fixture seed 2026; not driving data",
+      "license": "project-generated fixture",
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "split_policy": "disjoint generated sample IDs"
+    }
+  }
+}
