@@ -1,0 +1,306 @@
+{
+  "kind": "evaluation",
+  "label": "internal image-space evaluation",
+  "synthetic_demo": false,
+  "dataset_sha256": "20ea066a74a04ec7a92023524fc40d268cd18e2027f0e7f087426f54660fe8f6",
+  "metric_config": {
+    "version": "road-micro-v1",
+    "threshold": 0.5,
+    "space": "resized-image",
+    "empty_union": 1,
+    "undefined_precision_recall": null
+  },
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "counts": {
+    "tp": 2843,
+    "fp": 2432,
+    "fn": 6252,
+    "tn": 53583
+  },
+  "metrics": {
+    "iou": 0.2466383274052225,
+    "dice": 0.3956854558107168,
+    "precision": 0.538957345971564,
+    "recall": 0.3125893347993403
+  },
+  "mean_image_iou": 0.25248806491493964,
+  "images": [
+    {
+      "id": "um_000040",
+      "counts": {
+        "tp": 341,
+        "fp": 363,
+        "fn": 714,
+        "tn": 6692
+      },
+      "metrics": {
+        "iou": 0.2404795486600846,
+        "dice": 0.3877202956225128,
+        "precision": 0.484375,
+        "recall": 0.3232227488151659
+      },
+      "artifacts": {
+        "original": "0000_original.png",
+        "ground_truth": "0000_ground_truth.png",
+        "prediction": "0000_prediction.png",
+        "gt_overlay": "0000_gt_overlay.png",
+        "overlay": "0000_overlay.png"
+      }
+    },
+    {
+      "id": "um_000086",
+      "counts": {
+        "tp": 430,
+        "fp": 491,
+        "fn": 772,
+        "tn": 6155
+      },
+      "metrics": {
+        "iou": 0.2539870053160071,
+        "dice": 0.40508714083843617,
+        "precision": 0.46688382193268185,
+        "recall": 0.3577371048252912
+      },
+      "artifacts": {
+        "original": "0001_original.png",
+        "ground_truth": "0001_ground_truth.png",
+        "prediction": "0001_prediction.png",
+        "gt_overlay": "0001_gt_overlay.png",
+        "overlay": "0001_overlay.png"
+      }
+    },
+    {
+      "id": "um_000089",
+      "counts": {
+        "tp": 230,
+        "fp": 461,
+        "fn": 1001,
+        "tn": 6500
+      },
+      "metrics": {
+        "iou": 0.1359338061465721,
+        "dice": 0.2393340270551509,
+        "precision": 0.33285094066570187,
+        "recall": 0.1868399675060926
+      },
+      "artifacts": {
+        "original": "0002_original.png",
+        "ground_truth": "0002_ground_truth.png",
+        "prediction": "0002_prediction.png",
+        "gt_overlay": "0002_gt_overlay.png",
+        "overlay": "0002_overlay.png"
+      }
+    },
+    {
+      "id": "um_000090",
+      "counts": {
+        "tp": 110,
+        "fp": 221,
+        "fn": 1137,
+        "tn": 6724
+      },
+      "metrics": {
+        "iou": 0.07493188010899182,
+        "dice": 0.1394169835234474,
+        "precision": 0.3323262839879154,
+        "recall": 0.08821170809943865
+      },
+      "artifacts": {
+        "original": "0003_original.png",
+        "ground_truth": "0003_ground_truth.png",
+        "prediction": "0003_prediction.png",
+        "gt_overlay": "0003_gt_overlay.png",
+        "overlay": "0003_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000076",
+      "counts": {
+        "tp": 335,
+        "fp": 250,
+        "fn": 378,
+        "tn": 7229
+      },
+      "metrics": {
+        "iou": 0.34787123572170303,
+        "dice": 0.5161787365177196,
+        "precision": 0.5726495726495726,
+        "recall": 0.46984572230014027
+      },
+      "artifacts": {
+        "original": "0004_original.png",
+        "ground_truth": "0004_ground_truth.png",
+        "prediction": "0004_prediction.png",
+        "gt_overlay": "0004_gt_overlay.png",
+        "overlay": "0004_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000079",
+      "counts": {
+        "tp": 427,
+        "fp": 334,
+        "fn": 525,
+        "tn": 6906
+      },
+      "metrics": {
+        "iou": 0.3320373250388802,
+        "dice": 0.4985405720957385,
+        "precision": 0.5611038107752957,
+        "recall": 0.4485294117647059
+      },
+      "artifacts": {
+        "original": "0005_original.png",
+        "ground_truth": "0005_ground_truth.png",
+        "prediction": "0005_prediction.png",
+        "gt_overlay": "0005_gt_overlay.png",
+        "overlay": "0005_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000080",
+      "counts": {
+        "tp": 250,
+        "fp": 143,
+        "fn": 1056,
+        "tn": 6743
+      },
+      "metrics": {
+        "iou": 0.1725327812284334,
+        "dice": 0.2942907592701589,
+        "precision": 0.6361323155216285,
+        "recall": 0.19142419601837674
+      },
+      "artifacts": {
+        "original": "0006_original.png",
+        "ground_truth": "0006_ground_truth.png",
+        "prediction": "0006_prediction.png",
+        "gt_overlay": "0006_gt_overlay.png",
+        "overlay": "0006_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000081",
+      "counts": {
+        "tp": 720,
+        "fp": 169,
+        "fn": 669,
+        "tn": 6634
+      },
+      "metrics": {
+        "iou": 0.4621309370988447,
+        "dice": 0.6321334503950834,
+        "precision": 0.8098987626546682,
+        "recall": 0.5183585313174947
+      },
+      "artifacts": {
+        "original": "0007_original.png",
+        "ground_truth": "0007_ground_truth.png",
+        "prediction": "0007_prediction.png",
+        "gt_overlay": "0007_gt_overlay.png",
+        "overlay": "0007_overlay.png"
+      }
+    }
+  ],
+  "worst_ids": [
+    "um_000090",
+    "um_000089",
+    "uu_000080",
+    "um_000040",
+    "um_000086",
+    "uu_000079",
+    "uu_000076",
+    "uu_000081"
+  ],
+  "provenance": {
+    "model": {
+      "name": "kitti-small-unet-v1",
+      "kind": "unet",
+      "architecture": "tiny-unet-v1-width8",
+      "checkpoint": "checkpoints/kitti-small-unet-v1.pt",
+      "checkpoint_sha256": "44f31661edf8601e90c2d84c47595e0e3192dfa34a9c394b24a515a8dcc447cc",
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "training": {
+        "train_sha256": "0add3cebbacebf821b90ec804a94aa535c3b46df387ec5c049a8c5151652addd",
+        "validation_sha256": "6e81d3f00e7b424fd9b14db8cdca70b7255d41d862727eb1ca5a3178f26a6f1b",
+        "seed": 2026,
+        "epochs": 5,
+        "lr": 0.001,
+        "batch_size": 1,
+        "device": "cpu",
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.7241671433051428,
+            "validation_iou": 0.00030731407498463427
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.4784919197360675,
+            "validation_iou": 0.019517361373780164
+          },
+          {
+            "epoch": 3,
+            "train_loss": 0.40457719812790555,
+            "validation_iou": 0.17898697136487146
+          },
+          {
+            "epoch": 4,
+            "train_loss": 0.3623419404029846,
+            "validation_iou": 0.17148716498126015
+          },
+          {
+            "epoch": 5,
+            "train_loss": 0.3321092228094737,
+            "validation_iou": 0.3069252834312252
+          }
+        ],
+        "synthetic_demo": false,
+        "code_sha256": "e14f0b9f3f7af9d90fd10f7751918c655a7f4ed366ab5735dfc6ba4870b75e0a",
+        "torch": "2.10.0"
+      }
+    },
+    "model_manifest_sha256": "d8d1f96e599c1fac4673d0d39078b0188035f73269280fb6a378202653b71354",
+    "worker_code_sha256": "e14f0b9f3f7af9d90fd10f7751918c655a7f4ed366ab5735dfc6ba4870b75e0a",
+    "python": "3.12.11",
+    "numpy": "2.2.6",
+    "device_requested": "cpu",
+    "dataset": {
+      "name": "KITTI small / internal_test",
+      "role": "internal_test",
+      "synthetic_demo": false,
+      "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+      "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+      "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+      "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+      "license": "CC BY-NC-SA 3.0; KITTI authors",
+      "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+      "seed": 2026,
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "split_policy": "Globally partition raw drives 70/15/15, then seeded sample within each split; no recording crosses splits",
+      "subset_counts": {
+        "train": 24,
+        "validation": 8,
+        "internal_test": 8
+      }
+    }
+  }
+}

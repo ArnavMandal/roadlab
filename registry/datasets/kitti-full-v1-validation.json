@@ -1,0 +1,597 @@
+{
+  "name": "kitti-full-v1 / validation",
+  "role": "validation",
+  "synthetic_demo": false,
+  "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+  "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+  "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+  "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+  "license": "CC BY-NC-SA 3.0; KITTI authors",
+  "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+  "seed": 2026,
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "split_policy": "Globally partition raw drives 70/15/15, then seeded sample within each split; no recording crosses splits",
+  "subset_counts": {
+    "train": 189,
+    "validation": 57,
+    "internal_test": 43
+  },
+  "examples": [
+    {
+      "id": "um_000061",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000208",
+      "image": "datasets/kitti-full-v1/image_2/um_000061.png",
+      "image_sha256": "2e2df2c20919b29bc75cee10b2bcc6dd30c241fee2915f3c3a98dfca3ad410ad",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000061.png",
+      "mask_sha256": "d0109497b2aa2191d638e7eab710b6fd8d1155b223180e4b7fa6fd7fdf179c5d"
+    },
+    {
+      "id": "um_000062",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000220",
+      "image": "datasets/kitti-full-v1/image_2/um_000062.png",
+      "image_sha256": "95cee3d0439e48f640fa39f4c63309638d2787b43a19d7f3507d0d58ed9573be",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000062.png",
+      "mask_sha256": "89e9a82c78843304349ce01ab788ea4e871111731cfa4e7f3a0d45b94de216ca"
+    },
+    {
+      "id": "um_000063",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000323",
+      "image": "datasets/kitti-full-v1/image_2/um_000063.png",
+      "image_sha256": "915b5851a02f2015749e41bc32f7ebb3dca68ad7cb653ee86e67bf3ead0f5220",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000063.png",
+      "mask_sha256": "644636e74ce20eca3ac5d9479dcdb077fa58d0a720cfbdb43d43d44b42dfb043"
+    },
+    {
+      "id": "um_000064",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000333",
+      "image": "datasets/kitti-full-v1/image_2/um_000064.png",
+      "image_sha256": "64cc2080a6a1f0fefd43cb040f7acde06c73fb62f8ad4032b2357914877df90a",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000064.png",
+      "mask_sha256": "fe0276847dca3857b95ea4dc3ba2cc789167b2603184799e86b68abb093f22d6"
+    },
+    {
+      "id": "um_000065",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000343",
+      "image": "datasets/kitti-full-v1/image_2/um_000065.png",
+      "image_sha256": "d3f0159790a8d522dabea3598cd12bd0da1aef4dc2377b511f481643915baf63",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000065.png",
+      "mask_sha256": "31248d2371b5224f41454a50c75cbdcf97734c82578c318adf79def8905ea85e"
+    },
+    {
+      "id": "um_000066",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000354",
+      "image": "datasets/kitti-full-v1/image_2/um_000066.png",
+      "image_sha256": "23b029cf66660067432bfe7369a199313d3c8934e3d06a2999a9f83a51ff8c7c",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000066.png",
+      "mask_sha256": "24fe3d2ba792537c9a1103bcfdfe3b724670821cd7b45ac3bb8de7e6056c85e6"
+    },
+    {
+      "id": "um_000067",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000365",
+      "image": "datasets/kitti-full-v1/image_2/um_000067.png",
+      "image_sha256": "b79dd4162beb3aef4aa167b966b4f3d448b2e865faceead3f7423bf56d79009f",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000067.png",
+      "mask_sha256": "6f6ca69ef34e0c6336b0f936ef8ff9b7aa2238b1f574c36131fa1368a84febfd"
+    },
+    {
+      "id": "um_000068",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000375",
+      "image": "datasets/kitti-full-v1/image_2/um_000068.png",
+      "image_sha256": "bb04371228c707342f3b6e750fde3b07360b0fcb5edd6876d8d5feec5c9e3029",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000068.png",
+      "mask_sha256": "b765963f4f7779d6400602cb47c6265d61808367236979dfb56d9a962a2d1da9"
+    },
+    {
+      "id": "um_000069",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000385",
+      "image": "datasets/kitti-full-v1/image_2/um_000069.png",
+      "image_sha256": "ed9a5646a7b4bc4d04bedfedc5465567f7983f0e73b8ab81978f05269ad8966a",
+      "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000069.png",
+      "mask_sha256": "07c3dbb005f3930879ae6d97e364e8f74d71cec5f772b176e19c390cadc93a12"
+    },
+    {
+      "id": "umm_000022",
+      "category": "umm",
+      "group": "2011_09_26_drive_0051",
+      "raw_frame": "0000000014",
+      "image": "datasets/kitti-full-v1/image_2/umm_000022.png",
+      "image_sha256": "2c2c421db47ab850e31c523a0df6fe487dc877174b484e4911d74b2d41e695a3",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000022.png",
+      "mask_sha256": "6a2234f382bf983966a52d7b41bb3beb423746a94c431889e6e3ea4108ede559"
+    },
+    {
+      "id": "umm_000023",
+      "category": "umm",
+      "group": "2011_09_26_drive_0051",
+      "raw_frame": "0000000029",
+      "image": "datasets/kitti-full-v1/image_2/umm_000023.png",
+      "image_sha256": "9dec3c34527787d2a2d8e4f4190b092397d4e8968e7552c24ab032b104e304f8",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000023.png",
+      "mask_sha256": "af5bfa0b4ad3a938963f13d7c1ff2539d139bed61371f87ee0246963eb765e3d"
+    },
+    {
+      "id": "umm_000024",
+      "category": "umm",
+      "group": "2011_09_26_drive_0051",
+      "raw_frame": "0000000044",
+      "image": "datasets/kitti-full-v1/image_2/umm_000024.png",
+      "image_sha256": "8f9ecc0bd2903eeeff5428ba396e52960099097dd1397a17b5d1d34d8f3ebb56",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000024.png",
+      "mask_sha256": "c0cb085148bfa91c64d31a2c2f768bf9da4d443d1dfdcbed332e1fba9318399e"
+    },
+    {
+      "id": "umm_000025",
+      "category": "umm",
+      "group": "2011_09_26_drive_0051",
+      "raw_frame": "0000000061",
+      "image": "datasets/kitti-full-v1/image_2/umm_000025.png",
+      "image_sha256": "1fd8b0a034913cf08b344e08901c59e8b0e5dcfbc758b062f913d1d1f5ff5690",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000025.png",
+      "mask_sha256": "2e4d73b9d4028e73969d7f6067d432c0e41ceac1f7a60da3147abf217355621f"
+    },
+    {
+      "id": "umm_000026",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000061",
+      "image": "datasets/kitti-full-v1/image_2/umm_000026.png",
+      "image_sha256": "59439badcc94a5a80e3a7af9e49765a22d43e64e64679d6d3d2e0a64a3cc8d42",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000026.png",
+      "mask_sha256": "f0e6346349ac6e12c6ab4f5d10b849f59ff2122a30c2c9c770ae2ec91b4532bf"
+    },
+    {
+      "id": "umm_000027",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000075",
+      "image": "datasets/kitti-full-v1/image_2/umm_000027.png",
+      "image_sha256": "a17ca300a3ef74c0bec0003b4898190204e3bfddd1dc851de40163889b43d8c4",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000027.png",
+      "mask_sha256": "8ba02a67ce039213850485c5580e006a92b31f3a965ca05704aeee65f0ac9eac"
+    },
+    {
+      "id": "umm_000028",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000089",
+      "image": "datasets/kitti-full-v1/image_2/umm_000028.png",
+      "image_sha256": "0633e5a13fb5d2ea08f2897d6789dafec4d7d19bf3bf92c59de3048138786b5e",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000028.png",
+      "mask_sha256": "0e51a15db85d84b8dfbd93ff7648722a7ba8a4479ecc448526834d3757259cc7"
+    },
+    {
+      "id": "umm_000029",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000102",
+      "image": "datasets/kitti-full-v1/image_2/umm_000029.png",
+      "image_sha256": "21d25dce8ffaf62edae941be78c17bb33f91981dbfe51af3be0023f2cb4e2f6c",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000029.png",
+      "mask_sha256": "c9de2f9b202c1262f94543475bc5c351d4cc4f8bf43ce428ca1bb302de656aae"
+    },
+    {
+      "id": "umm_000030",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000115",
+      "image": "datasets/kitti-full-v1/image_2/umm_000030.png",
+      "image_sha256": "8c6917dfc0d681e51e3670c1326d2a1fb8648470f713100d3d89392bcbf4eb5e",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000030.png",
+      "mask_sha256": "fab601dc9b5fb316fd85e0bb0e4352331c4d2d9902f5c1f94e3f98ccda0ffa75"
+    },
+    {
+      "id": "umm_000031",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000172",
+      "image": "datasets/kitti-full-v1/image_2/umm_000031.png",
+      "image_sha256": "b171bc7d95d59987ecee64fccb517396872ef5d611a82b7f879e279568b71fe7",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000031.png",
+      "mask_sha256": "7271ee0ab2e025cb8d3e56697fcfd277af9b4d0cf86948b995d7376191e4ac76"
+    },
+    {
+      "id": "umm_000032",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000186",
+      "image": "datasets/kitti-full-v1/image_2/umm_000032.png",
+      "image_sha256": "d19739420ecaf7bbaa31fca4af39725611be6c8e119713dfbe162c367c0317e9",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000032.png",
+      "mask_sha256": "8dc1f22398aa490799a3f93f5866418f380b815e0518c5589c7a0da51f32705b"
+    },
+    {
+      "id": "umm_000033",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000201",
+      "image": "datasets/kitti-full-v1/image_2/umm_000033.png",
+      "image_sha256": "4a1874ae0598b3409da782ececf05fb029761cb006397dec5ecaeff4e36c644c",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000033.png",
+      "mask_sha256": "55e7ea36290fa387b875d7a0e4d2bfd03bb774750c65a75671763649382813d2"
+    },
+    {
+      "id": "umm_000034",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000216",
+      "image": "datasets/kitti-full-v1/image_2/umm_000034.png",
+      "image_sha256": "b964527ba1124734d71468ef4d928b1c0e9ae8f84c46673b37e0b536e30d57e1",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000034.png",
+      "mask_sha256": "be1819146291c6e0ca1c3bea4ea88fe60f5cc370a25adb0c58c33384f957c94f"
+    },
+    {
+      "id": "umm_000035",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000231",
+      "image": "datasets/kitti-full-v1/image_2/umm_000035.png",
+      "image_sha256": "0fde69735e9a263e132bc2fca9cffae69d9d516342f38191c9d18cdd5a234836",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000035.png",
+      "mask_sha256": "505741f497ec21598be7f4b3995bcd54d3c434595d30cf82e0ee2eced95853b5"
+    },
+    {
+      "id": "umm_000036",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000246",
+      "image": "datasets/kitti-full-v1/image_2/umm_000036.png",
+      "image_sha256": "b914286facc71c94ae0a8e2b09443b7b5d2da793fa8d1ad67e08b9a6ed77ab6b",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000036.png",
+      "mask_sha256": "48803ffcec020e20931b89248dbfdddfe627a77dbb344a68a875e21a7a9cfe0b"
+    },
+    {
+      "id": "umm_000037",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000260",
+      "image": "datasets/kitti-full-v1/image_2/umm_000037.png",
+      "image_sha256": "fc77caf9fd8b10263d11ba8e5659447850554d3ba1f97e3abab3bc2bced86979",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000037.png",
+      "mask_sha256": "6e6a28f0c1438459c35d5468fda46df7be7558e2d711851a8cb67a3db58b2488"
+    },
+    {
+      "id": "umm_000038",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000274",
+      "image": "datasets/kitti-full-v1/image_2/umm_000038.png",
+      "image_sha256": "70c8af122ca8483b9836bd0c66915bdd195a553a3db7a61cdf770a074c6a1622",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000038.png",
+      "mask_sha256": "8b60db0a9aa543523451a1d183fb5c5b4f150716569915f7669a25ab468c63d2"
+    },
+    {
+      "id": "umm_000039",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000288",
+      "image": "datasets/kitti-full-v1/image_2/umm_000039.png",
+      "image_sha256": "0c4b71b5cf7ee312c4691a88c3fcf5037b0a1d16cc19f098d2b279c570a8702d",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000039.png",
+      "mask_sha256": "4e3114d0e338296242dbf2ba6c3cff8943cc8df1eadb8b3ea6ac2bb709c91d2e"
+    },
+    {
+      "id": "umm_000041",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000232",
+      "image": "datasets/kitti-full-v1/image_2/umm_000041.png",
+      "image_sha256": "aaac9e2731720010e684d2659b10ca8094952eb593a3a26ac8b56aff00bdfbb7",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000041.png",
+      "mask_sha256": "5ec41aecfaa3366fd8b308cf1cf8bc6811923362e5dd20aabbe4d82ed9c7169b"
+    },
+    {
+      "id": "umm_000042",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000244",
+      "image": "datasets/kitti-full-v1/image_2/umm_000042.png",
+      "image_sha256": "f5a3b05bcf75e07d88f867ca8497d509d10058584abf7b2263de4a58f96693cf",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000042.png",
+      "mask_sha256": "98f21bab8ae970de452e3f22a0a8c8ed2252c1c2f8afa480e4650624c8114621"
+    },
+    {
+      "id": "umm_000043",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000256",
+      "image": "datasets/kitti-full-v1/image_2/umm_000043.png",
+      "image_sha256": "1d2dcc97da08bdcb67e85e1940ac12d15b27551de93e8596a88d8b9c8657ced7",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000043.png",
+      "mask_sha256": "296cca25b8d16a1d1309a43967654cdb8338759a7e2b37ab50006c3ba7d6bc3a"
+    },
+    {
+      "id": "umm_000044",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000268",
+      "image": "datasets/kitti-full-v1/image_2/umm_000044.png",
+      "image_sha256": "525205af294d342bd70d988d8aee07eed432aa06fca8178b7e99be07dced5154",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000044.png",
+      "mask_sha256": "0ae4755b298f1c44becac854cb314f8c23c4016d012cdc9f84c5bb3914d3e13d"
+    },
+    {
+      "id": "umm_000045",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000279",
+      "image": "datasets/kitti-full-v1/image_2/umm_000045.png",
+      "image_sha256": "1ecabd7a7d673eaf5aab25f0caf899d6e3ffc274fd343beff95ee8ec35fcc723",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000045.png",
+      "mask_sha256": "465aaad7b31a8b877dea473594deed7b84683927e563ab25dfbe90293ff6f8ab"
+    },
+    {
+      "id": "umm_000046",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000290",
+      "image": "datasets/kitti-full-v1/image_2/umm_000046.png",
+      "image_sha256": "ed96412295b58b7dd18a3c86a899683c7568b7efd276e3c41fd10d802aad9c39",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000046.png",
+      "mask_sha256": "2a12c05ffe66fa012b8f875ffd1cff7c1cd5ff6b3f48fdaff65f9bbc4cfbf085"
+    },
+    {
+      "id": "umm_000047",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000301",
+      "image": "datasets/kitti-full-v1/image_2/umm_000047.png",
+      "image_sha256": "d5cd61ccde1532e374e39c2982fa6d44c0dbcae98a3d9f2b9839e160e6e0612e",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000047.png",
+      "mask_sha256": "f5179648720d2d0dd54ae42a436d28de962ab6f7c91bbeac46363f7d1bd67cd9"
+    },
+    {
+      "id": "umm_000048",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000312",
+      "image": "datasets/kitti-full-v1/image_2/umm_000048.png",
+      "image_sha256": "b2bb190a36495c712052dbc1f2444496f9715a16eaf0719411f567c2063e6174",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000048.png",
+      "mask_sha256": "64e7ddbe369e294754eb17ca8840cb34ba410d18e7677c14d4ab04442e88034d"
+    },
+    {
+      "id": "umm_000049",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000407",
+      "image": "datasets/kitti-full-v1/image_2/umm_000049.png",
+      "image_sha256": "55b41f072b1d9b561a7087d87827e9e10537da9d203b1297c4199546dd0b2143",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000049.png",
+      "mask_sha256": "43a8cd0df00d6b921cf2618cae7e42500ff89a91602112873c95cca98ca79d1b"
+    },
+    {
+      "id": "umm_000050",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000418",
+      "image": "datasets/kitti-full-v1/image_2/umm_000050.png",
+      "image_sha256": "a9269b16f2c05359be8091fbc8183d888a8397c33ebc00a93072ff9d9d733d9d",
+      "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000050.png",
+      "mask_sha256": "e7779fb385365e870b1f93cdb8eb45ba3014a5a573e5c2033cce17199f8bf0c7"
+    },
+    {
+      "id": "uu_000031",
+      "category": "uu",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000183",
+      "image": "datasets/kitti-full-v1/image_2/uu_000031.png",
+      "image_sha256": "047d81b9b4b8c7db28ad301a683c9867e266f6544691804c1d0750f565b5754c",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000031.png",
+      "mask_sha256": "f115354936468a9fac67a073ccd1df590964622254962bff86a5c2a2d93837d7"
+    },
+    {
+      "id": "uu_000032",
+      "category": "uu",
+      "group": "2011_09_26_drive_0087",
+      "raw_frame": "0000000721",
+      "image": "datasets/kitti-full-v1/image_2/uu_000032.png",
+      "image_sha256": "40bd335695b29ee406191a9287405b9b5d82efa78d4b0b3d4837f947d02ff657",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000032.png",
+      "mask_sha256": "54ccc71b91566b6de6203ac8e40abfd43a07f0fe5c14aa6a8fe58d89f4eebdf9"
+    },
+    {
+      "id": "uu_000040",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000000049",
+      "image": "datasets/kitti-full-v1/image_2/uu_000040.png",
+      "image_sha256": "7c78accec9e6d1bebbfbae7f3868908f4435b391edffc38f071ea0858fe76d37",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000040.png",
+      "mask_sha256": "9bc5a52965cabca8a2d49cf8511eae4a3c49cfe11bb98cff890e04e5a1af6f21"
+    },
+    {
+      "id": "uu_000041",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000000068",
+      "image": "datasets/kitti-full-v1/image_2/uu_000041.png",
+      "image_sha256": "d44c678cf6d06c3af4a9614576665e5a5ee6748bd51d559c0433729307042dd0",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000041.png",
+      "mask_sha256": "868d02f78e3817b9b86b82a3a5fe0841fc3cfabc3e09b95d15d67150c19d4d5c"
+    },
+    {
+      "id": "uu_000042",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000000265",
+      "image": "datasets/kitti-full-v1/image_2/uu_000042.png",
+      "image_sha256": "320404c8d97de1d138914f7dc1e50b952a6b240dff86775b2a95a2adc0621284",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000042.png",
+      "mask_sha256": "6545f0312d97231f76b7c5f6e16125820e826d5e18f37040e3089cc2829742a6"
+    },
+    {
+      "id": "uu_000043",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000000586",
+      "image": "datasets/kitti-full-v1/image_2/uu_000043.png",
+      "image_sha256": "433fce710ebe219244927bc0c8161e55cecc689b295ad2d77a4c14a281e74eaf",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000043.png",
+      "mask_sha256": "43e530972afccb2ee00d15bba3c64e953a85ea7e1d09d6df87cf1e6ba1d20789"
+    },
+    {
+      "id": "uu_000044",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000000838",
+      "image": "datasets/kitti-full-v1/image_2/uu_000044.png",
+      "image_sha256": "0251085b437c289a2b8d88cf23ce4628b4b62c765c0e85554ed3edadceea2ba4",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000044.png",
+      "mask_sha256": "3844b76ea684cfc0f2efd96250ee76cdbfec3613c68a641e7cf1dff426f95b36"
+    },
+    {
+      "id": "uu_000045",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000001109",
+      "image": "datasets/kitti-full-v1/image_2/uu_000045.png",
+      "image_sha256": "99c0d7ffe8449e11365c62f4c512a0718571efdcf926724c565c05674eeac8a5",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000045.png",
+      "mask_sha256": "7a44c4e2a525d2509483c49a366e6cd845ff2f52c9684d25cec4a17f79b57e84"
+    },
+    {
+      "id": "uu_000046",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000001397",
+      "image": "datasets/kitti-full-v1/image_2/uu_000046.png",
+      "image_sha256": "3772fc0411d9334609f3c11b5b7548516d6f9a419774259c3ba27a1557f75359",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000046.png",
+      "mask_sha256": "f2155769f850b3953f0c45692730763169286e2807b467580a77278609f772aa"
+    },
+    {
+      "id": "uu_000047",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000001634",
+      "image": "datasets/kitti-full-v1/image_2/uu_000047.png",
+      "image_sha256": "15549c48642ba0f4486353782a0bfa4a327dbd1a8a9dd75b48ff1b023d296694",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000047.png",
+      "mask_sha256": "8e9b4788d50a901ae0c70de5d700bc6d17913236cace4a9f1b96ffc59b1bcd9a"
+    },
+    {
+      "id": "uu_000048",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000001882",
+      "image": "datasets/kitti-full-v1/image_2/uu_000048.png",
+      "image_sha256": "466958d60ae87724889f71e01f1cf066dcc0ad0ebc78fb448abfff0c571b7f77",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000048.png",
+      "mask_sha256": "134962bc77c1126da4d503bc6bf9bd41136057b27aee714645a2e7561e4a0925"
+    },
+    {
+      "id": "uu_000049",
+      "category": "uu",
+      "group": "2011_09_30_drive_0018",
+      "raw_frame": "0000002606",
+      "image": "datasets/kitti-full-v1/image_2/uu_000049.png",
+      "image_sha256": "1cf56f95a2682f7e8ef016e634e3c89f816323e7a974aaada93934048a75f048",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000049.png",
+      "mask_sha256": "12b41e1c45d6be5d0140a0f2f4b88a3bd67afd7c35371cc0a560844ec9e0b264"
+    },
+    {
+      "id": "uu_000050",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000035",
+      "image": "datasets/kitti-full-v1/image_2/uu_000050.png",
+      "image_sha256": "aedd2a41f65babdfb4321b636af027fc77e63d4dd0fa02bb01eb21617eb8c28e",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000050.png",
+      "mask_sha256": "0fc445e5b081f5db6104c0ca9ee9dd9babc4d5cea5d8a9ef6aed12b9ff95ceca"
+    },
+    {
+      "id": "uu_000051",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000217",
+      "image": "datasets/kitti-full-v1/image_2/uu_000051.png",
+      "image_sha256": "49bc8dd137f23823b176505891cda09dc3e40631b005a4e4d4a04e824078e2d4",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000051.png",
+      "mask_sha256": "bdead3666e18dcd8e6d23544113257fc798d4ec36ac92914b48ac24c1bd4ece0"
+    },
+    {
+      "id": "uu_000052",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000382",
+      "image": "datasets/kitti-full-v1/image_2/uu_000052.png",
+      "image_sha256": "1524a2f3ba4e92fba1871b92f411b03121cded5171cbd0c3eed8383af1752d41",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000052.png",
+      "mask_sha256": "36d3f27bd94e951352310a127587474c466eaf5b3f7cf8e076d48c66c5434bed"
+    },
+    {
+      "id": "uu_000053",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000426",
+      "image": "datasets/kitti-full-v1/image_2/uu_000053.png",
+      "image_sha256": "fe5e79a35787ab014bdf97274d1b2f76d5401ede7cc9d022f3ec042a36cdbf2d",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000053.png",
+      "mask_sha256": "b8afaea8151e774b4199d6f42e148d67dfb681263f97b5c36127ad27926727af"
+    },
+    {
+      "id": "uu_000054",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000598",
+      "image": "datasets/kitti-full-v1/image_2/uu_000054.png",
+      "image_sha256": "9bc89219fb1f38647cba572e7a644d96862adce08ad8f1631340ae4543de76db",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000054.png",
+      "mask_sha256": "b75f7f86464011515f1491a49490356c905fb748c537ec60b5ba7795d3a15016"
+    },
+    {
+      "id": "uu_000055",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000788",
+      "image": "datasets/kitti-full-v1/image_2/uu_000055.png",
+      "image_sha256": "125240fca6ae61c82cb32ab72fd4a984b1dc8de94baf632eabb4eb091287c523",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000055.png",
+      "mask_sha256": "1a1dfb617a7341025c2db501d9bfb485d705fcd90df930345ecfdbee091bb1fd"
+    },
+    {
+      "id": "uu_000056",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000948",
+      "image": "datasets/kitti-full-v1/image_2/uu_000056.png",
+      "image_sha256": "8e5256882fce61a5270c8458568a3f9607dd10a030aef0b067e591cb0f8e7ed0",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000056.png",
+      "mask_sha256": "eb0a93b6696524842f488adc366ddf0bea6657ab88a0a73c520e352a41113a7d"
+    },
+    {
+      "id": "uu_000057",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000001009",
+      "image": "datasets/kitti-full-v1/image_2/uu_000057.png",
+      "image_sha256": "134fb7537d650f75a9937b982382e86080e8e38dcdcf0650ef94cdc030b1ac68",
+      "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000057.png",
+      "mask_sha256": "40c5607cf6523a99ba4bc02b8dc6f92d46c365c88f8f9a7564bfe10007250668"
+    }
+  ]
+}

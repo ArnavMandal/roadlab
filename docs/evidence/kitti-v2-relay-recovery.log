@@ -1,0 +1,3 @@
+Killing worker A while its job is running: 018aaaf4e7cb8f59a6e1c7a143465ae0
+PASS: reclaimed dead worker job; one accepted attempt per job; duplicate and repeat completion stable; API restart preserved jobs.
+Evidence: storage/demo-logs/15d80f177703/report.json

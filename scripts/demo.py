@@ -34,7 +34,16 @@ def wait_for(fn, timeout=90):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--no-web", action="store_true")
+    p.add_argument(
+        "--dataset", help="registered dataset for a real evaluation crash demo"
+    )
+    p.add_argument("--model", help="registered model, required with --dataset")
+    p.add_argument("--comparison-model", help="optional baseline evaluated on the same dataset")
     a = p.parse_args()
+    if a.comparison_model and not a.dataset:
+        p.error("--comparison-model requires --dataset and --model")
+    if bool(a.dataset) != bool(a.model):
+        p.error("--dataset and --model must be supplied together")
     logdir = ROOT / "storage" / "demo-logs" / uuid.uuid4().hex[:12]
     logdir.mkdir(parents=True)
     processes = []
@@ -84,6 +93,13 @@ def main():
             )
         key = "demo-" + uuid.uuid4().hex
         payload = {"task": "fake", "duration": 7, "max_attempts": 3}
+        if a.dataset:
+            payload = {
+                "task": "evaluate",
+                "dataset": a.dataset,
+                "model": a.model,
+                "max_attempts": 3,
+            }
         first = request("/jobs", payload, key)
         one = launch(
             "worker-a", [sys.executable, "-m", "worker.run", "--name", "demo-a"]
@@ -94,6 +110,18 @@ def main():
             "worker-b", [sys.executable, "-m", "worker.run", "--name", "demo-b"]
         )
         wait_for(lambda: request("/jobs/" + second["id"])["state"] == "running")
+        old_claim = request("/jobs/" + first["id"])
+        if a.dataset:
+            attempt_dir = (
+                Path(os.environ.get("ARTIFACT_ROOT", "storage/artifacts"))
+                / first["id"]
+                / old_claim["token"]
+            )
+            wait_for(lambda: any(attempt_dir.glob("*_original.png")), 90)
+            if request("/jobs/" + first["id"])["state"] != "running":
+                raise RuntimeError(
+                    "evaluation finished before fault injection; no crash proof collected"
+                )
         print("Killing worker A while its job is running:", first["id"], flush=True)
         os.killpg(one.pid, signal.SIGKILL)
         one.wait()
@@ -118,6 +146,26 @@ def main():
             )
         assert any(x["state"] == "expired" for x in results[0]["attempts"])
         assert results[0]["job"]["attempt"] == 2
+        # Simulate a late publisher from the dead generation; Go must fence it.
+        from worker.data import write_json, sha
+
+        stale_dir = (
+            Path(os.environ.get("ARTIFACT_ROOT", "storage/artifacts"))
+            / first["id"]
+            / old_claim["token"]
+        )
+        write_json(
+            stale_dir / "result.json",
+            {"kind": "stale-completion-probe", "accepted": False},
+        )
+        try:
+            request(
+                "/jobs/" + first["id"] + "/complete",
+                {"token": old_claim["token"], "sha256": sha(stale_dir / "result.json")},
+            )
+            raise AssertionError("stale completion was accepted")
+        except HTTPError as error:
+            assert error.code == 409
         duplicate = request("/jobs", payload, key)
         assert duplicate["id"] == first["id"]
         # Persisted jobs must survive an actual API process restart.
@@ -133,10 +181,22 @@ def main():
             {"token": after["token"], "sha256": after["result_sha256"]},
         )
         assert repeat["state"] == "succeeded"
+        comparison = None
+        if a.comparison_model:
+            baseline = request("/jobs", {**payload, "model": a.comparison_model}, key + "-baseline")
+            wait_for(lambda: request("/jobs/" + baseline["id"])["state"] in ("succeeded", "failed"))
+            baseline = request("/jobs/" + baseline["id"])
+            assert baseline["state"] == "succeeded", baseline
+            comparison = {"job": baseline, "result": request("/jobs/" + baseline["id"] + "/result")}
+            assert comparison["result"]["dataset_sha256"] == results[0]["result"]["dataset_sha256"]
+            assert comparison["result"]["metric_config"] == results[0]["result"]["metric_config"]
         report = {
             "description": "real SIGKILL recovery; two workers; API process restart; duplicate submit; repeated completion",
             "duplicate_id": duplicate["id"],
+            "workload": payload,
+            "stale_completion_status": 409,
             "jobs": results,
+            "comparison": comparison,
         }
         (logdir / "report.json").write_text(json.dumps(report, indent=2) + "\n")
         print(

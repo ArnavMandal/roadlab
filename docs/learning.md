@@ -1,5 +1,7 @@
 # Explain it yourself
 
+**Real-data update:** subsequent work completed both a [40-image subset run](kitti-small-run.md) and an [all-289-image run](kitti-full-run.md), including official sequence mapping, overlay inspection, CPU training and held-out evaluation. Earlier no-KITTI statements below describe the initial synthetic-only milestone. The full report records current coverage limitations.
+
 Before presenting the project, answer these by pointing to code and a saved test:
 
 1. Why can a timed-out HTTP request still have committed? How does the idempotency key prevent duplicate logical jobs?

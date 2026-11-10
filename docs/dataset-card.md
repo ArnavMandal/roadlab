@@ -1,5 +1,7 @@
 # Dataset card: KITTI Road and synthetic fixtures
 
+**Update:** the official archives are now available locally, and all 289 labeled images have been imported for the [full run](kitti-full-run.md). The [40-image subset report](kitti-small-run.md) documents verified mapping format, decoded previews, splits and an actual training run. Use `worker.kitti_subset` for direct, selective ZIP extraction. The full-import/manual CSV route below remains available.
+
 ## Verified source and label semantics
 
 The [official KITTI Road page](https://www.cvlibs.net/datasets/kitti/eval_road.php) describes 289 labeled training images and 290 test images with withheld ground truth. It separates all-road areas from ego-lane labels and evaluates its official leaderboard in bird's-eye-view space. RoadLab uses RGB left images and **all-road** annotations from the labeled training release. It does not claim official benchmark scores.
@@ -27,7 +29,7 @@ Source consulted on November 9, 2026. KITTI's [dataset home page](https://www.cv
 
 1. Log in or register through the official Road page and accept any terms yourself. Download **base kit: left color images, calibration and training labels**, using the revised ground truth. Also download **mapping of training set to raw data sequences**. Do not download or invent test labels.
 2. Extract the base kit so that this repository contains `storage/datasets/kitti/data_road/training/image_2` and `training/gt_image_2`.
-3. Preserve the original official mapping file/archive. Normalize it to a CSV with header `image,sequence`: one image basename per row, and a sequence identifier that includes the recording date and raw drive ID. Frames belonging to the same raw recording must have the exact same sequence value. Do not use frame number as the group. Validate this normalization against the official mapping before import. The official mapping was not accessible through the unauthenticated page here, so its raw file syntax has **not** been verified; no automatic raw-format parser is claimed.
+3. Preserve the original official mapping file/archive. Normalize it to a CSV with header `image,sequence`: one image basename per row, and a sequence identifier that includes the recording date and raw drive ID. Frames belonging to the same raw recording must have the exact same sequence value. Do not use frame number as the group. Validate this normalization against the official mapping before import. This manual normalization route is optional. The supplied official mapping ZIP has now been inspected and is parsed directly by `worker.kitti_subset`; see the subset report.
 4. Import using your actual paths:
 
 ```sh
@@ -56,7 +58,7 @@ Training checks train and validation roles, matching preprocessing, and disjoint
 
 Current preprocessing deliberately uses a small 128×64 grid to keep CPU experiments readable and fast: RGB bilinear resize, divide values by 255, no additional normalization or augmentation. Masks use **nearest-neighbor** interpolation, preserving discrete labels. Both loss and metrics exclude red-channel-invalid pixels. Direct resizing distorts the original aspect ratio; this is an explicit low-cost baseline, not an optimized KITTI recipe. Changing resolution requires new matching dataset and model manifests/checkpoints; compare only identical preprocessing.
 
-Import writes up to six decoded overlay previews per split into `storage/previews/kitti/`. Inspect them before training: green road should align with pavement, purple denotes ignored area. Actual KITTI overlays have **not** been produced in this delivery because the labeled images are not present.
+Import writes up to six decoded overlay previews per split into `storage/previews/kitti/`. Inspect them before training: green road should align with pavement, purple denotes ignored area. Actual subset overlays have now been produced and inspected; see `storage/previews/kitti-small-v1/`.
 
 ## Synthetic fixture
 

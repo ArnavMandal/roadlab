@@ -1,0 +1,1039 @@
+{
+  "kind": "evaluation",
+  "label": "internal image-space evaluation",
+  "synthetic_demo": false,
+  "dataset_sha256": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764",
+  "metric_config": {
+    "version": "road-micro-v1",
+    "threshold": 0.5,
+    "space": "resized-image",
+    "empty_union": 1,
+    "undefined_precision_recall": null
+  },
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "counts": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 53668,
+    "tn": 294584
+  },
+  "metrics": {
+    "iou": 0.0,
+    "dice": 0.0,
+    "precision": null,
+    "recall": 0.0
+  },
+  "mean_image_iou": 0.0,
+  "images": [
+    {
+      "id": "um_000024",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1632,
+        "tn": 6425
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0000_original.png",
+        "ground_truth": "0000_ground_truth.png",
+        "prediction": "0000_prediction.png",
+        "gt_overlay": "0000_gt_overlay.png",
+        "overlay": "0000_overlay.png"
+      }
+    },
+    {
+      "id": "um_000025",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1680,
+        "tn": 6370
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0001_original.png",
+        "ground_truth": "0001_ground_truth.png",
+        "prediction": "0001_prediction.png",
+        "gt_overlay": "0001_gt_overlay.png",
+        "overlay": "0001_overlay.png"
+      }
+    },
+    {
+      "id": "um_000026",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1694,
+        "tn": 6331
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0002_original.png",
+        "ground_truth": "0002_ground_truth.png",
+        "prediction": "0002_prediction.png",
+        "gt_overlay": "0002_gt_overlay.png",
+        "overlay": "0002_overlay.png"
+      }
+    },
+    {
+      "id": "um_000027",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1620,
+        "tn": 6457
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0003_original.png",
+        "ground_truth": "0003_ground_truth.png",
+        "prediction": "0003_prediction.png",
+        "gt_overlay": "0003_gt_overlay.png",
+        "overlay": "0003_overlay.png"
+      }
+    },
+    {
+      "id": "um_000028",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1504,
+        "tn": 6554
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0004_original.png",
+        "ground_truth": "0004_ground_truth.png",
+        "prediction": "0004_prediction.png",
+        "gt_overlay": "0004_gt_overlay.png",
+        "overlay": "0004_overlay.png"
+      }
+    },
+    {
+      "id": "um_000029",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1405,
+        "tn": 6667
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0005_original.png",
+        "ground_truth": "0005_ground_truth.png",
+        "prediction": "0005_prediction.png",
+        "gt_overlay": "0005_gt_overlay.png",
+        "overlay": "0005_overlay.png"
+      }
+    },
+    {
+      "id": "um_000030",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1356,
+        "tn": 6640
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0006_original.png",
+        "ground_truth": "0006_ground_truth.png",
+        "prediction": "0006_prediction.png",
+        "gt_overlay": "0006_gt_overlay.png",
+        "overlay": "0006_overlay.png"
+      }
+    },
+    {
+      "id": "um_000031",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1314,
+        "tn": 6721
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0007_original.png",
+        "ground_truth": "0007_ground_truth.png",
+        "prediction": "0007_prediction.png",
+        "gt_overlay": "0007_gt_overlay.png",
+        "overlay": "0007_overlay.png"
+      }
+    },
+    {
+      "id": "um_000032",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1005,
+        "tn": 7138
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0008_original.png",
+        "ground_truth": "0008_ground_truth.png",
+        "prediction": "0008_prediction.png",
+        "gt_overlay": "0008_gt_overlay.png",
+        "overlay": "0008_overlay.png"
+      }
+    },
+    {
+      "id": "um_000033",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1260,
+        "tn": 6244
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0009_original.png",
+        "ground_truth": "0009_ground_truth.png",
+        "prediction": "0009_prediction.png",
+        "gt_overlay": "0009_gt_overlay.png",
+        "overlay": "0009_overlay.png"
+      }
+    },
+    {
+      "id": "um_000034",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1359,
+        "tn": 6704
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0010_original.png",
+        "ground_truth": "0010_ground_truth.png",
+        "prediction": "0010_prediction.png",
+        "gt_overlay": "0010_gt_overlay.png",
+        "overlay": "0010_overlay.png"
+      }
+    },
+    {
+      "id": "um_000035",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1190,
+        "tn": 6917
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0011_original.png",
+        "ground_truth": "0011_ground_truth.png",
+        "prediction": "0011_prediction.png",
+        "gt_overlay": "0011_gt_overlay.png",
+        "overlay": "0011_overlay.png"
+      }
+    },
+    {
+      "id": "um_000036",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1341,
+        "tn": 6746
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0012_original.png",
+        "ground_truth": "0012_ground_truth.png",
+        "prediction": "0012_prediction.png",
+        "gt_overlay": "0012_gt_overlay.png",
+        "overlay": "0012_overlay.png"
+      }
+    },
+    {
+      "id": "um_000037",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1285,
+        "tn": 6812
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0013_original.png",
+        "ground_truth": "0013_ground_truth.png",
+        "prediction": "0013_prediction.png",
+        "gt_overlay": "0013_gt_overlay.png",
+        "overlay": "0013_overlay.png"
+      }
+    },
+    {
+      "id": "um_000038",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1338,
+        "tn": 6738
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0014_original.png",
+        "ground_truth": "0014_ground_truth.png",
+        "prediction": "0014_prediction.png",
+        "gt_overlay": "0014_gt_overlay.png",
+        "overlay": "0014_overlay.png"
+      }
+    },
+    {
+      "id": "um_000039",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1355,
+        "tn": 6708
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0015_original.png",
+        "ground_truth": "0015_ground_truth.png",
+        "prediction": "0015_prediction.png",
+        "gt_overlay": "0015_gt_overlay.png",
+        "overlay": "0015_overlay.png"
+      }
+    },
+    {
+      "id": "um_000040",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1055,
+        "tn": 7055
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0016_original.png",
+        "ground_truth": "0016_ground_truth.png",
+        "prediction": "0016_prediction.png",
+        "gt_overlay": "0016_gt_overlay.png",
+        "overlay": "0016_overlay.png"
+      }
+    },
+    {
+      "id": "um_000085",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1264,
+        "tn": 6928
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0017_original.png",
+        "ground_truth": "0017_ground_truth.png",
+        "prediction": "0017_prediction.png",
+        "gt_overlay": "0017_gt_overlay.png",
+        "overlay": "0017_overlay.png"
+      }
+    },
+    {
+      "id": "um_000086",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1202,
+        "tn": 6646
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0018_original.png",
+        "ground_truth": "0018_ground_truth.png",
+        "prediction": "0018_prediction.png",
+        "gt_overlay": "0018_gt_overlay.png",
+        "overlay": "0018_overlay.png"
+      }
+    },
+    {
+      "id": "um_000087",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1441,
+        "tn": 6751
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0019_original.png",
+        "ground_truth": "0019_ground_truth.png",
+        "prediction": "0019_prediction.png",
+        "gt_overlay": "0019_gt_overlay.png",
+        "overlay": "0019_overlay.png"
+      }
+    },
+    {
+      "id": "um_000088",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1383,
+        "tn": 6809
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0020_original.png",
+        "ground_truth": "0020_ground_truth.png",
+        "prediction": "0020_prediction.png",
+        "gt_overlay": "0020_gt_overlay.png",
+        "overlay": "0020_overlay.png"
+      }
+    },
+    {
+      "id": "um_000089",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1231,
+        "tn": 6961
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0021_original.png",
+        "ground_truth": "0021_ground_truth.png",
+        "prediction": "0021_prediction.png",
+        "gt_overlay": "0021_gt_overlay.png",
+        "overlay": "0021_overlay.png"
+      }
+    },
+    {
+      "id": "um_000090",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1247,
+        "tn": 6945
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0022_original.png",
+        "ground_truth": "0022_ground_truth.png",
+        "prediction": "0022_prediction.png",
+        "gt_overlay": "0022_gt_overlay.png",
+        "overlay": "0022_overlay.png"
+      }
+    },
+    {
+      "id": "um_000091",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1218,
+        "tn": 6974
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0023_original.png",
+        "ground_truth": "0023_ground_truth.png",
+        "prediction": "0023_prediction.png",
+        "gt_overlay": "0023_gt_overlay.png",
+        "overlay": "0023_overlay.png"
+      }
+    },
+    {
+      "id": "um_000092",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1201,
+        "tn": 6991
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0024_original.png",
+        "ground_truth": "0024_ground_truth.png",
+        "prediction": "0024_prediction.png",
+        "gt_overlay": "0024_gt_overlay.png",
+        "overlay": "0024_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000010",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1588,
+        "tn": 5603
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0025_original.png",
+        "ground_truth": "0025_ground_truth.png",
+        "prediction": "0025_prediction.png",
+        "gt_overlay": "0025_gt_overlay.png",
+        "overlay": "0025_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000033",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1093,
+        "tn": 7099
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0026_original.png",
+        "ground_truth": "0026_ground_truth.png",
+        "prediction": "0026_prediction.png",
+        "gt_overlay": "0026_gt_overlay.png",
+        "overlay": "0026_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000067",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1317,
+        "tn": 6875
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0027_original.png",
+        "ground_truth": "0027_ground_truth.png",
+        "prediction": "0027_prediction.png",
+        "gt_overlay": "0027_gt_overlay.png",
+        "overlay": "0027_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000068",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1303,
+        "tn": 6889
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0028_original.png",
+        "ground_truth": "0028_ground_truth.png",
+        "prediction": "0028_prediction.png",
+        "gt_overlay": "0028_gt_overlay.png",
+        "overlay": "0028_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000069",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1386,
+        "tn": 6806
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0029_original.png",
+        "ground_truth": "0029_ground_truth.png",
+        "prediction": "0029_prediction.png",
+        "gt_overlay": "0029_gt_overlay.png",
+        "overlay": "0029_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000070",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 981,
+        "tn": 7211
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0030_original.png",
+        "ground_truth": "0030_ground_truth.png",
+        "prediction": "0030_prediction.png",
+        "gt_overlay": "0030_gt_overlay.png",
+        "overlay": "0030_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000071",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1393,
+        "tn": 6799
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0031_original.png",
+        "ground_truth": "0031_ground_truth.png",
+        "prediction": "0031_prediction.png",
+        "gt_overlay": "0031_gt_overlay.png",
+        "overlay": "0031_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000073",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 817,
+        "tn": 7375
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0032_original.png",
+        "ground_truth": "0032_ground_truth.png",
+        "prediction": "0032_prediction.png",
+        "gt_overlay": "0032_gt_overlay.png",
+        "overlay": "0032_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000074",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1077,
+        "tn": 7115
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0033_original.png",
+        "ground_truth": "0033_ground_truth.png",
+        "prediction": "0033_prediction.png",
+        "gt_overlay": "0033_gt_overlay.png",
+        "overlay": "0033_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000075",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 801,
+        "tn": 7391
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0034_original.png",
+        "ground_truth": "0034_ground_truth.png",
+        "prediction": "0034_prediction.png",
+        "gt_overlay": "0034_gt_overlay.png",
+        "overlay": "0034_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000076",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 713,
+        "tn": 7479
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0035_original.png",
+        "ground_truth": "0035_ground_truth.png",
+        "prediction": "0035_prediction.png",
+        "gt_overlay": "0035_gt_overlay.png",
+        "overlay": "0035_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000077",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 770,
+        "tn": 7407
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0036_original.png",
+        "ground_truth": "0036_ground_truth.png",
+        "prediction": "0036_prediction.png",
+        "gt_overlay": "0036_gt_overlay.png",
+        "overlay": "0036_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000078",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 844,
+        "tn": 7348
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0037_original.png",
+        "ground_truth": "0037_ground_truth.png",
+        "prediction": "0037_prediction.png",
+        "gt_overlay": "0037_gt_overlay.png",
+        "overlay": "0037_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000079",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 952,
+        "tn": 7240
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0038_original.png",
+        "ground_truth": "0038_ground_truth.png",
+        "prediction": "0038_prediction.png",
+        "gt_overlay": "0038_gt_overlay.png",
+        "overlay": "0038_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000080",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1306,
+        "tn": 6886
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0039_original.png",
+        "ground_truth": "0039_ground_truth.png",
+        "prediction": "0039_prediction.png",
+        "gt_overlay": "0039_gt_overlay.png",
+        "overlay": "0039_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000081",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1389,
+        "tn": 6803
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0040_original.png",
+        "ground_truth": "0040_ground_truth.png",
+        "prediction": "0040_prediction.png",
+        "gt_overlay": "0040_gt_overlay.png",
+        "overlay": "0040_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000082",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1128,
+        "tn": 7064
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0041_original.png",
+        "ground_truth": "0041_ground_truth.png",
+        "prediction": "0041_prediction.png",
+        "gt_overlay": "0041_gt_overlay.png",
+        "overlay": "0041_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000083",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1230,
+        "tn": 6962
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0042_original.png",
+        "ground_truth": "0042_ground_truth.png",
+        "prediction": "0042_prediction.png",
+        "gt_overlay": "0042_gt_overlay.png",
+        "overlay": "0042_overlay.png"
+      }
+    }
+  ],
+  "worst_ids": [
+    "um_000024",
+    "um_000025",
+    "um_000026",
+    "um_000027",
+    "um_000028",
+    "um_000029",
+    "um_000030",
+    "um_000031",
+    "um_000032",
+    "um_000033"
+  ],
+  "provenance": {
+    "model": {
+      "name": "all-background",
+      "kind": "all_background",
+      "architecture": "all_background-v1",
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      }
+    },
+    "model_manifest_sha256": "5b57ba8396446d63366d98fe433dcc0f71e642a7aa9398376779428ec031887b",
+    "worker_code_sha256": "87c5b33d664bfa2c739e225d7e3442823c8f721a954148063d5e9c62b8c5d039",
+    "python": "3.12.11",
+    "numpy": "2.2.6",
+    "device_requested": "cpu",
+    "dataset": {
+      "name": "kitti-full-v1 / internal_test",
+      "role": "internal_test",
+      "synthetic_demo": false,
+      "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+      "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+      "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+      "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+      "license": "CC BY-NC-SA 3.0; KITTI authors",
+      "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+      "seed": 2026,
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "split_policy": "Globally partition raw drives 70/15/15, then seeded sample within each split; no recording crosses splits",
+      "subset_counts": {
+        "train": 189,
+        "validation": 57,
+        "internal_test": 43
+      }
+    }
+  }
+}

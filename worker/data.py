@@ -92,12 +92,40 @@ def load_example(item, prep):
     with Image.open(ip) as im, Image.open(mp) as mask:
         if im.size != mask.size:
             raise ValueError("image and label dimensions differ")
-        size = (prep["width"], prep["height"])
-        rgb = np.array(im.convert("RGB").resize(size, Image.Resampling.BILINEAR))
-        road, valid = decode_mask(
-            mask.convert("RGB").resize(size, Image.Resampling.NEAREST)
-        )
+        rgb, road, valid = preprocess_pair(im, mask, prep)
     return rgb, road, valid
+
+
+def preprocess_pair(image, mask, prep):
+    """Resize identically; letterbox padding has R=0 and is ignored everywhere."""
+    if image.size != mask.size:
+        raise ValueError("image and label dimensions differ")
+    size = (prep["width"], prep["height"])
+    if min(size) < 4:
+        raise ValueError("preprocessing dimensions must be at least four")
+    mode = prep.get("resize_mode", "stretch")
+    if mode == "stretch":
+        rgb = image.convert("RGB").resize(size, Image.Resampling.BILINEAR)
+        label = mask.convert("RGB").resize(size, Image.Resampling.NEAREST)
+    elif mode == "letterbox":
+        scale = min(size[0] / image.width, size[1] / image.height)
+        fitted = (
+            max(1, round(image.width * scale)),
+            max(1, round(image.height * scale)),
+        )
+        offset = ((size[0] - fitted[0]) // 2, (size[1] - fitted[1]) // 2)
+        rgb = Image.new("RGB", size, (0, 0, 0))
+        label = Image.new("RGB", size, (0, 0, 0))
+        rgb.paste(
+            image.convert("RGB").resize(fitted, Image.Resampling.BILINEAR), offset
+        )
+        label.paste(
+            mask.convert("RGB").resize(fitted, Image.Resampling.NEAREST), offset
+        )
+    else:
+        raise ValueError("unknown resize mode")
+    road, valid = decode_mask(label)
+    return np.array(rgb), road, valid
 
 
 def overlay(rgb, road, valid):

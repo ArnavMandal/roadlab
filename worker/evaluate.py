@@ -45,6 +45,7 @@ def predictor(model, prep, device_name):
         or checkpoint["preprocessing"] != prep
     ):
         raise ValueError("checkpoint architecture/preprocessing mismatch")
+    torch.set_num_threads(2)
     dev = device(device_name)
     net = UNet().to(dev)
     net.load_state_dict(checkpoint["state_dict"])
@@ -75,12 +76,19 @@ def evaluate(spec, out, progress=lambda x: None, device_name="cpu"):
     out.mkdir(parents=True, exist_ok=True)
     total = dict(tp=0, fp=0, fn=0, tn=0)
     images = []
+    category_counts = {}
     for i, item in enumerate(ds["examples"]):
         rgb, truth, valid = load_example(item, prep)
         pred = predict(rgb)
         c = counts(pred, truth, valid)
         for k in total:
             total[k] += c[k]
+        if "category" in item:
+            group_counts = category_counts.setdefault(
+                item["category"], dict(tp=0, fp=0, fn=0, tn=0)
+            )
+            for k in group_counts:
+                group_counts[k] += c[k]
         names = {
             view: f"{i:04}_{view}.png"
             for view in (
@@ -118,6 +126,10 @@ def evaluate(spec, out, progress=lambda x: None, device_name="cpu"):
         "metric_config": METRICS,
         "preprocessing": prep,
         "counts": total,
+        "by_category": {
+            name: {"counts": c, "metrics": metrics(c)}
+            for name, c in sorted(category_counts.items())
+        },
         "metrics": metrics(total),
         "mean_image_iou": float(np.mean(valid_ious)) if valid_ious else None,
         "images": images,

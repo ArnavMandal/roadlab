@@ -1,0 +1,1078 @@
+{
+  "kind": "evaluation",
+  "label": "internal image-space evaluation",
+  "synthetic_demo": false,
+  "dataset_sha256": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764",
+  "metric_config": {
+    "version": "road-micro-v1",
+    "threshold": 0.5,
+    "space": "resized-image",
+    "empty_union": 1,
+    "undefined_precision_recall": null
+  },
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "counts": {
+    "tp": 39669,
+    "fp": 15995,
+    "fn": 13999,
+    "tn": 278589
+  },
+  "metrics": {
+    "iou": 0.5694414538564231,
+    "dice": 0.7256612885522994,
+    "precision": 0.7126509054325956,
+    "recall": 0.7391555489304613
+  },
+  "mean_image_iou": 0.5689669124171726,
+  "images": [
+    {
+      "id": "um_000024",
+      "counts": {
+        "tp": 1351,
+        "fp": 95,
+        "fn": 281,
+        "tn": 6330
+      },
+      "metrics": {
+        "iou": 0.7822814128546612,
+        "dice": 0.8778427550357375,
+        "precision": 0.9343015214384509,
+        "recall": 0.8278186274509803
+      },
+      "artifacts": {
+        "original": "0000_original.png",
+        "ground_truth": "0000_ground_truth.png",
+        "prediction": "0000_prediction.png",
+        "gt_overlay": "0000_gt_overlay.png",
+        "overlay": "0000_overlay.png"
+      }
+    },
+    {
+      "id": "um_000025",
+      "counts": {
+        "tp": 1451,
+        "fp": 105,
+        "fn": 229,
+        "tn": 6265
+      },
+      "metrics": {
+        "iou": 0.8128851540616246,
+        "dice": 0.8967861557478368,
+        "precision": 0.9325192802056556,
+        "recall": 0.8636904761904762
+      },
+      "artifacts": {
+        "original": "0001_original.png",
+        "ground_truth": "0001_ground_truth.png",
+        "prediction": "0001_prediction.png",
+        "gt_overlay": "0001_gt_overlay.png",
+        "overlay": "0001_overlay.png"
+      }
+    },
+    {
+      "id": "um_000026",
+      "counts": {
+        "tp": 1415,
+        "fp": 96,
+        "fn": 279,
+        "tn": 6235
+      },
+      "metrics": {
+        "iou": 0.7905027932960894,
+        "dice": 0.8829953198127926,
+        "precision": 0.9364659166115156,
+        "recall": 0.8353010625737899
+      },
+      "artifacts": {
+        "original": "0002_original.png",
+        "ground_truth": "0002_ground_truth.png",
+        "prediction": "0002_prediction.png",
+        "gt_overlay": "0002_gt_overlay.png",
+        "overlay": "0002_overlay.png"
+      }
+    },
+    {
+      "id": "um_000027",
+      "counts": {
+        "tp": 1385,
+        "fp": 91,
+        "fn": 235,
+        "tn": 6366
+      },
+      "metrics": {
+        "iou": 0.8094681472822911,
+        "dice": 0.8947028423772609,
+        "precision": 0.9383468834688347,
+        "recall": 0.8549382716049383
+      },
+      "artifacts": {
+        "original": "0003_original.png",
+        "ground_truth": "0003_ground_truth.png",
+        "prediction": "0003_prediction.png",
+        "gt_overlay": "0003_gt_overlay.png",
+        "overlay": "0003_overlay.png"
+      }
+    },
+    {
+      "id": "um_000028",
+      "counts": {
+        "tp": 1271,
+        "fp": 170,
+        "fn": 233,
+        "tn": 6384
+      },
+      "metrics": {
+        "iou": 0.7592592592592593,
+        "dice": 0.8631578947368421,
+        "precision": 0.8820263705759889,
+        "recall": 0.8450797872340425
+      },
+      "artifacts": {
+        "original": "0004_original.png",
+        "ground_truth": "0004_ground_truth.png",
+        "prediction": "0004_prediction.png",
+        "gt_overlay": "0004_gt_overlay.png",
+        "overlay": "0004_overlay.png"
+      }
+    },
+    {
+      "id": "um_000029",
+      "counts": {
+        "tp": 1201,
+        "fp": 510,
+        "fn": 204,
+        "tn": 6157
+      },
+      "metrics": {
+        "iou": 0.6271540469973891,
+        "dice": 0.7708600770218228,
+        "precision": 0.7019286966686148,
+        "recall": 0.8548042704626334
+      },
+      "artifacts": {
+        "original": "0005_original.png",
+        "ground_truth": "0005_ground_truth.png",
+        "prediction": "0005_prediction.png",
+        "gt_overlay": "0005_gt_overlay.png",
+        "overlay": "0005_overlay.png"
+      }
+    },
+    {
+      "id": "um_000030",
+      "counts": {
+        "tp": 1132,
+        "fp": 503,
+        "fn": 224,
+        "tn": 6137
+      },
+      "metrics": {
+        "iou": 0.608929532006455,
+        "dice": 0.7569374791039786,
+        "precision": 0.692354740061162,
+        "recall": 0.8348082595870207
+      },
+      "artifacts": {
+        "original": "0006_original.png",
+        "ground_truth": "0006_ground_truth.png",
+        "prediction": "0006_prediction.png",
+        "gt_overlay": "0006_gt_overlay.png",
+        "overlay": "0006_overlay.png"
+      }
+    },
+    {
+      "id": "um_000031",
+      "counts": {
+        "tp": 1107,
+        "fp": 565,
+        "fn": 207,
+        "tn": 6156
+      },
+      "metrics": {
+        "iou": 0.5891431612559872,
+        "dice": 0.7414601473543202,
+        "precision": 0.6620813397129187,
+        "recall": 0.8424657534246576
+      },
+      "artifacts": {
+        "original": "0007_original.png",
+        "ground_truth": "0007_ground_truth.png",
+        "prediction": "0007_prediction.png",
+        "gt_overlay": "0007_gt_overlay.png",
+        "overlay": "0007_overlay.png"
+      }
+    },
+    {
+      "id": "um_000032",
+      "counts": {
+        "tp": 768,
+        "fp": 74,
+        "fn": 237,
+        "tn": 7064
+      },
+      "metrics": {
+        "iou": 0.7117701575532901,
+        "dice": 0.8316188413643747,
+        "precision": 0.9121140142517815,
+        "recall": 0.764179104477612
+      },
+      "artifacts": {
+        "original": "0008_original.png",
+        "ground_truth": "0008_ground_truth.png",
+        "prediction": "0008_prediction.png",
+        "gt_overlay": "0008_gt_overlay.png",
+        "overlay": "0008_overlay.png"
+      }
+    },
+    {
+      "id": "um_000033",
+      "counts": {
+        "tp": 1060,
+        "fp": 241,
+        "fn": 200,
+        "tn": 6003
+      },
+      "metrics": {
+        "iou": 0.7061958694203864,
+        "dice": 0.827801639984381,
+        "precision": 0.8147578785549577,
+        "recall": 0.8412698412698413
+      },
+      "artifacts": {
+        "original": "0009_original.png",
+        "ground_truth": "0009_ground_truth.png",
+        "prediction": "0009_prediction.png",
+        "gt_overlay": "0009_gt_overlay.png",
+        "overlay": "0009_overlay.png"
+      }
+    },
+    {
+      "id": "um_000034",
+      "counts": {
+        "tp": 1175,
+        "fp": 130,
+        "fn": 184,
+        "tn": 6574
+      },
+      "metrics": {
+        "iou": 0.7891202149093351,
+        "dice": 0.8821321321321322,
+        "precision": 0.9003831417624522,
+        "recall": 0.8646063281824872
+      },
+      "artifacts": {
+        "original": "0010_original.png",
+        "ground_truth": "0010_ground_truth.png",
+        "prediction": "0010_prediction.png",
+        "gt_overlay": "0010_gt_overlay.png",
+        "overlay": "0010_overlay.png"
+      }
+    },
+    {
+      "id": "um_000035",
+      "counts": {
+        "tp": 958,
+        "fp": 50,
+        "fn": 232,
+        "tn": 6867
+      },
+      "metrics": {
+        "iou": 0.7725806451612903,
+        "dice": 0.8717015468607825,
+        "precision": 0.9503968253968254,
+        "recall": 0.8050420168067227
+      },
+      "artifacts": {
+        "original": "0011_original.png",
+        "ground_truth": "0011_ground_truth.png",
+        "prediction": "0011_prediction.png",
+        "gt_overlay": "0011_gt_overlay.png",
+        "overlay": "0011_overlay.png"
+      }
+    },
+    {
+      "id": "um_000036",
+      "counts": {
+        "tp": 1161,
+        "fp": 155,
+        "fn": 180,
+        "tn": 6591
+      },
+      "metrics": {
+        "iou": 0.7760695187165776,
+        "dice": 0.8739179525780956,
+        "precision": 0.8822188449848024,
+        "recall": 0.8657718120805369
+      },
+      "artifacts": {
+        "original": "0012_original.png",
+        "ground_truth": "0012_ground_truth.png",
+        "prediction": "0012_prediction.png",
+        "gt_overlay": "0012_gt_overlay.png",
+        "overlay": "0012_overlay.png"
+      }
+    },
+    {
+      "id": "um_000037",
+      "counts": {
+        "tp": 1050,
+        "fp": 89,
+        "fn": 235,
+        "tn": 6723
+      },
+      "metrics": {
+        "iou": 0.7641921397379913,
+        "dice": 0.8663366336633663,
+        "precision": 0.9218612818261633,
+        "recall": 0.8171206225680934
+      },
+      "artifacts": {
+        "original": "0013_original.png",
+        "ground_truth": "0013_ground_truth.png",
+        "prediction": "0013_prediction.png",
+        "gt_overlay": "0013_gt_overlay.png",
+        "overlay": "0013_overlay.png"
+      }
+    },
+    {
+      "id": "um_000038",
+      "counts": {
+        "tp": 1168,
+        "fp": 131,
+        "fn": 170,
+        "tn": 6607
+      },
+      "metrics": {
+        "iou": 0.7950987066031314,
+        "dice": 0.8858551384148654,
+        "precision": 0.8991531947652041,
+        "recall": 0.8729446935724963
+      },
+      "artifacts": {
+        "original": "0014_original.png",
+        "ground_truth": "0014_ground_truth.png",
+        "prediction": "0014_prediction.png",
+        "gt_overlay": "0014_gt_overlay.png",
+        "overlay": "0014_overlay.png"
+      }
+    },
+    {
+      "id": "um_000039",
+      "counts": {
+        "tp": 1116,
+        "fp": 85,
+        "fn": 239,
+        "tn": 6623
+      },
+      "metrics": {
+        "iou": 0.775,
+        "dice": 0.8732394366197183,
+        "precision": 0.929225645295587,
+        "recall": 0.8236162361623616
+      },
+      "artifacts": {
+        "original": "0015_original.png",
+        "ground_truth": "0015_ground_truth.png",
+        "prediction": "0015_prediction.png",
+        "gt_overlay": "0015_gt_overlay.png",
+        "overlay": "0015_overlay.png"
+      }
+    },
+    {
+      "id": "um_000040",
+      "counts": {
+        "tp": 802,
+        "fp": 171,
+        "fn": 253,
+        "tn": 6884
+      },
+      "metrics": {
+        "iou": 0.6541598694942904,
+        "dice": 0.7909270216962525,
+        "precision": 0.8242548818088387,
+        "recall": 0.7601895734597156
+      },
+      "artifacts": {
+        "original": "0016_original.png",
+        "ground_truth": "0016_ground_truth.png",
+        "prediction": "0016_prediction.png",
+        "gt_overlay": "0016_gt_overlay.png",
+        "overlay": "0016_overlay.png"
+      }
+    },
+    {
+      "id": "um_000085",
+      "counts": {
+        "tp": 1251,
+        "fp": 960,
+        "fn": 13,
+        "tn": 5968
+      },
+      "metrics": {
+        "iou": 0.5625,
+        "dice": 0.72,
+        "precision": 0.5658073270013568,
+        "recall": 0.9897151898734177
+      },
+      "artifacts": {
+        "original": "0017_original.png",
+        "ground_truth": "0017_ground_truth.png",
+        "prediction": "0017_prediction.png",
+        "gt_overlay": "0017_gt_overlay.png",
+        "overlay": "0017_overlay.png"
+      }
+    },
+    {
+      "id": "um_000086",
+      "counts": {
+        "tp": 1165,
+        "fp": 902,
+        "fn": 37,
+        "tn": 5744
+      },
+      "metrics": {
+        "iou": 0.5537072243346007,
+        "dice": 0.7127561945549098,
+        "precision": 0.563618771165941,
+        "recall": 0.9692179700499168
+      },
+      "artifacts": {
+        "original": "0018_original.png",
+        "ground_truth": "0018_ground_truth.png",
+        "prediction": "0018_prediction.png",
+        "gt_overlay": "0018_gt_overlay.png",
+        "overlay": "0018_overlay.png"
+      }
+    },
+    {
+      "id": "um_000087",
+      "counts": {
+        "tp": 962,
+        "fp": 289,
+        "fn": 479,
+        "tn": 6462
+      },
+      "metrics": {
+        "iou": 0.5560693641618497,
+        "dice": 0.7147102526002972,
+        "precision": 0.7689848121502798,
+        "recall": 0.6675919500346982
+      },
+      "artifacts": {
+        "original": "0019_original.png",
+        "ground_truth": "0019_ground_truth.png",
+        "prediction": "0019_prediction.png",
+        "gt_overlay": "0019_gt_overlay.png",
+        "overlay": "0019_overlay.png"
+      }
+    },
+    {
+      "id": "um_000088",
+      "counts": {
+        "tp": 1238,
+        "fp": 500,
+        "fn": 145,
+        "tn": 6309
+      },
+      "metrics": {
+        "iou": 0.6574614976101965,
+        "dice": 0.7933354694008331,
+        "precision": 0.7123130034522439,
+        "recall": 0.8951554591467824
+      },
+      "artifacts": {
+        "original": "0020_original.png",
+        "ground_truth": "0020_ground_truth.png",
+        "prediction": "0020_prediction.png",
+        "gt_overlay": "0020_gt_overlay.png",
+        "overlay": "0020_overlay.png"
+      }
+    },
+    {
+      "id": "um_000089",
+      "counts": {
+        "tp": 204,
+        "fp": 467,
+        "fn": 1027,
+        "tn": 6494
+      },
+      "metrics": {
+        "iou": 0.12014134275618374,
+        "dice": 0.21451104100946372,
+        "precision": 0.30402384500745155,
+        "recall": 0.16571892770105606
+      },
+      "artifacts": {
+        "original": "0021_original.png",
+        "ground_truth": "0021_ground_truth.png",
+        "prediction": "0021_prediction.png",
+        "gt_overlay": "0021_gt_overlay.png",
+        "overlay": "0021_overlay.png"
+      }
+    },
+    {
+      "id": "um_000090",
+      "counts": {
+        "tp": 316,
+        "fp": 104,
+        "fn": 931,
+        "tn": 6841
+      },
+      "metrics": {
+        "iou": 0.23390081421169504,
+        "dice": 0.379124175164967,
+        "precision": 0.7523809523809524,
+        "recall": 0.25340817963111467
+      },
+      "artifacts": {
+        "original": "0022_original.png",
+        "ground_truth": "0022_ground_truth.png",
+        "prediction": "0022_prediction.png",
+        "gt_overlay": "0022_gt_overlay.png",
+        "overlay": "0022_overlay.png"
+      }
+    },
+    {
+      "id": "um_000091",
+      "counts": {
+        "tp": 28,
+        "fp": 645,
+        "fn": 1190,
+        "tn": 6329
+      },
+      "metrics": {
+        "iou": 0.015029522275899088,
+        "dice": 0.029613960867265997,
+        "precision": 0.041604754829123326,
+        "recall": 0.022988505747126436
+      },
+      "artifacts": {
+        "original": "0023_original.png",
+        "ground_truth": "0023_ground_truth.png",
+        "prediction": "0023_prediction.png",
+        "gt_overlay": "0023_gt_overlay.png",
+        "overlay": "0023_overlay.png"
+      }
+    },
+    {
+      "id": "um_000092",
+      "counts": {
+        "tp": 26,
+        "fp": 639,
+        "fn": 1175,
+        "tn": 6352
+      },
+      "metrics": {
+        "iou": 0.014130434782608696,
+        "dice": 0.027867095391211148,
+        "precision": 0.039097744360902256,
+        "recall": 0.02164862614487927
+      },
+      "artifacts": {
+        "original": "0024_original.png",
+        "ground_truth": "0024_ground_truth.png",
+        "prediction": "0024_prediction.png",
+        "gt_overlay": "0024_gt_overlay.png",
+        "overlay": "0024_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000010",
+      "counts": {
+        "tp": 1437,
+        "fp": 153,
+        "fn": 151,
+        "tn": 5450
+      },
+      "metrics": {
+        "iou": 0.8253877082136704,
+        "dice": 0.9043423536815607,
+        "precision": 0.9037735849056604,
+        "recall": 0.904911838790932
+      },
+      "artifacts": {
+        "original": "0025_original.png",
+        "ground_truth": "0025_ground_truth.png",
+        "prediction": "0025_prediction.png",
+        "gt_overlay": "0025_gt_overlay.png",
+        "overlay": "0025_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000033",
+      "counts": {
+        "tp": 910,
+        "fp": 819,
+        "fn": 183,
+        "tn": 6280
+      },
+      "metrics": {
+        "iou": 0.47594142259414224,
+        "dice": 0.6449326718639263,
+        "precision": 0.5263157894736842,
+        "recall": 0.8325709057639524
+      },
+      "artifacts": {
+        "original": "0026_original.png",
+        "ground_truth": "0026_ground_truth.png",
+        "prediction": "0026_prediction.png",
+        "gt_overlay": "0026_gt_overlay.png",
+        "overlay": "0026_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000067",
+      "counts": {
+        "tp": 1077,
+        "fp": 165,
+        "fn": 240,
+        "tn": 6710
+      },
+      "metrics": {
+        "iou": 0.7267206477732794,
+        "dice": 0.8417350527549824,
+        "precision": 0.8671497584541062,
+        "recall": 0.8177676537585421
+      },
+      "artifacts": {
+        "original": "0027_original.png",
+        "ground_truth": "0027_ground_truth.png",
+        "prediction": "0027_prediction.png",
+        "gt_overlay": "0027_gt_overlay.png",
+        "overlay": "0027_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000068",
+      "counts": {
+        "tp": 1134,
+        "fp": 458,
+        "fn": 169,
+        "tn": 6431
+      },
+      "metrics": {
+        "iou": 0.6439522998296422,
+        "dice": 0.783419689119171,
+        "precision": 0.7123115577889447,
+        "recall": 0.8702993092862624
+      },
+      "artifacts": {
+        "original": "0028_original.png",
+        "ground_truth": "0028_ground_truth.png",
+        "prediction": "0028_prediction.png",
+        "gt_overlay": "0028_gt_overlay.png",
+        "overlay": "0028_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000069",
+      "counts": {
+        "tp": 1317,
+        "fp": 745,
+        "fn": 69,
+        "tn": 6061
+      },
+      "metrics": {
+        "iou": 0.6180197090567808,
+        "dice": 0.7639211136890951,
+        "precision": 0.6387002909796314,
+        "recall": 0.9502164502164502
+      },
+      "artifacts": {
+        "original": "0029_original.png",
+        "ground_truth": "0029_ground_truth.png",
+        "prediction": "0029_prediction.png",
+        "gt_overlay": "0029_gt_overlay.png",
+        "overlay": "0029_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000070",
+      "counts": {
+        "tp": 678,
+        "fp": 329,
+        "fn": 303,
+        "tn": 6882
+      },
+      "metrics": {
+        "iou": 0.517557251908397,
+        "dice": 0.682092555331992,
+        "precision": 0.6732869910625621,
+        "recall": 0.691131498470948
+      },
+      "artifacts": {
+        "original": "0030_original.png",
+        "ground_truth": "0030_ground_truth.png",
+        "prediction": "0030_prediction.png",
+        "gt_overlay": "0030_gt_overlay.png",
+        "overlay": "0030_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000071",
+      "counts": {
+        "tp": 1191,
+        "fp": 913,
+        "fn": 202,
+        "tn": 5886
+      },
+      "metrics": {
+        "iou": 0.5164787510841283,
+        "dice": 0.6811552759508149,
+        "precision": 0.56606463878327,
+        "recall": 0.8549892318736539
+      },
+      "artifacts": {
+        "original": "0031_original.png",
+        "ground_truth": "0031_ground_truth.png",
+        "prediction": "0031_prediction.png",
+        "gt_overlay": "0031_gt_overlay.png",
+        "overlay": "0031_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000073",
+      "counts": {
+        "tp": 0,
+        "fp": 20,
+        "fn": 817,
+        "tn": 7355
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "artifacts": {
+        "original": "0032_original.png",
+        "ground_truth": "0032_ground_truth.png",
+        "prediction": "0032_prediction.png",
+        "gt_overlay": "0032_gt_overlay.png",
+        "overlay": "0032_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000074",
+      "counts": {
+        "tp": 701,
+        "fp": 847,
+        "fn": 376,
+        "tn": 6268
+      },
+      "metrics": {
+        "iou": 0.36434511434511435,
+        "dice": 0.5340952380952381,
+        "precision": 0.4528423772609819,
+        "recall": 0.6508820798514392
+      },
+      "artifacts": {
+        "original": "0033_original.png",
+        "ground_truth": "0033_ground_truth.png",
+        "prediction": "0033_prediction.png",
+        "gt_overlay": "0033_gt_overlay.png",
+        "overlay": "0033_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000075",
+      "counts": {
+        "tp": 228,
+        "fp": 775,
+        "fn": 573,
+        "tn": 6616
+      },
+      "metrics": {
+        "iou": 0.1446700507614213,
+        "dice": 0.25277161862527714,
+        "precision": 0.22731804586241275,
+        "recall": 0.2846441947565543
+      },
+      "artifacts": {
+        "original": "0034_original.png",
+        "ground_truth": "0034_ground_truth.png",
+        "prediction": "0034_prediction.png",
+        "gt_overlay": "0034_gt_overlay.png",
+        "overlay": "0034_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000076",
+      "counts": {
+        "tp": 418,
+        "fp": 196,
+        "fn": 295,
+        "tn": 7283
+      },
+      "metrics": {
+        "iou": 0.4598459845984598,
+        "dice": 0.6299924642049737,
+        "precision": 0.6807817589576547,
+        "recall": 0.5862552594670407
+      },
+      "artifacts": {
+        "original": "0035_original.png",
+        "ground_truth": "0035_ground_truth.png",
+        "prediction": "0035_prediction.png",
+        "gt_overlay": "0035_gt_overlay.png",
+        "overlay": "0035_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000077",
+      "counts": {
+        "tp": 317,
+        "fp": 88,
+        "fn": 453,
+        "tn": 7319
+      },
+      "metrics": {
+        "iou": 0.36946386946386944,
+        "dice": 0.5395744680851063,
+        "precision": 0.782716049382716,
+        "recall": 0.4116883116883117
+      },
+      "artifacts": {
+        "original": "0036_original.png",
+        "ground_truth": "0036_ground_truth.png",
+        "prediction": "0036_prediction.png",
+        "gt_overlay": "0036_gt_overlay.png",
+        "overlay": "0036_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000078",
+      "counts": {
+        "tp": 570,
+        "fp": 475,
+        "fn": 274,
+        "tn": 6873
+      },
+      "metrics": {
+        "iou": 0.43214556482183475,
+        "dice": 0.6034939121228163,
+        "precision": 0.5454545454545454,
+        "recall": 0.6753554502369669
+      },
+      "artifacts": {
+        "original": "0037_original.png",
+        "ground_truth": "0037_ground_truth.png",
+        "prediction": "0037_prediction.png",
+        "gt_overlay": "0037_gt_overlay.png",
+        "overlay": "0037_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000079",
+      "counts": {
+        "tp": 760,
+        "fp": 1353,
+        "fn": 192,
+        "tn": 5887
+      },
+      "metrics": {
+        "iou": 0.3297180043383948,
+        "dice": 0.49592169657422513,
+        "precision": 0.3596781826786559,
+        "recall": 0.7983193277310925
+      },
+      "artifacts": {
+        "original": "0038_original.png",
+        "ground_truth": "0038_ground_truth.png",
+        "prediction": "0038_prediction.png",
+        "gt_overlay": "0038_gt_overlay.png",
+        "overlay": "0038_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000080",
+      "counts": {
+        "tp": 960,
+        "fp": 150,
+        "fn": 346,
+        "tn": 6736
+      },
+      "metrics": {
+        "iou": 0.6593406593406593,
+        "dice": 0.7947019867549668,
+        "precision": 0.8648648648648649,
+        "recall": 0.7350689127105666
+      },
+      "artifacts": {
+        "original": "0039_original.png",
+        "ground_truth": "0039_ground_truth.png",
+        "prediction": "0039_prediction.png",
+        "gt_overlay": "0039_gt_overlay.png",
+        "overlay": "0039_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000081",
+      "counts": {
+        "tp": 1204,
+        "fp": 109,
+        "fn": 185,
+        "tn": 6694
+      },
+      "metrics": {
+        "iou": 0.8037383177570093,
+        "dice": 0.8911917098445595,
+        "precision": 0.916984006092917,
+        "recall": 0.8668106551475881
+      },
+      "artifacts": {
+        "original": "0040_original.png",
+        "ground_truth": "0040_ground_truth.png",
+        "prediction": "0040_prediction.png",
+        "gt_overlay": "0040_gt_overlay.png",
+        "overlay": "0040_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000082",
+      "counts": {
+        "tp": 1055,
+        "fp": 448,
+        "fn": 73,
+        "tn": 6616
+      },
+      "metrics": {
+        "iou": 0.6694162436548223,
+        "dice": 0.8019764348156595,
+        "precision": 0.7019294743845642,
+        "recall": 0.9352836879432624
+      },
+      "artifacts": {
+        "original": "0041_original.png",
+        "ground_truth": "0041_ground_truth.png",
+        "prediction": "0041_prediction.png",
+        "gt_overlay": "0041_gt_overlay.png",
+        "overlay": "0041_overlay.png"
+      }
+    },
+    {
+      "id": "uu_000083",
+      "counts": {
+        "tp": 951,
+        "fp": 185,
+        "fn": 279,
+        "tn": 6777
+      },
+      "metrics": {
+        "iou": 0.6720848056537102,
+        "dice": 0.8038884192730347,
+        "precision": 0.8371478873239436,
+        "recall": 0.7731707317073171
+      },
+      "artifacts": {
+        "original": "0042_original.png",
+        "ground_truth": "0042_ground_truth.png",
+        "prediction": "0042_prediction.png",
+        "gt_overlay": "0042_gt_overlay.png",
+        "overlay": "0042_overlay.png"
+      }
+    }
+  ],
+  "worst_ids": [
+    "uu_000073",
+    "um_000092",
+    "um_000091",
+    "um_000089",
+    "uu_000075",
+    "um_000090",
+    "uu_000079",
+    "uu_000074",
+    "uu_000077",
+    "uu_000078"
+  ],
+  "provenance": {
+    "model": {
+      "name": "kitti-full-unet-v1",
+      "kind": "unet",
+      "architecture": "tiny-unet-v1-width8",
+      "checkpoint": "checkpoints/kitti-full-unet-v1.pt",
+      "checkpoint_sha256": "431aec0bf59adcc2a945f3fff7d7eb997216b988144012984cb99862acc51d64",
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "training": {
+        "train_sha256": "aff56a22802748c3ef208bdc38d9ae68c8c428fcfda254ab99e16d2d4fb6fee0",
+        "validation_sha256": "15cc0e434b834f1b425de713ce6bfecf5f89a1e127ed419b5900e6cc0abced8e",
+        "seed": 2026,
+        "epochs": 5,
+        "lr": 0.001,
+        "batch_size": 1,
+        "device": "cpu",
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.3916912679634397,
+            "validation_iou": 0.4198228679470594
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.25356048794965896,
+            "validation_iou": 0.594739871423415
+          },
+          {
+            "epoch": 3,
+            "train_loss": 0.2024718895160332,
+            "validation_iou": 0.7132334748101483
+          },
+          {
+            "epoch": 4,
+            "train_loss": 0.18995483436439403,
+            "validation_iou": 0.6366910400523846
+          },
+          {
+            "epoch": 5,
+            "train_loss": 0.16854506397925356,
+            "validation_iou": 0.6510606448563157
+          }
+        ],
+        "synthetic_demo": false,
+        "code_sha256": "87c5b33d664bfa2c739e225d7e3442823c8f721a954148063d5e9c62b8c5d039",
+        "torch": "2.10.0"
+      }
+    },
+    "model_manifest_sha256": "13883140117c93883156963d1049ddeddea2b04f54e504d4cca61b49e8ff8947",
+    "worker_code_sha256": "87c5b33d664bfa2c739e225d7e3442823c8f721a954148063d5e9c62b8c5d039",
+    "python": "3.12.11",
+    "numpy": "2.2.6",
+    "device_requested": "cpu",
+    "dataset": {
+      "name": "kitti-full-v1 / internal_test",
+      "role": "internal_test",
+      "synthetic_demo": false,
+      "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+      "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+      "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+      "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+      "license": "CC BY-NC-SA 3.0; KITTI authors",
+      "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+      "seed": 2026,
+      "preprocessing": {
+        "height": 64,
+        "width": 128,
+        "rgb": "uint8/255",
+        "image_resize": "bilinear",
+        "mask_resize": "nearest"
+      },
+      "split_policy": "Globally partition raw drives 70/15/15, then seeded sample within each split; no recording crosses splits",
+      "subset_counts": {
+        "train": 189,
+        "validation": 57,
+        "internal_test": 43
+      }
+    }
+  }
+}

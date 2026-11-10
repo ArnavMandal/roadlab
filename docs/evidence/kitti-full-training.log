@@ -1,0 +1,5 @@
+{'epoch': 1, 'train_loss': 0.3916912679634397, 'validation_iou': 0.4198228679470594}
+{'epoch': 2, 'train_loss': 0.25356048794965896, 'validation_iou': 0.594739871423415}
+{'epoch': 3, 'train_loss': 0.2024718895160332, 'validation_iou': 0.7132334748101483}
+{'epoch': 4, 'train_loss': 0.18995483436439403, 'validation_iou': 0.6366910400523846}
+{'epoch': 5, 'train_loss': 0.16854506397925356, 'validation_iou': 0.6510606448563157}

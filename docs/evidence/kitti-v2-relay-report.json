@@ -1,0 +1,5161 @@
+{
+  "description": "real SIGKILL recovery; two workers; API process restart; duplicate submit; repeated completion",
+  "duplicate_id": "018aaaf4e7cb8f59a6e1c7a143465ae0",
+  "workload": {
+    "task": "evaluate",
+    "dataset": "kitti-balanced-v2-internal_test",
+    "model": "kitti-unet-v2",
+    "max_attempts": 3
+  },
+  "stale_completion_status": 409,
+  "jobs": [
+    {
+      "job": {
+        "id": "018aaaf4e7cb8f59a6e1c7a143465ae0",
+        "request": {
+          "task": "evaluate",
+          "model": "kitti-unet-v2",
+          "dataset": "kitti-balanced-v2-internal_test",
+          "max_attempts": 3
+        },
+        "spec": {
+          "task": "evaluate",
+          "label": "internal image-space evaluation",
+          "model": {
+            "kind": "unet",
+            "name": "kitti-unet-v2",
+            "training": {
+              "lr": 0.001,
+              "seed": 2026,
+              "torch": "2.10.0",
+              "device": "cpu",
+              "epochs": 12,
+              "history": [
+                {
+                  "epoch": 1,
+                  "train_loss": 0.42956523517282996,
+                  "validation_iou": 0.309096614085632
+                },
+                {
+                  "epoch": 2,
+                  "train_loss": 0.26108699433687255,
+                  "validation_iou": 0.48753914870766585
+                },
+                {
+                  "epoch": 3,
+                  "train_loss": 0.2237198341546989,
+                  "validation_iou": 0.6307944870326399
+                },
+                {
+                  "epoch": 4,
+                  "train_loss": 0.20911689233489153,
+                  "validation_iou": 0.35239786202518836
+                },
+                {
+                  "epoch": 5,
+                  "train_loss": 0.20192000833226414,
+                  "validation_iou": 0.5032709573560077
+                },
+                {
+                  "epoch": 6,
+                  "train_loss": 0.17963273965004015,
+                  "validation_iou": 0.3090461117060022
+                },
+                {
+                  "epoch": 7,
+                  "train_loss": 0.1818596918953628,
+                  "validation_iou": 0.6974438791449101
+                },
+                {
+                  "epoch": 8,
+                  "train_loss": 0.16645859161891588,
+                  "validation_iou": 0.7086509948598655
+                },
+                {
+                  "epoch": 9,
+                  "train_loss": 0.15763806021068155,
+                  "validation_iou": 0.5994984270196474
+                },
+                {
+                  "epoch": 10,
+                  "train_loss": 0.15957027484730976,
+                  "validation_iou": 0.7140202698011071
+                },
+                {
+                  "epoch": 11,
+                  "train_loss": 0.15042494993384292,
+                  "validation_iou": 0.737767795942773
+                },
+                {
+                  "epoch": 12,
+                  "train_loss": 0.17449847194479734,
+                  "validation_iou": 0.7105419838792059
+                }
+              ],
+              "batch_size": 1,
+              "code_sha256": "8e24f4c4b602934a7c9820256eb9a3484f896299abd082f5330b467d6edd8049",
+              "train_sha256": "d66a4ad6f22a1eae775d451b268c36f5fe5511c58c4a1983ca934afc4f0844ff",
+              "synthetic_demo": false,
+              "validation_sha256": "e2c6433540f0ae6bd0b51cea714094f97245b6de21547666695d9f74bbbfd64c"
+            },
+            "checkpoint": "checkpoints/kitti-unet-v2.pt",
+            "architecture": "tiny-unet-v1-width8",
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "checkpoint_sha256": "91a15de2445bac53ad16d7c4d0b1b9a06bc8f0c6683b60b87652d58266931e82"
+          },
+          "dataset": {
+            "name": "KITTI grouped v2 / internal_test",
+            "role": "internal_test",
+            "seed": 2026,
+            "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+            "license": "CC BY-NC-SA 3.0; KITTI authors",
+            "examples": [
+              {
+                "id": "um_000004",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000004.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/um_000004.png",
+                "category": "um",
+                "raw_frame": "0000000326",
+                "mask_sha256": "3304bfef3e16bdf03837dc151bfe12fe7c0128946b884d33463337aa27626246",
+                "image_sha256": "87f76d01bec2a8a2aa29d6677c1748b1e2c0aa15e02119ceacc40969bf820fda"
+              },
+              {
+                "id": "um_000005",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000005.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/um_000005.png",
+                "category": "um",
+                "raw_frame": "0000000348",
+                "mask_sha256": "92107ed77c12fe787fdd30d189d0b3b0e87f818c2904afe9ebc7dc67cd1b89b7",
+                "image_sha256": "dcc82c89e78aa6d2d58a62fb5d05976341120ea65f9bea3e2e9db8ea1f20e26b"
+              },
+              {
+                "id": "um_000093",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000093.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/um_000093.png",
+                "category": "um",
+                "raw_frame": "0000000041",
+                "mask_sha256": "ff6a262753cfb50a43ec260e57d54b464086e513313538d1fbc17b3088b255b0",
+                "image_sha256": "a4bc5b06a39b0acf8c7221d9992d3da9577134a090b7fb68736982a29ce34522"
+              },
+              {
+                "id": "um_000094",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000094.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/um_000094.png",
+                "category": "um",
+                "raw_frame": "0000000057",
+                "mask_sha256": "e7fe033ec4e2d76804e8d44496afc8f6df00151034f47a8e786ef23b60afc61c",
+                "image_sha256": "fbf6ac73ad29b740b112478dafaa29b1e20dfc7e3e377210993c6337b91fa2bd"
+              },
+              {
+                "id": "umm_000090",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000090.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000090.png",
+                "category": "umm",
+                "raw_frame": "0000000123",
+                "mask_sha256": "c8f291f6e0eb05de8dec252136bf9472ca530e8d90f801a35a8f4c43a9d8afd3",
+                "image_sha256": "06b2dface885cd11d82c815eb3b49d46b3d2ae1c94897c4f5817771122d41230"
+              },
+              {
+                "id": "umm_000091",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000091.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000091.png",
+                "category": "umm",
+                "raw_frame": "0000000132",
+                "mask_sha256": "d18e5b8965c5bec75af7f39e557401113c577fcebc90fc7a6f3b7a0e9fc5cde8",
+                "image_sha256": "414b075e8eba60575e0e6d2e211071ecd185177f4ca1c0480adb48035afc2187"
+              },
+              {
+                "id": "umm_000092",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000092.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000092.png",
+                "category": "umm",
+                "raw_frame": "0000000141",
+                "mask_sha256": "24f84735293fa25278860a35a0d61e33869b02282fe47ef9c52a7a6e14dff54e",
+                "image_sha256": "717c46ad97825d002ea0cc01ccb7a9d9b242767e00a7170b69eabcb27f6e713c"
+              },
+              {
+                "id": "umm_000093",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000093.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000093.png",
+                "category": "umm",
+                "raw_frame": "0000000150",
+                "mask_sha256": "061c4d78b335c8114b98a4949ae803f3eee1619177d6c52cd36759b8bcbf8f0d",
+                "image_sha256": "b63fb221e27d7c72761c7b0e2b513c61365148bc522b9a1988f306644b2331f1"
+              },
+              {
+                "id": "umm_000094",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000094.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000094.png",
+                "category": "umm",
+                "raw_frame": "0000000177",
+                "mask_sha256": "38bfbadb34dfc643fd0d612ce474b83d9cf2de3fbaf67223d2a8f75b7cedd7cd",
+                "image_sha256": "ef8e49fa4200c54272257531b4c58b6634827630125e9e4e30354bc6c825373b"
+              },
+              {
+                "id": "umm_000095",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000095.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000095.png",
+                "category": "umm",
+                "raw_frame": "0000000185",
+                "mask_sha256": "c02b2dbc426316f384e91e68dea595cbcf1acd2a05bdc89ef84c7c7971292cfb",
+                "image_sha256": "1b602724c0e2b0030f413fc13f7190028dbefae5a3572653a6231dd0a65c4967"
+              },
+              {
+                "id": "uu_000000",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000000.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000000.png",
+                "category": "uu",
+                "raw_frame": "0000000019",
+                "mask_sha256": "3f82991f0cd03b82b5761046fba3c8301b46223ee8be4d889e924ca1c16ce769",
+                "image_sha256": "8dd1251e0751ad6f7e651a192e51f881c2d40a5b2cb4a051c9a89a057a99a92c"
+              },
+              {
+                "id": "uu_000001",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000001.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000001.png",
+                "category": "uu",
+                "raw_frame": "0000000038",
+                "mask_sha256": "5bc47fd2d1b7353cb10a3ba953876391c9bf2d2a5ad1c565ea261473eedb7009",
+                "image_sha256": "d7bb63f8e8b14c6e33747701e7adf8b6b829b784452f722c4d2506b800a371c5"
+              },
+              {
+                "id": "uu_000002",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000002.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000002.png",
+                "category": "uu",
+                "raw_frame": "0000000056",
+                "mask_sha256": "f0c1b1d50ec99a7ae420258e2fa307b33fc23256e257773f62484a01eed5b2ca",
+                "image_sha256": "b962be3de5b14aed62ec413b7d75cab324536e6b403dda36d9158e404956cab3"
+              },
+              {
+                "id": "uu_000003",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000003.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000003.png",
+                "category": "uu",
+                "raw_frame": "0000000074",
+                "mask_sha256": "5354ae4a2b81c077d92fd5c14b9ffa62ff8e22e8879c969ca982a569b37e87ee",
+                "image_sha256": "55c7c976f14c637e9da579e03d7b73d8c958b4d0415f6b1687343c1b9a21fd32"
+              },
+              {
+                "id": "uu_000004",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000004.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000004.png",
+                "category": "uu",
+                "raw_frame": "0000000092",
+                "mask_sha256": "1d2a290ae863d064e4cc87030a9ca9545e353b7e912203e0b3f313b0d71ca7a5",
+                "image_sha256": "2e8fe3f28e61272da6ff76c20e18189eeebe17203797809d955ed8c5d0ca31b3"
+              },
+              {
+                "id": "uu_000005",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000005.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000005.png",
+                "category": "uu",
+                "raw_frame": "0000000110",
+                "mask_sha256": "525230f5733c50f1132ec8f00b3c32851025ad3b477df0f07d70b4a514e37d37",
+                "image_sha256": "d41b3761872063c3eef968e492ffee1476bc5ab7fc3dfb294e43e14b6e5aad28"
+              },
+              {
+                "id": "uu_000006",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000006.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000006.png",
+                "category": "uu",
+                "raw_frame": "0000000241",
+                "mask_sha256": "746ced10c55a5bae8e9e9fc7cdee9000c1295bee617025daaf1ca18bfc443e3a",
+                "image_sha256": "1c0e29949b364ce8636062c81873956eefa5b66f69565cf93a6f4d4b8feef95e"
+              },
+              {
+                "id": "uu_000007",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000007.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000007.png",
+                "category": "uu",
+                "raw_frame": "0000000265",
+                "mask_sha256": "cd72b3dd097b44c0fa001ef243fa0c331ee49b18582e1cb8d78572434a36766a",
+                "image_sha256": "1d2247b06669f669cd04f7a8508d314d223e9a77f1d3bbb9b92a4d67f91887ea"
+              },
+              {
+                "id": "uu_000008",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000008.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000008.png",
+                "category": "uu",
+                "raw_frame": "0000000286",
+                "mask_sha256": "23281dcb206432f3c1556739bafa84cb0946cca16f5ca7a9e2562ea13c7104b6",
+                "image_sha256": "3446bf8d1da2845a8f1a71b277edb9188325aafcb5d2153bcae90680ba5626f7"
+              },
+              {
+                "id": "uu_000009",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000009.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000009.png",
+                "category": "uu",
+                "raw_frame": "0000000306",
+                "mask_sha256": "028ba901c56f1e486920d1974e2b1f0e37effeb34b7482424c92e6723198feca",
+                "image_sha256": "085c7ca7f276c3d3ed40589fe88430f3404a8cb8a812e9d8aec0f60431736ada"
+              },
+              {
+                "id": "uu_000027",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000027.png",
+                "group": "2011_09_26_drive_0039",
+                "image": "datasets/kitti-full-v1/image_2/uu_000027.png",
+                "category": "uu",
+                "raw_frame": "0000000129",
+                "mask_sha256": "1919cae7f31563602d5e1b8d86cc6f6fb711606011b16b28523474d71aaaccf9",
+                "image_sha256": "c82c2d23ce11c52b9d776cf884c1e63d3fd521954396469c43f6c2894cec8a87"
+              },
+              {
+                "id": "uu_000036",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000036.png",
+                "group": "2011_09_26_drive_0104",
+                "image": "datasets/kitti-full-v1/image_2/uu_000036.png",
+                "category": "uu",
+                "raw_frame": "0000000104",
+                "mask_sha256": "e8872e7b5eb3a0c8c90107a4cf6b7dcfe983398468b32b50f88c2043ada797dd",
+                "image_sha256": "ab0751a16cac2d82019a0e3eabe78ea16edb3213f7bfc5b9c017dc9544b94b36"
+              },
+              {
+                "id": "uu_000037",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000037.png",
+                "group": "2011_09_26_drive_0104",
+                "image": "datasets/kitti-full-v1/image_2/uu_000037.png",
+                "category": "uu",
+                "raw_frame": "0000000256",
+                "mask_sha256": "5d8a5819b8cdaf76f57b5e6e667a27741c040ad2cbf5e5cfe48606b738a6e775",
+                "image_sha256": "49eaf33488e58275e036fdb35831f0bcc213b829a637995592f305a7494e4c71"
+              },
+              {
+                "id": "um_000061",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000061.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000061.png",
+                "category": "um",
+                "raw_frame": "0000000208",
+                "mask_sha256": "d0109497b2aa2191d638e7eab710b6fd8d1155b223180e4b7fa6fd7fdf179c5d",
+                "image_sha256": "2e2df2c20919b29bc75cee10b2bcc6dd30c241fee2915f3c3a98dfca3ad410ad"
+              },
+              {
+                "id": "um_000062",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000062.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000062.png",
+                "category": "um",
+                "raw_frame": "0000000220",
+                "mask_sha256": "89e9a82c78843304349ce01ab788ea4e871111731cfa4e7f3a0d45b94de216ca",
+                "image_sha256": "95cee3d0439e48f640fa39f4c63309638d2787b43a19d7f3507d0d58ed9573be"
+              },
+              {
+                "id": "um_000063",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000063.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000063.png",
+                "category": "um",
+                "raw_frame": "0000000323",
+                "mask_sha256": "644636e74ce20eca3ac5d9479dcdb077fa58d0a720cfbdb43d43d44b42dfb043",
+                "image_sha256": "915b5851a02f2015749e41bc32f7ebb3dca68ad7cb653ee86e67bf3ead0f5220"
+              },
+              {
+                "id": "um_000064",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000064.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000064.png",
+                "category": "um",
+                "raw_frame": "0000000333",
+                "mask_sha256": "fe0276847dca3857b95ea4dc3ba2cc789167b2603184799e86b68abb093f22d6",
+                "image_sha256": "64cc2080a6a1f0fefd43cb040f7acde06c73fb62f8ad4032b2357914877df90a"
+              },
+              {
+                "id": "um_000065",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000065.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000065.png",
+                "category": "um",
+                "raw_frame": "0000000343",
+                "mask_sha256": "31248d2371b5224f41454a50c75cbdcf97734c82578c318adf79def8905ea85e",
+                "image_sha256": "d3f0159790a8d522dabea3598cd12bd0da1aef4dc2377b511f481643915baf63"
+              },
+              {
+                "id": "um_000066",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000066.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000066.png",
+                "category": "um",
+                "raw_frame": "0000000354",
+                "mask_sha256": "24fe3d2ba792537c9a1103bcfdfe3b724670821cd7b45ac3bb8de7e6056c85e6",
+                "image_sha256": "23b029cf66660067432bfe7369a199313d3c8934e3d06a2999a9f83a51ff8c7c"
+              },
+              {
+                "id": "um_000067",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000067.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000067.png",
+                "category": "um",
+                "raw_frame": "0000000365",
+                "mask_sha256": "6f6ca69ef34e0c6336b0f936ef8ff9b7aa2238b1f574c36131fa1368a84febfd",
+                "image_sha256": "b79dd4162beb3aef4aa167b966b4f3d448b2e865faceead3f7423bf56d79009f"
+              },
+              {
+                "id": "um_000068",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000068.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000068.png",
+                "category": "um",
+                "raw_frame": "0000000375",
+                "mask_sha256": "b765963f4f7779d6400602cb47c6265d61808367236979dfb56d9a962a2d1da9",
+                "image_sha256": "bb04371228c707342f3b6e750fde3b07360b0fcb5edd6876d8d5feec5c9e3029"
+              },
+              {
+                "id": "um_000069",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000069.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000069.png",
+                "category": "um",
+                "raw_frame": "0000000385",
+                "mask_sha256": "07c3dbb005f3930879ae6d97e364e8f74d71cec5f772b176e19c390cadc93a12",
+                "image_sha256": "ed9a5646a7b4bc4d04bedfedc5465567f7983f0e73b8ab81978f05269ad8966a"
+              },
+              {
+                "id": "umm_000041",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000041.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000041.png",
+                "category": "umm",
+                "raw_frame": "0000000232",
+                "mask_sha256": "5ec41aecfaa3366fd8b308cf1cf8bc6811923362e5dd20aabbe4d82ed9c7169b",
+                "image_sha256": "aaac9e2731720010e684d2659b10ca8094952eb593a3a26ac8b56aff00bdfbb7"
+              },
+              {
+                "id": "umm_000042",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000042.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000042.png",
+                "category": "umm",
+                "raw_frame": "0000000244",
+                "mask_sha256": "98f21bab8ae970de452e3f22a0a8c8ed2252c1c2f8afa480e4650624c8114621",
+                "image_sha256": "f5a3b05bcf75e07d88f867ca8497d509d10058584abf7b2263de4a58f96693cf"
+              },
+              {
+                "id": "umm_000043",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000043.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000043.png",
+                "category": "umm",
+                "raw_frame": "0000000256",
+                "mask_sha256": "296cca25b8d16a1d1309a43967654cdb8338759a7e2b37ab50006c3ba7d6bc3a",
+                "image_sha256": "1d2dcc97da08bdcb67e85e1940ac12d15b27551de93e8596a88d8b9c8657ced7"
+              },
+              {
+                "id": "umm_000044",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000044.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000044.png",
+                "category": "umm",
+                "raw_frame": "0000000268",
+                "mask_sha256": "0ae4755b298f1c44becac854cb314f8c23c4016d012cdc9f84c5bb3914d3e13d",
+                "image_sha256": "525205af294d342bd70d988d8aee07eed432aa06fca8178b7e99be07dced5154"
+              },
+              {
+                "id": "umm_000045",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000045.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000045.png",
+                "category": "umm",
+                "raw_frame": "0000000279",
+                "mask_sha256": "465aaad7b31a8b877dea473594deed7b84683927e563ab25dfbe90293ff6f8ab",
+                "image_sha256": "1ecabd7a7d673eaf5aab25f0caf899d6e3ffc274fd343beff95ee8ec35fcc723"
+              },
+              {
+                "id": "umm_000046",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000046.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000046.png",
+                "category": "umm",
+                "raw_frame": "0000000290",
+                "mask_sha256": "2a12c05ffe66fa012b8f875ffd1cff7c1cd5ff6b3f48fdaff65f9bbc4cfbf085",
+                "image_sha256": "ed96412295b58b7dd18a3c86a899683c7568b7efd276e3c41fd10d802aad9c39"
+              },
+              {
+                "id": "umm_000047",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000047.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000047.png",
+                "category": "umm",
+                "raw_frame": "0000000301",
+                "mask_sha256": "f5179648720d2d0dd54ae42a436d28de962ab6f7c91bbeac46363f7d1bd67cd9",
+                "image_sha256": "d5cd61ccde1532e374e39c2982fa6d44c0dbcae98a3d9f2b9839e160e6e0612e"
+              },
+              {
+                "id": "umm_000048",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000048.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000048.png",
+                "category": "umm",
+                "raw_frame": "0000000312",
+                "mask_sha256": "64e7ddbe369e294754eb17ca8840cb34ba410d18e7677c14d4ab04442e88034d",
+                "image_sha256": "b2bb190a36495c712052dbc1f2444496f9715a16eaf0719411f567c2063e6174"
+              },
+              {
+                "id": "umm_000049",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000049.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000049.png",
+                "category": "umm",
+                "raw_frame": "0000000407",
+                "mask_sha256": "43a8cd0df00d6b921cf2618cae7e42500ff89a91602112873c95cca98ca79d1b",
+                "image_sha256": "55b41f072b1d9b561a7087d87827e9e10537da9d203b1297c4199546dd0b2143"
+              },
+              {
+                "id": "umm_000050",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000050.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000050.png",
+                "category": "umm",
+                "raw_frame": "0000000418",
+                "mask_sha256": "e7779fb385365e870b1f93cdb8eb45ba3014a5a573e5c2033cce17199f8bf0c7",
+                "image_sha256": "a9269b16f2c05359be8091fbc8183d888a8397c33ebc00a93072ff9d9d733d9d"
+              },
+              {
+                "id": "uu_000031",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000031.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/uu_000031.png",
+                "category": "uu",
+                "raw_frame": "0000000183",
+                "mask_sha256": "f115354936468a9fac67a073ccd1df590964622254962bff86a5c2a2d93837d7",
+                "image_sha256": "047d81b9b4b8c7db28ad301a683c9867e266f6544691804c1d0750f565b5754c"
+              }
+            ],
+            "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+            "split_policy": "Category-covered recording groups, metadata-only fixed candidate search",
+            "split_search": {
+              "seed": 2026,
+              "candidates": 1000,
+              "metadata_cost": 0.007099115309436186,
+              "chosen_candidate": 437
+            },
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "synthetic_demo": false,
+            "evaluation_note": "Versioned exploratory internal split; data appeared in earlier experiments. Train fresh models; old checkpoints are not compatible baselines.",
+            "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+            "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+            "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+            "source_manifest_sha256": {
+              "train": "aff56a22802748c3ef208bdc38d9ae68c8c428fcfda254ab99e16d2d4fb6fee0",
+              "validation": "15cc0e434b834f1b425de713ce6bfecf5f89a1e127ed419b5900e6cc0abced8e",
+              "internal_test": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764"
+            }
+          },
+          "dataset_sha256": "a22c4cddb236629f07b6839309dca3cac2d9077c6983b32a52c2f5eecb2e00dd",
+          "synthetic_demo": false,
+          "model_manifest_sha256": "badf21a25e9ebc451a5c3c9a9a7ca03cc6c9a27b75efeb4d34da895ed9f669a2"
+        },
+        "state": "succeeded",
+        "attempt": 2,
+        "max_attempts": 3,
+        "token": "e6c2c7321da5b0985471a1e1fcba837c",
+        "lease_until": null,
+        "created_at": "2026-11-09T18:16:20.76253-05:00",
+        "updated_at": "2026-11-09T18:16:30.007176-05:00",
+        "available_at": "2026-11-09T18:16:28.136474-05:00",
+        "progress": 1,
+        "error": "",
+        "result_sha256": "b3fb98b800ff7ed94336cc8ed5e44410f66668949a467121d55ceee24ad9a637"
+      },
+      "attempts": [
+        {
+          "token": "a82ff807b6f91a2a41bd0f4bb0b46cd4",
+          "number": 1,
+          "worker": "demo-a",
+          "state": "expired",
+          "started_at": "2026-11-09T18:16:20.910209-05:00",
+          "finished_at": "2026-11-09T18:16:26.135438-05:00",
+          "error": "lease expired"
+        },
+        {
+          "token": "e6c2c7321da5b0985471a1e1fcba837c",
+          "number": 2,
+          "worker": "demo-b",
+          "state": "succeeded",
+          "started_at": "2026-11-09T18:16:28.170422-05:00",
+          "finished_at": "2026-11-09T18:16:30.007382-05:00",
+          "error": ""
+        }
+      ],
+      "result": {
+        "kind": "evaluation",
+        "label": "internal image-space evaluation",
+        "synthetic_demo": false,
+        "dataset_sha256": "a22c4cddb236629f07b6839309dca3cac2d9077c6983b32a52c2f5eecb2e00dd",
+        "metric_config": {
+          "version": "road-micro-v1",
+          "threshold": 0.5,
+          "space": "resized-image",
+          "empty_union": 1,
+          "undefined_precision_recall": null
+        },
+        "preprocessing": {
+          "rgb": "uint8/255",
+          "width": 384,
+          "height": 128,
+          "padding": "center; black RGB; invalid label",
+          "mask_resize": "nearest",
+          "resize_mode": "letterbox",
+          "image_resize": "bilinear"
+        },
+        "counts": {
+          "tp": 316688,
+          "fp": 26135,
+          "fn": 56358,
+          "tn": 1503502
+        },
+        "by_category": {
+          "um": {
+            "counts": {
+              "tp": 100523,
+              "fp": 7904,
+              "fn": 10769,
+              "tn": 456156
+            },
+            "metrics": {
+              "iou": 0.8433420584583375,
+              "dice": 0.9150141771990588,
+              "precision": 0.9271030278436183,
+              "recall": 0.9032365309276498
+            }
+          },
+          "umm": {
+            "counts": {
+              "tp": 134165,
+              "fp": 3369,
+              "fn": 23651,
+              "tn": 542977
+            },
+            "metrics": {
+              "iou": 0.832366535347582,
+              "dice": 0.9085153208058236,
+              "precision": 0.9755042389518228,
+              "recall": 0.8501356009530086
+            }
+          },
+          "uu": {
+            "counts": {
+              "tp": 82000,
+              "fp": 14862,
+              "fn": 21938,
+              "tn": 504369
+            },
+            "metrics": {
+              "iou": 0.6902356902356902,
+              "dice": 0.8167330677290837,
+              "precision": 0.8465652164935682,
+              "recall": 0.788931863226154
+            }
+          }
+        },
+        "metrics": {
+          "iou": 0.7933443726029045,
+          "dice": 0.8847652293925286,
+          "precision": 0.923765324963611,
+          "recall": 0.848924797478059
+        },
+        "mean_image_iou": 0.7897926549743076,
+        "images": [
+          {
+            "id": "um_000004",
+            "counts": {
+              "tp": 7328,
+              "fp": 10,
+              "fn": 1610,
+              "tn": 35596
+            },
+            "metrics": {
+              "iou": 0.8189539561913277,
+              "dice": 0.9004669451953797,
+              "precision": 0.9986372308530935,
+              "recall": 0.8198702170507943
+            },
+            "artifacts": {
+              "original": "0000_original.png",
+              "ground_truth": "0000_ground_truth.png",
+              "prediction": "0000_prediction.png",
+              "gt_overlay": "0000_gt_overlay.png",
+              "overlay": "0000_overlay.png"
+            }
+          },
+          {
+            "id": "um_000005",
+            "counts": {
+              "tp": 9136,
+              "fp": 2285,
+              "fn": 1287,
+              "tn": 31836
+            },
+            "metrics": {
+              "iou": 0.7189172175007869,
+              "dice": 0.8364768357443692,
+              "precision": 0.7999299535942562,
+              "recall": 0.8765230739710256
+            },
+            "artifacts": {
+              "original": "0001_original.png",
+              "ground_truth": "0001_ground_truth.png",
+              "prediction": "0001_prediction.png",
+              "gt_overlay": "0001_gt_overlay.png",
+              "overlay": "0001_overlay.png"
+            }
+          },
+          {
+            "id": "um_000093",
+            "counts": {
+              "tp": 8721,
+              "fp": 36,
+              "fn": 310,
+              "tn": 33468
+            },
+            "metrics": {
+              "iou": 0.9618396382485938,
+              "dice": 0.9805486845064089,
+              "precision": 0.9958890030832477,
+              "recall": 0.9656737902779315
+            },
+            "artifacts": {
+              "original": "0002_original.png",
+              "ground_truth": "0002_ground_truth.png",
+              "prediction": "0002_prediction.png",
+              "gt_overlay": "0002_gt_overlay.png",
+              "overlay": "0002_overlay.png"
+            }
+          },
+          {
+            "id": "um_000094",
+            "counts": {
+              "tp": 7907,
+              "fp": 55,
+              "fn": 642,
+              "tn": 34280
+            },
+            "metrics": {
+              "iou": 0.9189911668991166,
+              "dice": 0.9577857186118345,
+              "precision": 0.9930921878924893,
+              "recall": 0.9249034974850859
+            },
+            "artifacts": {
+              "original": "0003_original.png",
+              "ground_truth": "0003_ground_truth.png",
+              "prediction": "0003_prediction.png",
+              "gt_overlay": "0003_gt_overlay.png",
+              "overlay": "0003_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000090",
+            "counts": {
+              "tp": 7973,
+              "fp": 16,
+              "fn": 1296,
+              "tn": 33539
+            },
+            "metrics": {
+              "iou": 0.8586968228325256,
+              "dice": 0.9239772858963958,
+              "precision": 0.9979972462135436,
+              "recall": 0.8601790915956414
+            },
+            "artifacts": {
+              "original": "0004_original.png",
+              "ground_truth": "0004_ground_truth.png",
+              "prediction": "0004_prediction.png",
+              "gt_overlay": "0004_gt_overlay.png",
+              "overlay": "0004_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000091",
+            "counts": {
+              "tp": 8288,
+              "fp": 134,
+              "fn": 554,
+              "tn": 34512
+            },
+            "metrics": {
+              "iou": 0.9233511586452763,
+              "dice": 0.9601482854494903,
+              "precision": 0.9840892899548801,
+              "recall": 0.9373444921963356
+            },
+            "artifacts": {
+              "original": "0005_original.png",
+              "ground_truth": "0005_ground_truth.png",
+              "prediction": "0005_prediction.png",
+              "gt_overlay": "0005_gt_overlay.png",
+              "overlay": "0005_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000092",
+            "counts": {
+              "tp": 8534,
+              "fp": 212,
+              "fn": 709,
+              "tn": 33780
+            },
+            "metrics": {
+              "iou": 0.9025912215758858,
+              "dice": 0.9488020456945911,
+              "precision": 0.9757603475874685,
+              "recall": 0.9232933030401385
+            },
+            "artifacts": {
+              "original": "0006_original.png",
+              "ground_truth": "0006_ground_truth.png",
+              "prediction": "0006_prediction.png",
+              "gt_overlay": "0006_gt_overlay.png",
+              "overlay": "0006_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000093",
+            "counts": {
+              "tp": 8693,
+              "fp": 3,
+              "fn": 997,
+              "tn": 33214
+            },
+            "metrics": {
+              "iou": 0.8968327659135459,
+              "dice": 0.9456107908191015,
+              "precision": 0.999655013799448,
+              "recall": 0.897110423116615
+            },
+            "artifacts": {
+              "original": "0007_original.png",
+              "ground_truth": "0007_ground_truth.png",
+              "prediction": "0007_prediction.png",
+              "gt_overlay": "0007_gt_overlay.png",
+              "overlay": "0007_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000094",
+            "counts": {
+              "tp": 8801,
+              "fp": 197,
+              "fn": 1036,
+              "tn": 33226
+            },
+            "metrics": {
+              "iou": 0.877117799481762,
+              "dice": 0.9345367666578179,
+              "precision": 0.9781062458324072,
+              "recall": 0.8946833384161837
+            },
+            "artifacts": {
+              "original": "0008_original.png",
+              "ground_truth": "0008_ground_truth.png",
+              "prediction": "0008_prediction.png",
+              "gt_overlay": "0008_gt_overlay.png",
+              "overlay": "0008_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000095",
+            "counts": {
+              "tp": 7057,
+              "fp": 198,
+              "fn": 2694,
+              "tn": 33218
+            },
+            "metrics": {
+              "iou": 0.7093175193486783,
+              "dice": 0.8299423732800189,
+              "precision": 0.9727084769124742,
+              "recall": 0.723720644036509
+            },
+            "artifacts": {
+              "original": "0009_original.png",
+              "ground_truth": "0009_ground_truth.png",
+              "prediction": "0009_prediction.png",
+              "gt_overlay": "0009_gt_overlay.png",
+              "overlay": "0009_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000000",
+            "counts": {
+              "tp": 6457,
+              "fp": 2274,
+              "fn": 434,
+              "tn": 35379
+            },
+            "metrics": {
+              "iou": 0.7045280960174577,
+              "dice": 0.8266547177057996,
+              "precision": 0.7395487343946856,
+              "recall": 0.9370193005369323
+            },
+            "artifacts": {
+              "original": "0010_original.png",
+              "ground_truth": "0010_ground_truth.png",
+              "prediction": "0010_prediction.png",
+              "gt_overlay": "0010_gt_overlay.png",
+              "overlay": "0010_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000001",
+            "counts": {
+              "tp": 6278,
+              "fp": 464,
+              "fn": 839,
+              "tn": 36963
+            },
+            "metrics": {
+              "iou": 0.828122938926263,
+              "dice": 0.9059816725593477,
+              "precision": 0.9311776920795016,
+              "recall": 0.8821132499648728
+            },
+            "artifacts": {
+              "original": "0011_original.png",
+              "ground_truth": "0011_ground_truth.png",
+              "prediction": "0011_prediction.png",
+              "gt_overlay": "0011_gt_overlay.png",
+              "overlay": "0011_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000002",
+            "counts": {
+              "tp": 6020,
+              "fp": 3853,
+              "fn": 601,
+              "tn": 34070
+            },
+            "metrics": {
+              "iou": 0.5747565400038189,
+              "dice": 0.7299624105735419,
+              "precision": 0.6097437455687228,
+              "recall": 0.9092282132608367
+            },
+            "artifacts": {
+              "original": "0012_original.png",
+              "ground_truth": "0012_ground_truth.png",
+              "prediction": "0012_prediction.png",
+              "gt_overlay": "0012_gt_overlay.png",
+              "overlay": "0012_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000003",
+            "counts": {
+              "tp": 6408,
+              "fp": 608,
+              "fn": 746,
+              "tn": 36782
+            },
+            "metrics": {
+              "iou": 0.8255604225715022,
+              "dice": 0.9044460127028935,
+              "precision": 0.9133409350057012,
+              "recall": 0.8957226726306962
+            },
+            "artifacts": {
+              "original": "0013_original.png",
+              "ground_truth": "0013_ground_truth.png",
+              "prediction": "0013_prediction.png",
+              "gt_overlay": "0013_gt_overlay.png",
+              "overlay": "0013_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000004",
+            "counts": {
+              "tp": 6323,
+              "fp": 2179,
+              "fn": 691,
+              "tn": 35351
+            },
+            "metrics": {
+              "iou": 0.6878059393016426,
+              "dice": 0.8150296468161897,
+              "precision": 0.743707362973418,
+              "recall": 0.901482748788138
+            },
+            "artifacts": {
+              "original": "0014_original.png",
+              "ground_truth": "0014_ground_truth.png",
+              "prediction": "0014_prediction.png",
+              "gt_overlay": "0014_gt_overlay.png",
+              "overlay": "0014_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000005",
+            "counts": {
+              "tp": 1976,
+              "fp": 748,
+              "fn": 5163,
+              "tn": 36657
+            },
+            "metrics": {
+              "iou": 0.2505388614175225,
+              "dice": 0.4006894454020075,
+              "precision": 0.7254038179148311,
+              "recall": 0.2767894663118084
+            },
+            "artifacts": {
+              "original": "0015_original.png",
+              "ground_truth": "0015_ground_truth.png",
+              "prediction": "0015_prediction.png",
+              "gt_overlay": "0015_gt_overlay.png",
+              "overlay": "0015_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000006",
+            "counts": {
+              "tp": 7765,
+              "fp": 860,
+              "fn": 1099,
+              "tn": 34820
+            },
+            "metrics": {
+              "iou": 0.7985396955985191,
+              "dice": 0.8879867345188404,
+              "precision": 0.9002898550724637,
+              "recall": 0.8760153429602888
+            },
+            "artifacts": {
+              "original": "0016_original.png",
+              "ground_truth": "0016_ground_truth.png",
+              "prediction": "0016_prediction.png",
+              "gt_overlay": "0016_gt_overlay.png",
+              "overlay": "0016_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000007",
+            "counts": {
+              "tp": 7735,
+              "fp": 1118,
+              "fn": 1578,
+              "tn": 34113
+            },
+            "metrics": {
+              "iou": 0.7415396414533602,
+              "dice": 0.8515908840691402,
+              "precision": 0.8737151248164464,
+              "recall": 0.8305594330505744
+            },
+            "artifacts": {
+              "original": "0017_original.png",
+              "ground_truth": "0017_ground_truth.png",
+              "prediction": "0017_prediction.png",
+              "gt_overlay": "0017_gt_overlay.png",
+              "overlay": "0017_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000008",
+            "counts": {
+              "tp": 8385,
+              "fp": 182,
+              "fn": 1714,
+              "tn": 34263
+            },
+            "metrics": {
+              "iou": 0.8155821418149986,
+              "dice": 0.898424943747991,
+              "precision": 0.9787556904400607,
+              "recall": 0.8302802257649272
+            },
+            "artifacts": {
+              "original": "0018_original.png",
+              "ground_truth": "0018_ground_truth.png",
+              "prediction": "0018_prediction.png",
+              "gt_overlay": "0018_gt_overlay.png",
+              "overlay": "0018_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000009",
+            "counts": {
+              "tp": 7056,
+              "fp": 274,
+              "fn": 2248,
+              "tn": 34966
+            },
+            "metrics": {
+              "iou": 0.7366882438922531,
+              "dice": 0.8483828303474811,
+              "precision": 0.9626193724420191,
+              "recall": 0.7583834909716252
+            },
+            "artifacts": {
+              "original": "0019_original.png",
+              "ground_truth": "0019_ground_truth.png",
+              "prediction": "0019_prediction.png",
+              "gt_overlay": "0019_gt_overlay.png",
+              "overlay": "0019_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000027",
+            "counts": {
+              "tp": 4520,
+              "fp": 843,
+              "fn": 1306,
+              "tn": 37875
+            },
+            "metrics": {
+              "iou": 0.677762783025941,
+              "dice": 0.8079363660738225,
+              "precision": 0.8428118590341227,
+              "recall": 0.7758324751115688
+            },
+            "artifacts": {
+              "original": "0020_original.png",
+              "ground_truth": "0020_ground_truth.png",
+              "prediction": "0020_prediction.png",
+              "gt_overlay": "0020_gt_overlay.png",
+              "overlay": "0020_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000036",
+            "counts": {
+              "tp": 4091,
+              "fp": 1304,
+              "fn": 1097,
+              "tn": 38052
+            },
+            "metrics": {
+              "iou": 0.6301601971657425,
+              "dice": 0.773126712652367,
+              "precision": 0.758294717330862,
+              "recall": 0.788550501156515
+            },
+            "artifacts": {
+              "original": "0021_original.png",
+              "ground_truth": "0021_ground_truth.png",
+              "prediction": "0021_prediction.png",
+              "gt_overlay": "0021_gt_overlay.png",
+              "overlay": "0021_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000037",
+            "counts": {
+              "tp": 3386,
+              "fp": 151,
+              "fn": 1560,
+              "tn": 39000
+            },
+            "metrics": {
+              "iou": 0.6643123405925054,
+              "dice": 0.7983024873275963,
+              "precision": 0.9573084534916596,
+              "recall": 0.6845936109987869
+            },
+            "artifacts": {
+              "original": "0022_original.png",
+              "ground_truth": "0022_ground_truth.png",
+              "prediction": "0022_prediction.png",
+              "gt_overlay": "0022_gt_overlay.png",
+              "overlay": "0022_overlay.png"
+            }
+          },
+          {
+            "id": "um_000061",
+            "counts": {
+              "tp": 5322,
+              "fp": 98,
+              "fn": 2631,
+              "tn": 36493
+            },
+            "metrics": {
+              "iou": 0.6610358961619675,
+              "dice": 0.7959321019965603,
+              "precision": 0.9819188191881919,
+              "recall": 0.6691814409656733
+            },
+            "artifacts": {
+              "original": "0023_original.png",
+              "ground_truth": "0023_ground_truth.png",
+              "prediction": "0023_prediction.png",
+              "gt_overlay": "0023_gt_overlay.png",
+              "overlay": "0023_overlay.png"
+            }
+          },
+          {
+            "id": "um_000062",
+            "counts": {
+              "tp": 7289,
+              "fp": 278,
+              "fn": 731,
+              "tn": 36246
+            },
+            "metrics": {
+              "iou": 0.8784044348035671,
+              "dice": 0.9352665682940913,
+              "precision": 0.9632615303290604,
+              "recall": 0.908852867830424
+            },
+            "artifacts": {
+              "original": "0024_original.png",
+              "ground_truth": "0024_ground_truth.png",
+              "prediction": "0024_prediction.png",
+              "gt_overlay": "0024_gt_overlay.png",
+              "overlay": "0024_overlay.png"
+            }
+          },
+          {
+            "id": "um_000063",
+            "counts": {
+              "tp": 8292,
+              "fp": 278,
+              "fn": 738,
+              "tn": 35236
+            },
+            "metrics": {
+              "iou": 0.8908465835840138,
+              "dice": 0.9422727272727273,
+              "precision": 0.967561260210035,
+              "recall": 0.9182724252491694
+            },
+            "artifacts": {
+              "original": "0025_original.png",
+              "ground_truth": "0025_ground_truth.png",
+              "prediction": "0025_prediction.png",
+              "gt_overlay": "0025_gt_overlay.png",
+              "overlay": "0025_overlay.png"
+            }
+          },
+          {
+            "id": "um_000064",
+            "counts": {
+              "tp": 7545,
+              "fp": 246,
+              "fn": 292,
+              "tn": 36461
+            },
+            "metrics": {
+              "iou": 0.9334405542496598,
+              "dice": 0.9655746096749425,
+              "precision": 0.9684251058914132,
+              "recall": 0.9627408447109863
+            },
+            "artifacts": {
+              "original": "0026_original.png",
+              "ground_truth": "0026_ground_truth.png",
+              "prediction": "0026_prediction.png",
+              "gt_overlay": "0026_gt_overlay.png",
+              "overlay": "0026_overlay.png"
+            }
+          },
+          {
+            "id": "um_000065",
+            "counts": {
+              "tp": 7706,
+              "fp": 122,
+              "fn": 456,
+              "tn": 36209
+            },
+            "metrics": {
+              "iou": 0.9302269435055529,
+              "dice": 0.9638524077548468,
+              "precision": 0.9844149207971384,
+              "recall": 0.9441313403577555
+            },
+            "artifacts": {
+              "original": "0027_original.png",
+              "ground_truth": "0027_ground_truth.png",
+              "prediction": "0027_prediction.png",
+              "gt_overlay": "0027_gt_overlay.png",
+              "overlay": "0027_overlay.png"
+            }
+          },
+          {
+            "id": "um_000066",
+            "counts": {
+              "tp": 7510,
+              "fp": 528,
+              "fn": 857,
+              "tn": 35649
+            },
+            "metrics": {
+              "iou": 0.8442945474985947,
+              "dice": 0.9155745199634258,
+              "precision": 0.9343120179149043,
+              "recall": 0.8975738018405641
+            },
+            "artifacts": {
+              "original": "0028_original.png",
+              "ground_truth": "0028_ground_truth.png",
+              "prediction": "0028_prediction.png",
+              "gt_overlay": "0028_gt_overlay.png",
+              "overlay": "0028_overlay.png"
+            }
+          },
+          {
+            "id": "um_000067",
+            "counts": {
+              "tp": 8563,
+              "fp": 219,
+              "fn": 812,
+              "tn": 34950
+            },
+            "metrics": {
+              "iou": 0.8925370022930998,
+              "dice": 0.9432174918764114,
+              "precision": 0.9750626281029379,
+              "recall": 0.9133866666666667
+            },
+            "artifacts": {
+              "original": "0029_original.png",
+              "ground_truth": "0029_ground_truth.png",
+              "prediction": "0029_prediction.png",
+              "gt_overlay": "0029_gt_overlay.png",
+              "overlay": "0029_overlay.png"
+            }
+          },
+          {
+            "id": "um_000068",
+            "counts": {
+              "tp": 7521,
+              "fp": 1325,
+              "fn": 215,
+              "tn": 35483
+            },
+            "metrics": {
+              "iou": 0.830040834344995,
+              "dice": 0.9071282113134724,
+              "precision": 0.8502147863441103,
+              "recall": 0.9722078593588418
+            },
+            "artifacts": {
+              "original": "0030_original.png",
+              "ground_truth": "0030_ground_truth.png",
+              "prediction": "0030_prediction.png",
+              "gt_overlay": "0030_gt_overlay.png",
+              "overlay": "0030_overlay.png"
+            }
+          },
+          {
+            "id": "um_000069",
+            "counts": {
+              "tp": 7683,
+              "fp": 2424,
+              "fn": 188,
+              "tn": 34249
+            },
+            "metrics": {
+              "iou": 0.7462846041767849,
+              "dice": 0.854711313828012,
+              "precision": 0.7601662214306916,
+              "recall": 0.9761148519883115
+            },
+            "artifacts": {
+              "original": "0031_original.png",
+              "ground_truth": "0031_ground_truth.png",
+              "prediction": "0031_prediction.png",
+              "gt_overlay": "0031_gt_overlay.png",
+              "overlay": "0031_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000041",
+            "counts": {
+              "tp": 7649,
+              "fp": 1676,
+              "fn": 914,
+              "tn": 34305
+            },
+            "metrics": {
+              "iou": 0.7470456099228441,
+              "dice": 0.8552101967799642,
+              "precision": 0.8202680965147453,
+              "recall": 0.8932617073455564
+            },
+            "artifacts": {
+              "original": "0032_original.png",
+              "ground_truth": "0032_ground_truth.png",
+              "prediction": "0032_prediction.png",
+              "gt_overlay": "0032_gt_overlay.png",
+              "overlay": "0032_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000042",
+            "counts": {
+              "tp": 9091,
+              "fp": 260,
+              "fn": 763,
+              "tn": 34430
+            },
+            "metrics": {
+              "iou": 0.89885307494562,
+              "dice": 0.9467326217130956,
+              "precision": 0.9721954871136776,
+              "recall": 0.9225695149177999
+            },
+            "artifacts": {
+              "original": "0033_original.png",
+              "ground_truth": "0033_ground_truth.png",
+              "prediction": "0033_prediction.png",
+              "gt_overlay": "0033_gt_overlay.png",
+              "overlay": "0033_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000043",
+            "counts": {
+              "tp": 9034,
+              "fp": 25,
+              "fn": 1034,
+              "tn": 34451
+            },
+            "metrics": {
+              "iou": 0.8950757951055187,
+              "dice": 0.9446332409682647,
+              "precision": 0.9972403135003863,
+              "recall": 0.8972983710766785
+            },
+            "artifacts": {
+              "original": "0034_original.png",
+              "ground_truth": "0034_ground_truth.png",
+              "prediction": "0034_prediction.png",
+              "gt_overlay": "0034_gt_overlay.png",
+              "overlay": "0034_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000044",
+            "counts": {
+              "tp": 9563,
+              "fp": 87,
+              "fn": 969,
+              "tn": 33848
+            },
+            "metrics": {
+              "iou": 0.9005556078726811,
+              "dice": 0.9476761470617382,
+              "precision": 0.9909844559585492,
+              "recall": 0.9079946828712495
+            },
+            "artifacts": {
+              "original": "0035_original.png",
+              "ground_truth": "0035_ground_truth.png",
+              "prediction": "0035_prediction.png",
+              "gt_overlay": "0035_gt_overlay.png",
+              "overlay": "0035_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000045",
+            "counts": {
+              "tp": 9439,
+              "fp": 155,
+              "fn": 1012,
+              "tn": 33895
+            },
+            "metrics": {
+              "iou": 0.8899679426739582,
+              "dice": 0.9417809927662759,
+              "precision": 0.9838440692099228,
+              "recall": 0.9031671610372213
+            },
+            "artifacts": {
+              "original": "0036_original.png",
+              "ground_truth": "0036_ground_truth.png",
+              "prediction": "0036_prediction.png",
+              "gt_overlay": "0036_gt_overlay.png",
+              "overlay": "0036_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000046",
+            "counts": {
+              "tp": 9916,
+              "fp": 93,
+              "fn": 1661,
+              "tn": 32835
+            },
+            "metrics": {
+              "iou": 0.8497000856898029,
+              "dice": 0.9187436301306402,
+              "precision": 0.9907083624737736,
+              "recall": 0.8565258702599983
+            },
+            "artifacts": {
+              "original": "0037_original.png",
+              "ground_truth": "0037_ground_truth.png",
+              "prediction": "0037_prediction.png",
+              "gt_overlay": "0037_gt_overlay.png",
+              "overlay": "0037_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000047",
+            "counts": {
+              "tp": 9577,
+              "fp": 217,
+              "fn": 1472,
+              "tn": 33278
+            },
+            "metrics": {
+              "iou": 0.8500798863838097,
+              "dice": 0.9189655999616179,
+              "precision": 0.977843577700633,
+              "recall": 0.8667752737804326
+            },
+            "artifacts": {
+              "original": "0038_original.png",
+              "ground_truth": "0038_ground_truth.png",
+              "prediction": "0038_prediction.png",
+              "gt_overlay": "0038_gt_overlay.png",
+              "overlay": "0038_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000048",
+            "counts": {
+              "tp": 7319,
+              "fp": 1,
+              "fn": 3548,
+              "tn": 33676
+            },
+            "metrics": {
+              "iou": 0.6734449760765551,
+              "dice": 0.8048606147248034,
+              "precision": 0.9998633879781421,
+              "recall": 0.6735069476396429
+            },
+            "artifacts": {
+              "original": "0039_original.png",
+              "ground_truth": "0039_ground_truth.png",
+              "prediction": "0039_prediction.png",
+              "gt_overlay": "0039_gt_overlay.png",
+              "overlay": "0039_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000049",
+            "counts": {
+              "tp": 7600,
+              "fp": 47,
+              "fn": 905,
+              "tn": 35992
+            },
+            "metrics": {
+              "iou": 0.8886810102899907,
+              "dice": 0.9410599306587419,
+              "precision": 0.993853798875376,
+              "recall": 0.8935920047031158
+            },
+            "artifacts": {
+              "original": "0040_original.png",
+              "ground_truth": "0040_ground_truth.png",
+              "prediction": "0040_prediction.png",
+              "gt_overlay": "0040_gt_overlay.png",
+              "overlay": "0040_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000050",
+            "counts": {
+              "tp": 5631,
+              "fp": 48,
+              "fn": 4087,
+              "tn": 34778
+            },
+            "metrics": {
+              "iou": 0.5765922588572598,
+              "dice": 0.7314411898421771,
+              "precision": 0.9915478077126255,
+              "recall": 0.5794402140358098
+            },
+            "artifacts": {
+              "original": "0041_original.png",
+              "ground_truth": "0041_ground_truth.png",
+              "prediction": "0041_prediction.png",
+              "gt_overlay": "0041_gt_overlay.png",
+              "overlay": "0041_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000031",
+            "counts": {
+              "tp": 5600,
+              "fp": 4,
+              "fn": 2862,
+              "tn": 36078
+            },
+            "metrics": {
+              "iou": 0.6614694070399244,
+              "dice": 0.7962462675956207,
+              "precision": 0.9992862241256245,
+              "recall": 0.6617820846135666
+            },
+            "artifacts": {
+              "original": "0042_original.png",
+              "ground_truth": "0042_ground_truth.png",
+              "prediction": "0042_prediction.png",
+              "gt_overlay": "0042_gt_overlay.png",
+              "overlay": "0042_overlay.png"
+            }
+          }
+        ],
+        "worst_ids": [
+          "uu_000005",
+          "uu_000002",
+          "umm_000050",
+          "uu_000036",
+          "um_000061",
+          "uu_000031",
+          "uu_000037",
+          "umm_000048",
+          "uu_000027",
+          "uu_000004"
+        ],
+        "provenance": {
+          "model": {
+            "kind": "unet",
+            "name": "kitti-unet-v2",
+            "training": {
+              "lr": 0.001,
+              "seed": 2026,
+              "torch": "2.10.0",
+              "device": "cpu",
+              "epochs": 12,
+              "history": [
+                {
+                  "epoch": 1,
+                  "train_loss": 0.42956523517282996,
+                  "validation_iou": 0.309096614085632
+                },
+                {
+                  "epoch": 2,
+                  "train_loss": 0.26108699433687255,
+                  "validation_iou": 0.48753914870766585
+                },
+                {
+                  "epoch": 3,
+                  "train_loss": 0.2237198341546989,
+                  "validation_iou": 0.6307944870326399
+                },
+                {
+                  "epoch": 4,
+                  "train_loss": 0.20911689233489153,
+                  "validation_iou": 0.35239786202518836
+                },
+                {
+                  "epoch": 5,
+                  "train_loss": 0.20192000833226414,
+                  "validation_iou": 0.5032709573560077
+                },
+                {
+                  "epoch": 6,
+                  "train_loss": 0.17963273965004015,
+                  "validation_iou": 0.3090461117060022
+                },
+                {
+                  "epoch": 7,
+                  "train_loss": 0.1818596918953628,
+                  "validation_iou": 0.6974438791449101
+                },
+                {
+                  "epoch": 8,
+                  "train_loss": 0.16645859161891588,
+                  "validation_iou": 0.7086509948598655
+                },
+                {
+                  "epoch": 9,
+                  "train_loss": 0.15763806021068155,
+                  "validation_iou": 0.5994984270196474
+                },
+                {
+                  "epoch": 10,
+                  "train_loss": 0.15957027484730976,
+                  "validation_iou": 0.7140202698011071
+                },
+                {
+                  "epoch": 11,
+                  "train_loss": 0.15042494993384292,
+                  "validation_iou": 0.737767795942773
+                },
+                {
+                  "epoch": 12,
+                  "train_loss": 0.17449847194479734,
+                  "validation_iou": 0.7105419838792059
+                }
+              ],
+              "batch_size": 1,
+              "code_sha256": "8e24f4c4b602934a7c9820256eb9a3484f896299abd082f5330b467d6edd8049",
+              "train_sha256": "d66a4ad6f22a1eae775d451b268c36f5fe5511c58c4a1983ca934afc4f0844ff",
+              "synthetic_demo": false,
+              "validation_sha256": "e2c6433540f0ae6bd0b51cea714094f97245b6de21547666695d9f74bbbfd64c"
+            },
+            "checkpoint": "checkpoints/kitti-unet-v2.pt",
+            "architecture": "tiny-unet-v1-width8",
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "checkpoint_sha256": "91a15de2445bac53ad16d7c4d0b1b9a06bc8f0c6683b60b87652d58266931e82"
+          },
+          "model_manifest_sha256": "badf21a25e9ebc451a5c3c9a9a7ca03cc6c9a27b75efeb4d34da895ed9f669a2",
+          "worker_code_sha256": "8e24f4c4b602934a7c9820256eb9a3484f896299abd082f5330b467d6edd8049",
+          "python": "3.12.11",
+          "numpy": "2.2.6",
+          "device_requested": "cpu",
+          "dataset": {
+            "name": "KITTI grouped v2 / internal_test",
+            "role": "internal_test",
+            "seed": 2026,
+            "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+            "license": "CC BY-NC-SA 3.0; KITTI authors",
+            "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+            "split_policy": "Category-covered recording groups, metadata-only fixed candidate search",
+            "split_search": {
+              "seed": 2026,
+              "candidates": 1000,
+              "metadata_cost": 0.007099115309436186,
+              "chosen_candidate": 437
+            },
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "synthetic_demo": false,
+            "evaluation_note": "Versioned exploratory internal split; data appeared in earlier experiments. Train fresh models; old checkpoints are not compatible baselines.",
+            "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+            "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+            "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+            "source_manifest_sha256": {
+              "train": "aff56a22802748c3ef208bdc38d9ae68c8c428fcfda254ab99e16d2d4fb6fee0",
+              "validation": "15cc0e434b834f1b425de713ce6bfecf5f89a1e127ed419b5900e6cc0abced8e",
+              "internal_test": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764"
+            }
+          }
+        }
+      }
+    },
+    {
+      "job": {
+        "id": "05aa8b4bc3083630ea2532399ca13083",
+        "request": {
+          "task": "evaluate",
+          "model": "kitti-unet-v2",
+          "dataset": "kitti-balanced-v2-internal_test",
+          "max_attempts": 3
+        },
+        "spec": {
+          "task": "evaluate",
+          "label": "internal image-space evaluation",
+          "model": {
+            "kind": "unet",
+            "name": "kitti-unet-v2",
+            "training": {
+              "lr": 0.001,
+              "seed": 2026,
+              "torch": "2.10.0",
+              "device": "cpu",
+              "epochs": 12,
+              "history": [
+                {
+                  "epoch": 1,
+                  "train_loss": 0.42956523517282996,
+                  "validation_iou": 0.309096614085632
+                },
+                {
+                  "epoch": 2,
+                  "train_loss": 0.26108699433687255,
+                  "validation_iou": 0.48753914870766585
+                },
+                {
+                  "epoch": 3,
+                  "train_loss": 0.2237198341546989,
+                  "validation_iou": 0.6307944870326399
+                },
+                {
+                  "epoch": 4,
+                  "train_loss": 0.20911689233489153,
+                  "validation_iou": 0.35239786202518836
+                },
+                {
+                  "epoch": 5,
+                  "train_loss": 0.20192000833226414,
+                  "validation_iou": 0.5032709573560077
+                },
+                {
+                  "epoch": 6,
+                  "train_loss": 0.17963273965004015,
+                  "validation_iou": 0.3090461117060022
+                },
+                {
+                  "epoch": 7,
+                  "train_loss": 0.1818596918953628,
+                  "validation_iou": 0.6974438791449101
+                },
+                {
+                  "epoch": 8,
+                  "train_loss": 0.16645859161891588,
+                  "validation_iou": 0.7086509948598655
+                },
+                {
+                  "epoch": 9,
+                  "train_loss": 0.15763806021068155,
+                  "validation_iou": 0.5994984270196474
+                },
+                {
+                  "epoch": 10,
+                  "train_loss": 0.15957027484730976,
+                  "validation_iou": 0.7140202698011071
+                },
+                {
+                  "epoch": 11,
+                  "train_loss": 0.15042494993384292,
+                  "validation_iou": 0.737767795942773
+                },
+                {
+                  "epoch": 12,
+                  "train_loss": 0.17449847194479734,
+                  "validation_iou": 0.7105419838792059
+                }
+              ],
+              "batch_size": 1,
+              "code_sha256": "8e24f4c4b602934a7c9820256eb9a3484f896299abd082f5330b467d6edd8049",
+              "train_sha256": "d66a4ad6f22a1eae775d451b268c36f5fe5511c58c4a1983ca934afc4f0844ff",
+              "synthetic_demo": false,
+              "validation_sha256": "e2c6433540f0ae6bd0b51cea714094f97245b6de21547666695d9f74bbbfd64c"
+            },
+            "checkpoint": "checkpoints/kitti-unet-v2.pt",
+            "architecture": "tiny-unet-v1-width8",
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "checkpoint_sha256": "91a15de2445bac53ad16d7c4d0b1b9a06bc8f0c6683b60b87652d58266931e82"
+          },
+          "dataset": {
+            "name": "KITTI grouped v2 / internal_test",
+            "role": "internal_test",
+            "seed": 2026,
+            "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+            "license": "CC BY-NC-SA 3.0; KITTI authors",
+            "examples": [
+              {
+                "id": "um_000004",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000004.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/um_000004.png",
+                "category": "um",
+                "raw_frame": "0000000326",
+                "mask_sha256": "3304bfef3e16bdf03837dc151bfe12fe7c0128946b884d33463337aa27626246",
+                "image_sha256": "87f76d01bec2a8a2aa29d6677c1748b1e2c0aa15e02119ceacc40969bf820fda"
+              },
+              {
+                "id": "um_000005",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000005.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/um_000005.png",
+                "category": "um",
+                "raw_frame": "0000000348",
+                "mask_sha256": "92107ed77c12fe787fdd30d189d0b3b0e87f818c2904afe9ebc7dc67cd1b89b7",
+                "image_sha256": "dcc82c89e78aa6d2d58a62fb5d05976341120ea65f9bea3e2e9db8ea1f20e26b"
+              },
+              {
+                "id": "um_000093",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000093.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/um_000093.png",
+                "category": "um",
+                "raw_frame": "0000000041",
+                "mask_sha256": "ff6a262753cfb50a43ec260e57d54b464086e513313538d1fbc17b3088b255b0",
+                "image_sha256": "a4bc5b06a39b0acf8c7221d9992d3da9577134a090b7fb68736982a29ce34522"
+              },
+              {
+                "id": "um_000094",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000094.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/um_000094.png",
+                "category": "um",
+                "raw_frame": "0000000057",
+                "mask_sha256": "e7fe033ec4e2d76804e8d44496afc8f6df00151034f47a8e786ef23b60afc61c",
+                "image_sha256": "fbf6ac73ad29b740b112478dafaa29b1e20dfc7e3e377210993c6337b91fa2bd"
+              },
+              {
+                "id": "umm_000090",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000090.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000090.png",
+                "category": "umm",
+                "raw_frame": "0000000123",
+                "mask_sha256": "c8f291f6e0eb05de8dec252136bf9472ca530e8d90f801a35a8f4c43a9d8afd3",
+                "image_sha256": "06b2dface885cd11d82c815eb3b49d46b3d2ae1c94897c4f5817771122d41230"
+              },
+              {
+                "id": "umm_000091",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000091.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000091.png",
+                "category": "umm",
+                "raw_frame": "0000000132",
+                "mask_sha256": "d18e5b8965c5bec75af7f39e557401113c577fcebc90fc7a6f3b7a0e9fc5cde8",
+                "image_sha256": "414b075e8eba60575e0e6d2e211071ecd185177f4ca1c0480adb48035afc2187"
+              },
+              {
+                "id": "umm_000092",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000092.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000092.png",
+                "category": "umm",
+                "raw_frame": "0000000141",
+                "mask_sha256": "24f84735293fa25278860a35a0d61e33869b02282fe47ef9c52a7a6e14dff54e",
+                "image_sha256": "717c46ad97825d002ea0cc01ccb7a9d9b242767e00a7170b69eabcb27f6e713c"
+              },
+              {
+                "id": "umm_000093",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000093.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000093.png",
+                "category": "umm",
+                "raw_frame": "0000000150",
+                "mask_sha256": "061c4d78b335c8114b98a4949ae803f3eee1619177d6c52cd36759b8bcbf8f0d",
+                "image_sha256": "b63fb221e27d7c72761c7b0e2b513c61365148bc522b9a1988f306644b2331f1"
+              },
+              {
+                "id": "umm_000094",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000094.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000094.png",
+                "category": "umm",
+                "raw_frame": "0000000177",
+                "mask_sha256": "38bfbadb34dfc643fd0d612ce474b83d9cf2de3fbaf67223d2a8f75b7cedd7cd",
+                "image_sha256": "ef8e49fa4200c54272257531b4c58b6634827630125e9e4e30354bc6c825373b"
+              },
+              {
+                "id": "umm_000095",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000095.png",
+                "group": "2011_10_03_drive_0042",
+                "image": "datasets/kitti-full-v1/image_2/umm_000095.png",
+                "category": "umm",
+                "raw_frame": "0000000185",
+                "mask_sha256": "c02b2dbc426316f384e91e68dea595cbcf1acd2a05bdc89ef84c7c7971292cfb",
+                "image_sha256": "1b602724c0e2b0030f413fc13f7190028dbefae5a3572653a6231dd0a65c4967"
+              },
+              {
+                "id": "uu_000000",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000000.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000000.png",
+                "category": "uu",
+                "raw_frame": "0000000019",
+                "mask_sha256": "3f82991f0cd03b82b5761046fba3c8301b46223ee8be4d889e924ca1c16ce769",
+                "image_sha256": "8dd1251e0751ad6f7e651a192e51f881c2d40a5b2cb4a051c9a89a057a99a92c"
+              },
+              {
+                "id": "uu_000001",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000001.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000001.png",
+                "category": "uu",
+                "raw_frame": "0000000038",
+                "mask_sha256": "5bc47fd2d1b7353cb10a3ba953876391c9bf2d2a5ad1c565ea261473eedb7009",
+                "image_sha256": "d7bb63f8e8b14c6e33747701e7adf8b6b829b784452f722c4d2506b800a371c5"
+              },
+              {
+                "id": "uu_000002",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000002.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000002.png",
+                "category": "uu",
+                "raw_frame": "0000000056",
+                "mask_sha256": "f0c1b1d50ec99a7ae420258e2fa307b33fc23256e257773f62484a01eed5b2ca",
+                "image_sha256": "b962be3de5b14aed62ec413b7d75cab324536e6b403dda36d9158e404956cab3"
+              },
+              {
+                "id": "uu_000003",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000003.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000003.png",
+                "category": "uu",
+                "raw_frame": "0000000074",
+                "mask_sha256": "5354ae4a2b81c077d92fd5c14b9ffa62ff8e22e8879c969ca982a569b37e87ee",
+                "image_sha256": "55c7c976f14c637e9da579e03d7b73d8c958b4d0415f6b1687343c1b9a21fd32"
+              },
+              {
+                "id": "uu_000004",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000004.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000004.png",
+                "category": "uu",
+                "raw_frame": "0000000092",
+                "mask_sha256": "1d2a290ae863d064e4cc87030a9ca9545e353b7e912203e0b3f313b0d71ca7a5",
+                "image_sha256": "2e8fe3f28e61272da6ff76c20e18189eeebe17203797809d955ed8c5d0ca31b3"
+              },
+              {
+                "id": "uu_000005",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000005.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000005.png",
+                "category": "uu",
+                "raw_frame": "0000000110",
+                "mask_sha256": "525230f5733c50f1132ec8f00b3c32851025ad3b477df0f07d70b4a514e37d37",
+                "image_sha256": "d41b3761872063c3eef968e492ffee1476bc5ab7fc3dfb294e43e14b6e5aad28"
+              },
+              {
+                "id": "uu_000006",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000006.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000006.png",
+                "category": "uu",
+                "raw_frame": "0000000241",
+                "mask_sha256": "746ced10c55a5bae8e9e9fc7cdee9000c1295bee617025daaf1ca18bfc443e3a",
+                "image_sha256": "1c0e29949b364ce8636062c81873956eefa5b66f69565cf93a6f4d4b8feef95e"
+              },
+              {
+                "id": "uu_000007",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000007.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000007.png",
+                "category": "uu",
+                "raw_frame": "0000000265",
+                "mask_sha256": "cd72b3dd097b44c0fa001ef243fa0c331ee49b18582e1cb8d78572434a36766a",
+                "image_sha256": "1d2247b06669f669cd04f7a8508d314d223e9a77f1d3bbb9b92a4d67f91887ea"
+              },
+              {
+                "id": "uu_000008",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000008.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000008.png",
+                "category": "uu",
+                "raw_frame": "0000000286",
+                "mask_sha256": "23281dcb206432f3c1556739bafa84cb0946cca16f5ca7a9e2562ea13c7104b6",
+                "image_sha256": "3446bf8d1da2845a8f1a71b277edb9188325aafcb5d2153bcae90680ba5626f7"
+              },
+              {
+                "id": "uu_000009",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000009.png",
+                "group": "2011_09_26_drive_0009",
+                "image": "datasets/kitti-full-v1/image_2/uu_000009.png",
+                "category": "uu",
+                "raw_frame": "0000000306",
+                "mask_sha256": "028ba901c56f1e486920d1974e2b1f0e37effeb34b7482424c92e6723198feca",
+                "image_sha256": "085c7ca7f276c3d3ed40589fe88430f3404a8cb8a812e9d8aec0f60431736ada"
+              },
+              {
+                "id": "uu_000027",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000027.png",
+                "group": "2011_09_26_drive_0039",
+                "image": "datasets/kitti-full-v1/image_2/uu_000027.png",
+                "category": "uu",
+                "raw_frame": "0000000129",
+                "mask_sha256": "1919cae7f31563602d5e1b8d86cc6f6fb711606011b16b28523474d71aaaccf9",
+                "image_sha256": "c82c2d23ce11c52b9d776cf884c1e63d3fd521954396469c43f6c2894cec8a87"
+              },
+              {
+                "id": "uu_000036",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000036.png",
+                "group": "2011_09_26_drive_0104",
+                "image": "datasets/kitti-full-v1/image_2/uu_000036.png",
+                "category": "uu",
+                "raw_frame": "0000000104",
+                "mask_sha256": "e8872e7b5eb3a0c8c90107a4cf6b7dcfe983398468b32b50f88c2043ada797dd",
+                "image_sha256": "ab0751a16cac2d82019a0e3eabe78ea16edb3213f7bfc5b9c017dc9544b94b36"
+              },
+              {
+                "id": "uu_000037",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000037.png",
+                "group": "2011_09_26_drive_0104",
+                "image": "datasets/kitti-full-v1/image_2/uu_000037.png",
+                "category": "uu",
+                "raw_frame": "0000000256",
+                "mask_sha256": "5d8a5819b8cdaf76f57b5e6e667a27741c040ad2cbf5e5cfe48606b738a6e775",
+                "image_sha256": "49eaf33488e58275e036fdb35831f0bcc213b829a637995592f305a7494e4c71"
+              },
+              {
+                "id": "um_000061",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000061.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000061.png",
+                "category": "um",
+                "raw_frame": "0000000208",
+                "mask_sha256": "d0109497b2aa2191d638e7eab710b6fd8d1155b223180e4b7fa6fd7fdf179c5d",
+                "image_sha256": "2e2df2c20919b29bc75cee10b2bcc6dd30c241fee2915f3c3a98dfca3ad410ad"
+              },
+              {
+                "id": "um_000062",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000062.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000062.png",
+                "category": "um",
+                "raw_frame": "0000000220",
+                "mask_sha256": "89e9a82c78843304349ce01ab788ea4e871111731cfa4e7f3a0d45b94de216ca",
+                "image_sha256": "95cee3d0439e48f640fa39f4c63309638d2787b43a19d7f3507d0d58ed9573be"
+              },
+              {
+                "id": "um_000063",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000063.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000063.png",
+                "category": "um",
+                "raw_frame": "0000000323",
+                "mask_sha256": "644636e74ce20eca3ac5d9479dcdb077fa58d0a720cfbdb43d43d44b42dfb043",
+                "image_sha256": "915b5851a02f2015749e41bc32f7ebb3dca68ad7cb653ee86e67bf3ead0f5220"
+              },
+              {
+                "id": "um_000064",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000064.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000064.png",
+                "category": "um",
+                "raw_frame": "0000000333",
+                "mask_sha256": "fe0276847dca3857b95ea4dc3ba2cc789167b2603184799e86b68abb093f22d6",
+                "image_sha256": "64cc2080a6a1f0fefd43cb040f7acde06c73fb62f8ad4032b2357914877df90a"
+              },
+              {
+                "id": "um_000065",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000065.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000065.png",
+                "category": "um",
+                "raw_frame": "0000000343",
+                "mask_sha256": "31248d2371b5224f41454a50c75cbdcf97734c82578c318adf79def8905ea85e",
+                "image_sha256": "d3f0159790a8d522dabea3598cd12bd0da1aef4dc2377b511f481643915baf63"
+              },
+              {
+                "id": "um_000066",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000066.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000066.png",
+                "category": "um",
+                "raw_frame": "0000000354",
+                "mask_sha256": "24fe3d2ba792537c9a1103bcfdfe3b724670821cd7b45ac3bb8de7e6056c85e6",
+                "image_sha256": "23b029cf66660067432bfe7369a199313d3c8934e3d06a2999a9f83a51ff8c7c"
+              },
+              {
+                "id": "um_000067",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000067.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000067.png",
+                "category": "um",
+                "raw_frame": "0000000365",
+                "mask_sha256": "6f6ca69ef34e0c6336b0f936ef8ff9b7aa2238b1f574c36131fa1368a84febfd",
+                "image_sha256": "b79dd4162beb3aef4aa167b966b4f3d448b2e865faceead3f7423bf56d79009f"
+              },
+              {
+                "id": "um_000068",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000068.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000068.png",
+                "category": "um",
+                "raw_frame": "0000000375",
+                "mask_sha256": "b765963f4f7779d6400602cb47c6265d61808367236979dfb56d9a962a2d1da9",
+                "image_sha256": "bb04371228c707342f3b6e750fde3b07360b0fcb5edd6876d8d5feec5c9e3029"
+              },
+              {
+                "id": "um_000069",
+                "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000069.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/um_000069.png",
+                "category": "um",
+                "raw_frame": "0000000385",
+                "mask_sha256": "07c3dbb005f3930879ae6d97e364e8f74d71cec5f772b176e19c390cadc93a12",
+                "image_sha256": "ed9a5646a7b4bc4d04bedfedc5465567f7983f0e73b8ab81978f05269ad8966a"
+              },
+              {
+                "id": "umm_000041",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000041.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000041.png",
+                "category": "umm",
+                "raw_frame": "0000000232",
+                "mask_sha256": "5ec41aecfaa3366fd8b308cf1cf8bc6811923362e5dd20aabbe4d82ed9c7169b",
+                "image_sha256": "aaac9e2731720010e684d2659b10ca8094952eb593a3a26ac8b56aff00bdfbb7"
+              },
+              {
+                "id": "umm_000042",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000042.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000042.png",
+                "category": "umm",
+                "raw_frame": "0000000244",
+                "mask_sha256": "98f21bab8ae970de452e3f22a0a8c8ed2252c1c2f8afa480e4650624c8114621",
+                "image_sha256": "f5a3b05bcf75e07d88f867ca8497d509d10058584abf7b2263de4a58f96693cf"
+              },
+              {
+                "id": "umm_000043",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000043.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000043.png",
+                "category": "umm",
+                "raw_frame": "0000000256",
+                "mask_sha256": "296cca25b8d16a1d1309a43967654cdb8338759a7e2b37ab50006c3ba7d6bc3a",
+                "image_sha256": "1d2dcc97da08bdcb67e85e1940ac12d15b27551de93e8596a88d8b9c8657ced7"
+              },
+              {
+                "id": "umm_000044",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000044.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000044.png",
+                "category": "umm",
+                "raw_frame": "0000000268",
+                "mask_sha256": "0ae4755b298f1c44becac854cb314f8c23c4016d012cdc9f84c5bb3914d3e13d",
+                "image_sha256": "525205af294d342bd70d988d8aee07eed432aa06fca8178b7e99be07dced5154"
+              },
+              {
+                "id": "umm_000045",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000045.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000045.png",
+                "category": "umm",
+                "raw_frame": "0000000279",
+                "mask_sha256": "465aaad7b31a8b877dea473594deed7b84683927e563ab25dfbe90293ff6f8ab",
+                "image_sha256": "1ecabd7a7d673eaf5aab25f0caf899d6e3ffc274fd343beff95ee8ec35fcc723"
+              },
+              {
+                "id": "umm_000046",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000046.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000046.png",
+                "category": "umm",
+                "raw_frame": "0000000290",
+                "mask_sha256": "2a12c05ffe66fa012b8f875ffd1cff7c1cd5ff6b3f48fdaff65f9bbc4cfbf085",
+                "image_sha256": "ed96412295b58b7dd18a3c86a899683c7568b7efd276e3c41fd10d802aad9c39"
+              },
+              {
+                "id": "umm_000047",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000047.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000047.png",
+                "category": "umm",
+                "raw_frame": "0000000301",
+                "mask_sha256": "f5179648720d2d0dd54ae42a436d28de962ab6f7c91bbeac46363f7d1bd67cd9",
+                "image_sha256": "d5cd61ccde1532e374e39c2982fa6d44c0dbcae98a3d9f2b9839e160e6e0612e"
+              },
+              {
+                "id": "umm_000048",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000048.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000048.png",
+                "category": "umm",
+                "raw_frame": "0000000312",
+                "mask_sha256": "64e7ddbe369e294754eb17ca8840cb34ba410d18e7677c14d4ab04442e88034d",
+                "image_sha256": "b2bb190a36495c712052dbc1f2444496f9715a16eaf0719411f567c2063e6174"
+              },
+              {
+                "id": "umm_000049",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000049.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000049.png",
+                "category": "umm",
+                "raw_frame": "0000000407",
+                "mask_sha256": "43a8cd0df00d6b921cf2618cae7e42500ff89a91602112873c95cca98ca79d1b",
+                "image_sha256": "55b41f072b1d9b561a7087d87827e9e10537da9d203b1297c4199546dd0b2143"
+              },
+              {
+                "id": "umm_000050",
+                "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000050.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/umm_000050.png",
+                "category": "umm",
+                "raw_frame": "0000000418",
+                "mask_sha256": "e7779fb385365e870b1f93cdb8eb45ba3014a5a573e5c2033cce17199f8bf0c7",
+                "image_sha256": "a9269b16f2c05359be8091fbc8183d888a8397c33ebc00a93072ff9d9d733d9d"
+              },
+              {
+                "id": "uu_000031",
+                "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000031.png",
+                "group": "2011_09_26_drive_0070",
+                "image": "datasets/kitti-full-v1/image_2/uu_000031.png",
+                "category": "uu",
+                "raw_frame": "0000000183",
+                "mask_sha256": "f115354936468a9fac67a073ccd1df590964622254962bff86a5c2a2d93837d7",
+                "image_sha256": "047d81b9b4b8c7db28ad301a683c9867e266f6544691804c1d0750f565b5754c"
+              }
+            ],
+            "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+            "split_policy": "Category-covered recording groups, metadata-only fixed candidate search",
+            "split_search": {
+              "seed": 2026,
+              "candidates": 1000,
+              "metadata_cost": 0.007099115309436186,
+              "chosen_candidate": 437
+            },
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "synthetic_demo": false,
+            "evaluation_note": "Versioned exploratory internal split; data appeared in earlier experiments. Train fresh models; old checkpoints are not compatible baselines.",
+            "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+            "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+            "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+            "source_manifest_sha256": {
+              "train": "aff56a22802748c3ef208bdc38d9ae68c8c428fcfda254ab99e16d2d4fb6fee0",
+              "validation": "15cc0e434b834f1b425de713ce6bfecf5f89a1e127ed419b5900e6cc0abced8e",
+              "internal_test": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764"
+            }
+          },
+          "dataset_sha256": "a22c4cddb236629f07b6839309dca3cac2d9077c6983b32a52c2f5eecb2e00dd",
+          "synthetic_demo": false,
+          "model_manifest_sha256": "badf21a25e9ebc451a5c3c9a9a7ca03cc6c9a27b75efeb4d34da895ed9f669a2"
+        },
+        "state": "succeeded",
+        "attempt": 1,
+        "max_attempts": 3,
+        "token": "4faffc6405ecf1dc644261d7247b8eb8",
+        "lease_until": null,
+        "created_at": "2026-11-09T18:16:21.033862-05:00",
+        "updated_at": "2026-11-09T18:16:24.505989-05:00",
+        "available_at": "2026-11-09T18:16:21.033862-05:00",
+        "progress": 1,
+        "error": "",
+        "result_sha256": "b3fb98b800ff7ed94336cc8ed5e44410f66668949a467121d55ceee24ad9a637"
+      },
+      "attempts": [
+        {
+          "token": "4faffc6405ecf1dc644261d7247b8eb8",
+          "number": 1,
+          "worker": "demo-b",
+          "state": "succeeded",
+          "started_at": "2026-11-09T18:16:21.102116-05:00",
+          "finished_at": "2026-11-09T18:16:24.50652-05:00",
+          "error": ""
+        }
+      ],
+      "result": {
+        "kind": "evaluation",
+        "label": "internal image-space evaluation",
+        "synthetic_demo": false,
+        "dataset_sha256": "a22c4cddb236629f07b6839309dca3cac2d9077c6983b32a52c2f5eecb2e00dd",
+        "metric_config": {
+          "version": "road-micro-v1",
+          "threshold": 0.5,
+          "space": "resized-image",
+          "empty_union": 1,
+          "undefined_precision_recall": null
+        },
+        "preprocessing": {
+          "rgb": "uint8/255",
+          "width": 384,
+          "height": 128,
+          "padding": "center; black RGB; invalid label",
+          "mask_resize": "nearest",
+          "resize_mode": "letterbox",
+          "image_resize": "bilinear"
+        },
+        "counts": {
+          "tp": 316688,
+          "fp": 26135,
+          "fn": 56358,
+          "tn": 1503502
+        },
+        "by_category": {
+          "um": {
+            "counts": {
+              "tp": 100523,
+              "fp": 7904,
+              "fn": 10769,
+              "tn": 456156
+            },
+            "metrics": {
+              "iou": 0.8433420584583375,
+              "dice": 0.9150141771990588,
+              "precision": 0.9271030278436183,
+              "recall": 0.9032365309276498
+            }
+          },
+          "umm": {
+            "counts": {
+              "tp": 134165,
+              "fp": 3369,
+              "fn": 23651,
+              "tn": 542977
+            },
+            "metrics": {
+              "iou": 0.832366535347582,
+              "dice": 0.9085153208058236,
+              "precision": 0.9755042389518228,
+              "recall": 0.8501356009530086
+            }
+          },
+          "uu": {
+            "counts": {
+              "tp": 82000,
+              "fp": 14862,
+              "fn": 21938,
+              "tn": 504369
+            },
+            "metrics": {
+              "iou": 0.6902356902356902,
+              "dice": 0.8167330677290837,
+              "precision": 0.8465652164935682,
+              "recall": 0.788931863226154
+            }
+          }
+        },
+        "metrics": {
+          "iou": 0.7933443726029045,
+          "dice": 0.8847652293925286,
+          "precision": 0.923765324963611,
+          "recall": 0.848924797478059
+        },
+        "mean_image_iou": 0.7897926549743076,
+        "images": [
+          {
+            "id": "um_000004",
+            "counts": {
+              "tp": 7328,
+              "fp": 10,
+              "fn": 1610,
+              "tn": 35596
+            },
+            "metrics": {
+              "iou": 0.8189539561913277,
+              "dice": 0.9004669451953797,
+              "precision": 0.9986372308530935,
+              "recall": 0.8198702170507943
+            },
+            "artifacts": {
+              "original": "0000_original.png",
+              "ground_truth": "0000_ground_truth.png",
+              "prediction": "0000_prediction.png",
+              "gt_overlay": "0000_gt_overlay.png",
+              "overlay": "0000_overlay.png"
+            }
+          },
+          {
+            "id": "um_000005",
+            "counts": {
+              "tp": 9136,
+              "fp": 2285,
+              "fn": 1287,
+              "tn": 31836
+            },
+            "metrics": {
+              "iou": 0.7189172175007869,
+              "dice": 0.8364768357443692,
+              "precision": 0.7999299535942562,
+              "recall": 0.8765230739710256
+            },
+            "artifacts": {
+              "original": "0001_original.png",
+              "ground_truth": "0001_ground_truth.png",
+              "prediction": "0001_prediction.png",
+              "gt_overlay": "0001_gt_overlay.png",
+              "overlay": "0001_overlay.png"
+            }
+          },
+          {
+            "id": "um_000093",
+            "counts": {
+              "tp": 8721,
+              "fp": 36,
+              "fn": 310,
+              "tn": 33468
+            },
+            "metrics": {
+              "iou": 0.9618396382485938,
+              "dice": 0.9805486845064089,
+              "precision": 0.9958890030832477,
+              "recall": 0.9656737902779315
+            },
+            "artifacts": {
+              "original": "0002_original.png",
+              "ground_truth": "0002_ground_truth.png",
+              "prediction": "0002_prediction.png",
+              "gt_overlay": "0002_gt_overlay.png",
+              "overlay": "0002_overlay.png"
+            }
+          },
+          {
+            "id": "um_000094",
+            "counts": {
+              "tp": 7907,
+              "fp": 55,
+              "fn": 642,
+              "tn": 34280
+            },
+            "metrics": {
+              "iou": 0.9189911668991166,
+              "dice": 0.9577857186118345,
+              "precision": 0.9930921878924893,
+              "recall": 0.9249034974850859
+            },
+            "artifacts": {
+              "original": "0003_original.png",
+              "ground_truth": "0003_ground_truth.png",
+              "prediction": "0003_prediction.png",
+              "gt_overlay": "0003_gt_overlay.png",
+              "overlay": "0003_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000090",
+            "counts": {
+              "tp": 7973,
+              "fp": 16,
+              "fn": 1296,
+              "tn": 33539
+            },
+            "metrics": {
+              "iou": 0.8586968228325256,
+              "dice": 0.9239772858963958,
+              "precision": 0.9979972462135436,
+              "recall": 0.8601790915956414
+            },
+            "artifacts": {
+              "original": "0004_original.png",
+              "ground_truth": "0004_ground_truth.png",
+              "prediction": "0004_prediction.png",
+              "gt_overlay": "0004_gt_overlay.png",
+              "overlay": "0004_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000091",
+            "counts": {
+              "tp": 8288,
+              "fp": 134,
+              "fn": 554,
+              "tn": 34512
+            },
+            "metrics": {
+              "iou": 0.9233511586452763,
+              "dice": 0.9601482854494903,
+              "precision": 0.9840892899548801,
+              "recall": 0.9373444921963356
+            },
+            "artifacts": {
+              "original": "0005_original.png",
+              "ground_truth": "0005_ground_truth.png",
+              "prediction": "0005_prediction.png",
+              "gt_overlay": "0005_gt_overlay.png",
+              "overlay": "0005_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000092",
+            "counts": {
+              "tp": 8534,
+              "fp": 212,
+              "fn": 709,
+              "tn": 33780
+            },
+            "metrics": {
+              "iou": 0.9025912215758858,
+              "dice": 0.9488020456945911,
+              "precision": 0.9757603475874685,
+              "recall": 0.9232933030401385
+            },
+            "artifacts": {
+              "original": "0006_original.png",
+              "ground_truth": "0006_ground_truth.png",
+              "prediction": "0006_prediction.png",
+              "gt_overlay": "0006_gt_overlay.png",
+              "overlay": "0006_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000093",
+            "counts": {
+              "tp": 8693,
+              "fp": 3,
+              "fn": 997,
+              "tn": 33214
+            },
+            "metrics": {
+              "iou": 0.8968327659135459,
+              "dice": 0.9456107908191015,
+              "precision": 0.999655013799448,
+              "recall": 0.897110423116615
+            },
+            "artifacts": {
+              "original": "0007_original.png",
+              "ground_truth": "0007_ground_truth.png",
+              "prediction": "0007_prediction.png",
+              "gt_overlay": "0007_gt_overlay.png",
+              "overlay": "0007_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000094",
+            "counts": {
+              "tp": 8801,
+              "fp": 197,
+              "fn": 1036,
+              "tn": 33226
+            },
+            "metrics": {
+              "iou": 0.877117799481762,
+              "dice": 0.9345367666578179,
+              "precision": 0.9781062458324072,
+              "recall": 0.8946833384161837
+            },
+            "artifacts": {
+              "original": "0008_original.png",
+              "ground_truth": "0008_ground_truth.png",
+              "prediction": "0008_prediction.png",
+              "gt_overlay": "0008_gt_overlay.png",
+              "overlay": "0008_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000095",
+            "counts": {
+              "tp": 7057,
+              "fp": 198,
+              "fn": 2694,
+              "tn": 33218
+            },
+            "metrics": {
+              "iou": 0.7093175193486783,
+              "dice": 0.8299423732800189,
+              "precision": 0.9727084769124742,
+              "recall": 0.723720644036509
+            },
+            "artifacts": {
+              "original": "0009_original.png",
+              "ground_truth": "0009_ground_truth.png",
+              "prediction": "0009_prediction.png",
+              "gt_overlay": "0009_gt_overlay.png",
+              "overlay": "0009_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000000",
+            "counts": {
+              "tp": 6457,
+              "fp": 2274,
+              "fn": 434,
+              "tn": 35379
+            },
+            "metrics": {
+              "iou": 0.7045280960174577,
+              "dice": 0.8266547177057996,
+              "precision": 0.7395487343946856,
+              "recall": 0.9370193005369323
+            },
+            "artifacts": {
+              "original": "0010_original.png",
+              "ground_truth": "0010_ground_truth.png",
+              "prediction": "0010_prediction.png",
+              "gt_overlay": "0010_gt_overlay.png",
+              "overlay": "0010_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000001",
+            "counts": {
+              "tp": 6278,
+              "fp": 464,
+              "fn": 839,
+              "tn": 36963
+            },
+            "metrics": {
+              "iou": 0.828122938926263,
+              "dice": 0.9059816725593477,
+              "precision": 0.9311776920795016,
+              "recall": 0.8821132499648728
+            },
+            "artifacts": {
+              "original": "0011_original.png",
+              "ground_truth": "0011_ground_truth.png",
+              "prediction": "0011_prediction.png",
+              "gt_overlay": "0011_gt_overlay.png",
+              "overlay": "0011_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000002",
+            "counts": {
+              "tp": 6020,
+              "fp": 3853,
+              "fn": 601,
+              "tn": 34070
+            },
+            "metrics": {
+              "iou": 0.5747565400038189,
+              "dice": 0.7299624105735419,
+              "precision": 0.6097437455687228,
+              "recall": 0.9092282132608367
+            },
+            "artifacts": {
+              "original": "0012_original.png",
+              "ground_truth": "0012_ground_truth.png",
+              "prediction": "0012_prediction.png",
+              "gt_overlay": "0012_gt_overlay.png",
+              "overlay": "0012_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000003",
+            "counts": {
+              "tp": 6408,
+              "fp": 608,
+              "fn": 746,
+              "tn": 36782
+            },
+            "metrics": {
+              "iou": 0.8255604225715022,
+              "dice": 0.9044460127028935,
+              "precision": 0.9133409350057012,
+              "recall": 0.8957226726306962
+            },
+            "artifacts": {
+              "original": "0013_original.png",
+              "ground_truth": "0013_ground_truth.png",
+              "prediction": "0013_prediction.png",
+              "gt_overlay": "0013_gt_overlay.png",
+              "overlay": "0013_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000004",
+            "counts": {
+              "tp": 6323,
+              "fp": 2179,
+              "fn": 691,
+              "tn": 35351
+            },
+            "metrics": {
+              "iou": 0.6878059393016426,
+              "dice": 0.8150296468161897,
+              "precision": 0.743707362973418,
+              "recall": 0.901482748788138
+            },
+            "artifacts": {
+              "original": "0014_original.png",
+              "ground_truth": "0014_ground_truth.png",
+              "prediction": "0014_prediction.png",
+              "gt_overlay": "0014_gt_overlay.png",
+              "overlay": "0014_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000005",
+            "counts": {
+              "tp": 1976,
+              "fp": 748,
+              "fn": 5163,
+              "tn": 36657
+            },
+            "metrics": {
+              "iou": 0.2505388614175225,
+              "dice": 0.4006894454020075,
+              "precision": 0.7254038179148311,
+              "recall": 0.2767894663118084
+            },
+            "artifacts": {
+              "original": "0015_original.png",
+              "ground_truth": "0015_ground_truth.png",
+              "prediction": "0015_prediction.png",
+              "gt_overlay": "0015_gt_overlay.png",
+              "overlay": "0015_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000006",
+            "counts": {
+              "tp": 7765,
+              "fp": 860,
+              "fn": 1099,
+              "tn": 34820
+            },
+            "metrics": {
+              "iou": 0.7985396955985191,
+              "dice": 0.8879867345188404,
+              "precision": 0.9002898550724637,
+              "recall": 0.8760153429602888
+            },
+            "artifacts": {
+              "original": "0016_original.png",
+              "ground_truth": "0016_ground_truth.png",
+              "prediction": "0016_prediction.png",
+              "gt_overlay": "0016_gt_overlay.png",
+              "overlay": "0016_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000007",
+            "counts": {
+              "tp": 7735,
+              "fp": 1118,
+              "fn": 1578,
+              "tn": 34113
+            },
+            "metrics": {
+              "iou": 0.7415396414533602,
+              "dice": 0.8515908840691402,
+              "precision": 0.8737151248164464,
+              "recall": 0.8305594330505744
+            },
+            "artifacts": {
+              "original": "0017_original.png",
+              "ground_truth": "0017_ground_truth.png",
+              "prediction": "0017_prediction.png",
+              "gt_overlay": "0017_gt_overlay.png",
+              "overlay": "0017_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000008",
+            "counts": {
+              "tp": 8385,
+              "fp": 182,
+              "fn": 1714,
+              "tn": 34263
+            },
+            "metrics": {
+              "iou": 0.8155821418149986,
+              "dice": 0.898424943747991,
+              "precision": 0.9787556904400607,
+              "recall": 0.8302802257649272
+            },
+            "artifacts": {
+              "original": "0018_original.png",
+              "ground_truth": "0018_ground_truth.png",
+              "prediction": "0018_prediction.png",
+              "gt_overlay": "0018_gt_overlay.png",
+              "overlay": "0018_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000009",
+            "counts": {
+              "tp": 7056,
+              "fp": 274,
+              "fn": 2248,
+              "tn": 34966
+            },
+            "metrics": {
+              "iou": 0.7366882438922531,
+              "dice": 0.8483828303474811,
+              "precision": 0.9626193724420191,
+              "recall": 0.7583834909716252
+            },
+            "artifacts": {
+              "original": "0019_original.png",
+              "ground_truth": "0019_ground_truth.png",
+              "prediction": "0019_prediction.png",
+              "gt_overlay": "0019_gt_overlay.png",
+              "overlay": "0019_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000027",
+            "counts": {
+              "tp": 4520,
+              "fp": 843,
+              "fn": 1306,
+              "tn": 37875
+            },
+            "metrics": {
+              "iou": 0.677762783025941,
+              "dice": 0.8079363660738225,
+              "precision": 0.8428118590341227,
+              "recall": 0.7758324751115688
+            },
+            "artifacts": {
+              "original": "0020_original.png",
+              "ground_truth": "0020_ground_truth.png",
+              "prediction": "0020_prediction.png",
+              "gt_overlay": "0020_gt_overlay.png",
+              "overlay": "0020_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000036",
+            "counts": {
+              "tp": 4091,
+              "fp": 1304,
+              "fn": 1097,
+              "tn": 38052
+            },
+            "metrics": {
+              "iou": 0.6301601971657425,
+              "dice": 0.773126712652367,
+              "precision": 0.758294717330862,
+              "recall": 0.788550501156515
+            },
+            "artifacts": {
+              "original": "0021_original.png",
+              "ground_truth": "0021_ground_truth.png",
+              "prediction": "0021_prediction.png",
+              "gt_overlay": "0021_gt_overlay.png",
+              "overlay": "0021_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000037",
+            "counts": {
+              "tp": 3386,
+              "fp": 151,
+              "fn": 1560,
+              "tn": 39000
+            },
+            "metrics": {
+              "iou": 0.6643123405925054,
+              "dice": 0.7983024873275963,
+              "precision": 0.9573084534916596,
+              "recall": 0.6845936109987869
+            },
+            "artifacts": {
+              "original": "0022_original.png",
+              "ground_truth": "0022_ground_truth.png",
+              "prediction": "0022_prediction.png",
+              "gt_overlay": "0022_gt_overlay.png",
+              "overlay": "0022_overlay.png"
+            }
+          },
+          {
+            "id": "um_000061",
+            "counts": {
+              "tp": 5322,
+              "fp": 98,
+              "fn": 2631,
+              "tn": 36493
+            },
+            "metrics": {
+              "iou": 0.6610358961619675,
+              "dice": 0.7959321019965603,
+              "precision": 0.9819188191881919,
+              "recall": 0.6691814409656733
+            },
+            "artifacts": {
+              "original": "0023_original.png",
+              "ground_truth": "0023_ground_truth.png",
+              "prediction": "0023_prediction.png",
+              "gt_overlay": "0023_gt_overlay.png",
+              "overlay": "0023_overlay.png"
+            }
+          },
+          {
+            "id": "um_000062",
+            "counts": {
+              "tp": 7289,
+              "fp": 278,
+              "fn": 731,
+              "tn": 36246
+            },
+            "metrics": {
+              "iou": 0.8784044348035671,
+              "dice": 0.9352665682940913,
+              "precision": 0.9632615303290604,
+              "recall": 0.908852867830424
+            },
+            "artifacts": {
+              "original": "0024_original.png",
+              "ground_truth": "0024_ground_truth.png",
+              "prediction": "0024_prediction.png",
+              "gt_overlay": "0024_gt_overlay.png",
+              "overlay": "0024_overlay.png"
+            }
+          },
+          {
+            "id": "um_000063",
+            "counts": {
+              "tp": 8292,
+              "fp": 278,
+              "fn": 738,
+              "tn": 35236
+            },
+            "metrics": {
+              "iou": 0.8908465835840138,
+              "dice": 0.9422727272727273,
+              "precision": 0.967561260210035,
+              "recall": 0.9182724252491694
+            },
+            "artifacts": {
+              "original": "0025_original.png",
+              "ground_truth": "0025_ground_truth.png",
+              "prediction": "0025_prediction.png",
+              "gt_overlay": "0025_gt_overlay.png",
+              "overlay": "0025_overlay.png"
+            }
+          },
+          {
+            "id": "um_000064",
+            "counts": {
+              "tp": 7545,
+              "fp": 246,
+              "fn": 292,
+              "tn": 36461
+            },
+            "metrics": {
+              "iou": 0.9334405542496598,
+              "dice": 0.9655746096749425,
+              "precision": 0.9684251058914132,
+              "recall": 0.9627408447109863
+            },
+            "artifacts": {
+              "original": "0026_original.png",
+              "ground_truth": "0026_ground_truth.png",
+              "prediction": "0026_prediction.png",
+              "gt_overlay": "0026_gt_overlay.png",
+              "overlay": "0026_overlay.png"
+            }
+          },
+          {
+            "id": "um_000065",
+            "counts": {
+              "tp": 7706,
+              "fp": 122,
+              "fn": 456,
+              "tn": 36209
+            },
+            "metrics": {
+              "iou": 0.9302269435055529,
+              "dice": 0.9638524077548468,
+              "precision": 0.9844149207971384,
+              "recall": 0.9441313403577555
+            },
+            "artifacts": {
+              "original": "0027_original.png",
+              "ground_truth": "0027_ground_truth.png",
+              "prediction": "0027_prediction.png",
+              "gt_overlay": "0027_gt_overlay.png",
+              "overlay": "0027_overlay.png"
+            }
+          },
+          {
+            "id": "um_000066",
+            "counts": {
+              "tp": 7510,
+              "fp": 528,
+              "fn": 857,
+              "tn": 35649
+            },
+            "metrics": {
+              "iou": 0.8442945474985947,
+              "dice": 0.9155745199634258,
+              "precision": 0.9343120179149043,
+              "recall": 0.8975738018405641
+            },
+            "artifacts": {
+              "original": "0028_original.png",
+              "ground_truth": "0028_ground_truth.png",
+              "prediction": "0028_prediction.png",
+              "gt_overlay": "0028_gt_overlay.png",
+              "overlay": "0028_overlay.png"
+            }
+          },
+          {
+            "id": "um_000067",
+            "counts": {
+              "tp": 8563,
+              "fp": 219,
+              "fn": 812,
+              "tn": 34950
+            },
+            "metrics": {
+              "iou": 0.8925370022930998,
+              "dice": 0.9432174918764114,
+              "precision": 0.9750626281029379,
+              "recall": 0.9133866666666667
+            },
+            "artifacts": {
+              "original": "0029_original.png",
+              "ground_truth": "0029_ground_truth.png",
+              "prediction": "0029_prediction.png",
+              "gt_overlay": "0029_gt_overlay.png",
+              "overlay": "0029_overlay.png"
+            }
+          },
+          {
+            "id": "um_000068",
+            "counts": {
+              "tp": 7521,
+              "fp": 1325,
+              "fn": 215,
+              "tn": 35483
+            },
+            "metrics": {
+              "iou": 0.830040834344995,
+              "dice": 0.9071282113134724,
+              "precision": 0.8502147863441103,
+              "recall": 0.9722078593588418
+            },
+            "artifacts": {
+              "original": "0030_original.png",
+              "ground_truth": "0030_ground_truth.png",
+              "prediction": "0030_prediction.png",
+              "gt_overlay": "0030_gt_overlay.png",
+              "overlay": "0030_overlay.png"
+            }
+          },
+          {
+            "id": "um_000069",
+            "counts": {
+              "tp": 7683,
+              "fp": 2424,
+              "fn": 188,
+              "tn": 34249
+            },
+            "metrics": {
+              "iou": 0.7462846041767849,
+              "dice": 0.854711313828012,
+              "precision": 0.7601662214306916,
+              "recall": 0.9761148519883115
+            },
+            "artifacts": {
+              "original": "0031_original.png",
+              "ground_truth": "0031_ground_truth.png",
+              "prediction": "0031_prediction.png",
+              "gt_overlay": "0031_gt_overlay.png",
+              "overlay": "0031_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000041",
+            "counts": {
+              "tp": 7649,
+              "fp": 1676,
+              "fn": 914,
+              "tn": 34305
+            },
+            "metrics": {
+              "iou": 0.7470456099228441,
+              "dice": 0.8552101967799642,
+              "precision": 0.8202680965147453,
+              "recall": 0.8932617073455564
+            },
+            "artifacts": {
+              "original": "0032_original.png",
+              "ground_truth": "0032_ground_truth.png",
+              "prediction": "0032_prediction.png",
+              "gt_overlay": "0032_gt_overlay.png",
+              "overlay": "0032_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000042",
+            "counts": {
+              "tp": 9091,
+              "fp": 260,
+              "fn": 763,
+              "tn": 34430
+            },
+            "metrics": {
+              "iou": 0.89885307494562,
+              "dice": 0.9467326217130956,
+              "precision": 0.9721954871136776,
+              "recall": 0.9225695149177999
+            },
+            "artifacts": {
+              "original": "0033_original.png",
+              "ground_truth": "0033_ground_truth.png",
+              "prediction": "0033_prediction.png",
+              "gt_overlay": "0033_gt_overlay.png",
+              "overlay": "0033_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000043",
+            "counts": {
+              "tp": 9034,
+              "fp": 25,
+              "fn": 1034,
+              "tn": 34451
+            },
+            "metrics": {
+              "iou": 0.8950757951055187,
+              "dice": 0.9446332409682647,
+              "precision": 0.9972403135003863,
+              "recall": 0.8972983710766785
+            },
+            "artifacts": {
+              "original": "0034_original.png",
+              "ground_truth": "0034_ground_truth.png",
+              "prediction": "0034_prediction.png",
+              "gt_overlay": "0034_gt_overlay.png",
+              "overlay": "0034_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000044",
+            "counts": {
+              "tp": 9563,
+              "fp": 87,
+              "fn": 969,
+              "tn": 33848
+            },
+            "metrics": {
+              "iou": 0.9005556078726811,
+              "dice": 0.9476761470617382,
+              "precision": 0.9909844559585492,
+              "recall": 0.9079946828712495
+            },
+            "artifacts": {
+              "original": "0035_original.png",
+              "ground_truth": "0035_ground_truth.png",
+              "prediction": "0035_prediction.png",
+              "gt_overlay": "0035_gt_overlay.png",
+              "overlay": "0035_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000045",
+            "counts": {
+              "tp": 9439,
+              "fp": 155,
+              "fn": 1012,
+              "tn": 33895
+            },
+            "metrics": {
+              "iou": 0.8899679426739582,
+              "dice": 0.9417809927662759,
+              "precision": 0.9838440692099228,
+              "recall": 0.9031671610372213
+            },
+            "artifacts": {
+              "original": "0036_original.png",
+              "ground_truth": "0036_ground_truth.png",
+              "prediction": "0036_prediction.png",
+              "gt_overlay": "0036_gt_overlay.png",
+              "overlay": "0036_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000046",
+            "counts": {
+              "tp": 9916,
+              "fp": 93,
+              "fn": 1661,
+              "tn": 32835
+            },
+            "metrics": {
+              "iou": 0.8497000856898029,
+              "dice": 0.9187436301306402,
+              "precision": 0.9907083624737736,
+              "recall": 0.8565258702599983
+            },
+            "artifacts": {
+              "original": "0037_original.png",
+              "ground_truth": "0037_ground_truth.png",
+              "prediction": "0037_prediction.png",
+              "gt_overlay": "0037_gt_overlay.png",
+              "overlay": "0037_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000047",
+            "counts": {
+              "tp": 9577,
+              "fp": 217,
+              "fn": 1472,
+              "tn": 33278
+            },
+            "metrics": {
+              "iou": 0.8500798863838097,
+              "dice": 0.9189655999616179,
+              "precision": 0.977843577700633,
+              "recall": 0.8667752737804326
+            },
+            "artifacts": {
+              "original": "0038_original.png",
+              "ground_truth": "0038_ground_truth.png",
+              "prediction": "0038_prediction.png",
+              "gt_overlay": "0038_gt_overlay.png",
+              "overlay": "0038_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000048",
+            "counts": {
+              "tp": 7319,
+              "fp": 1,
+              "fn": 3548,
+              "tn": 33676
+            },
+            "metrics": {
+              "iou": 0.6734449760765551,
+              "dice": 0.8048606147248034,
+              "precision": 0.9998633879781421,
+              "recall": 0.6735069476396429
+            },
+            "artifacts": {
+              "original": "0039_original.png",
+              "ground_truth": "0039_ground_truth.png",
+              "prediction": "0039_prediction.png",
+              "gt_overlay": "0039_gt_overlay.png",
+              "overlay": "0039_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000049",
+            "counts": {
+              "tp": 7600,
+              "fp": 47,
+              "fn": 905,
+              "tn": 35992
+            },
+            "metrics": {
+              "iou": 0.8886810102899907,
+              "dice": 0.9410599306587419,
+              "precision": 0.993853798875376,
+              "recall": 0.8935920047031158
+            },
+            "artifacts": {
+              "original": "0040_original.png",
+              "ground_truth": "0040_ground_truth.png",
+              "prediction": "0040_prediction.png",
+              "gt_overlay": "0040_gt_overlay.png",
+              "overlay": "0040_overlay.png"
+            }
+          },
+          {
+            "id": "umm_000050",
+            "counts": {
+              "tp": 5631,
+              "fp": 48,
+              "fn": 4087,
+              "tn": 34778
+            },
+            "metrics": {
+              "iou": 0.5765922588572598,
+              "dice": 0.7314411898421771,
+              "precision": 0.9915478077126255,
+              "recall": 0.5794402140358098
+            },
+            "artifacts": {
+              "original": "0041_original.png",
+              "ground_truth": "0041_ground_truth.png",
+              "prediction": "0041_prediction.png",
+              "gt_overlay": "0041_gt_overlay.png",
+              "overlay": "0041_overlay.png"
+            }
+          },
+          {
+            "id": "uu_000031",
+            "counts": {
+              "tp": 5600,
+              "fp": 4,
+              "fn": 2862,
+              "tn": 36078
+            },
+            "metrics": {
+              "iou": 0.6614694070399244,
+              "dice": 0.7962462675956207,
+              "precision": 0.9992862241256245,
+              "recall": 0.6617820846135666
+            },
+            "artifacts": {
+              "original": "0042_original.png",
+              "ground_truth": "0042_ground_truth.png",
+              "prediction": "0042_prediction.png",
+              "gt_overlay": "0042_gt_overlay.png",
+              "overlay": "0042_overlay.png"
+            }
+          }
+        ],
+        "worst_ids": [
+          "uu_000005",
+          "uu_000002",
+          "umm_000050",
+          "uu_000036",
+          "um_000061",
+          "uu_000031",
+          "uu_000037",
+          "umm_000048",
+          "uu_000027",
+          "uu_000004"
+        ],
+        "provenance": {
+          "model": {
+            "kind": "unet",
+            "name": "kitti-unet-v2",
+            "training": {
+              "lr": 0.001,
+              "seed": 2026,
+              "torch": "2.10.0",
+              "device": "cpu",
+              "epochs": 12,
+              "history": [
+                {
+                  "epoch": 1,
+                  "train_loss": 0.42956523517282996,
+                  "validation_iou": 0.309096614085632
+                },
+                {
+                  "epoch": 2,
+                  "train_loss": 0.26108699433687255,
+                  "validation_iou": 0.48753914870766585
+                },
+                {
+                  "epoch": 3,
+                  "train_loss": 0.2237198341546989,
+                  "validation_iou": 0.6307944870326399
+                },
+                {
+                  "epoch": 4,
+                  "train_loss": 0.20911689233489153,
+                  "validation_iou": 0.35239786202518836
+                },
+                {
+                  "epoch": 5,
+                  "train_loss": 0.20192000833226414,
+                  "validation_iou": 0.5032709573560077
+                },
+                {
+                  "epoch": 6,
+                  "train_loss": 0.17963273965004015,
+                  "validation_iou": 0.3090461117060022
+                },
+                {
+                  "epoch": 7,
+                  "train_loss": 0.1818596918953628,
+                  "validation_iou": 0.6974438791449101
+                },
+                {
+                  "epoch": 8,
+                  "train_loss": 0.16645859161891588,
+                  "validation_iou": 0.7086509948598655
+                },
+                {
+                  "epoch": 9,
+                  "train_loss": 0.15763806021068155,
+                  "validation_iou": 0.5994984270196474
+                },
+                {
+                  "epoch": 10,
+                  "train_loss": 0.15957027484730976,
+                  "validation_iou": 0.7140202698011071
+                },
+                {
+                  "epoch": 11,
+                  "train_loss": 0.15042494993384292,
+                  "validation_iou": 0.737767795942773
+                },
+                {
+                  "epoch": 12,
+                  "train_loss": 0.17449847194479734,
+                  "validation_iou": 0.7105419838792059
+                }
+              ],
+              "batch_size": 1,
+              "code_sha256": "8e24f4c4b602934a7c9820256eb9a3484f896299abd082f5330b467d6edd8049",
+              "train_sha256": "d66a4ad6f22a1eae775d451b268c36f5fe5511c58c4a1983ca934afc4f0844ff",
+              "synthetic_demo": false,
+              "validation_sha256": "e2c6433540f0ae6bd0b51cea714094f97245b6de21547666695d9f74bbbfd64c"
+            },
+            "checkpoint": "checkpoints/kitti-unet-v2.pt",
+            "architecture": "tiny-unet-v1-width8",
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "checkpoint_sha256": "91a15de2445bac53ad16d7c4d0b1b9a06bc8f0c6683b60b87652d58266931e82"
+          },
+          "model_manifest_sha256": "badf21a25e9ebc451a5c3c9a9a7ca03cc6c9a27b75efeb4d34da895ed9f669a2",
+          "worker_code_sha256": "8e24f4c4b602934a7c9820256eb9a3484f896299abd082f5330b467d6edd8049",
+          "python": "3.12.11",
+          "numpy": "2.2.6",
+          "device_requested": "cpu",
+          "dataset": {
+            "name": "KITTI grouped v2 / internal_test",
+            "role": "internal_test",
+            "seed": 2026,
+            "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+            "license": "CC BY-NC-SA 3.0; KITTI authors",
+            "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+            "split_policy": "Category-covered recording groups, metadata-only fixed candidate search",
+            "split_search": {
+              "seed": 2026,
+              "candidates": 1000,
+              "metadata_cost": 0.007099115309436186,
+              "chosen_candidate": 437
+            },
+            "preprocessing": {
+              "rgb": "uint8/255",
+              "width": 384,
+              "height": 128,
+              "padding": "center; black RGB; invalid label",
+              "mask_resize": "nearest",
+              "resize_mode": "letterbox",
+              "image_resize": "bilinear"
+            },
+            "synthetic_demo": false,
+            "evaluation_note": "Versioned exploratory internal split; data appeared in earlier experiments. Train fresh models; old checkpoints are not compatible baselines.",
+            "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+            "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+            "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+            "source_manifest_sha256": {
+              "train": "aff56a22802748c3ef208bdc38d9ae68c8c428fcfda254ab99e16d2d4fb6fee0",
+              "validation": "15cc0e434b834f1b425de713ce6bfecf5f89a1e127ed419b5900e6cc0abced8e",
+              "internal_test": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "job": {
+      "id": "952d229f242cbd01916f601569b2e336",
+      "request": {
+        "task": "evaluate",
+        "model": "kitti-balanced-v2-background",
+        "dataset": "kitti-balanced-v2-internal_test",
+        "max_attempts": 3
+      },
+      "spec": {
+        "task": "evaluate",
+        "label": "internal image-space evaluation",
+        "model": {
+          "kind": "all_background",
+          "name": "kitti-balanced-v2-background",
+          "checkpoint": null,
+          "architecture": "all_background-v1",
+          "preprocessing": {
+            "rgb": "uint8/255",
+            "width": 384,
+            "height": 128,
+            "padding": "center; black RGB; invalid label",
+            "mask_resize": "nearest",
+            "resize_mode": "letterbox",
+            "image_resize": "bilinear"
+          },
+          "checkpoint_sha256": null
+        },
+        "dataset": {
+          "name": "KITTI grouped v2 / internal_test",
+          "role": "internal_test",
+          "seed": 2026,
+          "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+          "license": "CC BY-NC-SA 3.0; KITTI authors",
+          "examples": [
+            {
+              "id": "um_000004",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000004.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/um_000004.png",
+              "category": "um",
+              "raw_frame": "0000000326",
+              "mask_sha256": "3304bfef3e16bdf03837dc151bfe12fe7c0128946b884d33463337aa27626246",
+              "image_sha256": "87f76d01bec2a8a2aa29d6677c1748b1e2c0aa15e02119ceacc40969bf820fda"
+            },
+            {
+              "id": "um_000005",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000005.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/um_000005.png",
+              "category": "um",
+              "raw_frame": "0000000348",
+              "mask_sha256": "92107ed77c12fe787fdd30d189d0b3b0e87f818c2904afe9ebc7dc67cd1b89b7",
+              "image_sha256": "dcc82c89e78aa6d2d58a62fb5d05976341120ea65f9bea3e2e9db8ea1f20e26b"
+            },
+            {
+              "id": "um_000093",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000093.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/um_000093.png",
+              "category": "um",
+              "raw_frame": "0000000041",
+              "mask_sha256": "ff6a262753cfb50a43ec260e57d54b464086e513313538d1fbc17b3088b255b0",
+              "image_sha256": "a4bc5b06a39b0acf8c7221d9992d3da9577134a090b7fb68736982a29ce34522"
+            },
+            {
+              "id": "um_000094",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000094.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/um_000094.png",
+              "category": "um",
+              "raw_frame": "0000000057",
+              "mask_sha256": "e7fe033ec4e2d76804e8d44496afc8f6df00151034f47a8e786ef23b60afc61c",
+              "image_sha256": "fbf6ac73ad29b740b112478dafaa29b1e20dfc7e3e377210993c6337b91fa2bd"
+            },
+            {
+              "id": "umm_000090",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000090.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/umm_000090.png",
+              "category": "umm",
+              "raw_frame": "0000000123",
+              "mask_sha256": "c8f291f6e0eb05de8dec252136bf9472ca530e8d90f801a35a8f4c43a9d8afd3",
+              "image_sha256": "06b2dface885cd11d82c815eb3b49d46b3d2ae1c94897c4f5817771122d41230"
+            },
+            {
+              "id": "umm_000091",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000091.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/umm_000091.png",
+              "category": "umm",
+              "raw_frame": "0000000132",
+              "mask_sha256": "d18e5b8965c5bec75af7f39e557401113c577fcebc90fc7a6f3b7a0e9fc5cde8",
+              "image_sha256": "414b075e8eba60575e0e6d2e211071ecd185177f4ca1c0480adb48035afc2187"
+            },
+            {
+              "id": "umm_000092",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000092.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/umm_000092.png",
+              "category": "umm",
+              "raw_frame": "0000000141",
+              "mask_sha256": "24f84735293fa25278860a35a0d61e33869b02282fe47ef9c52a7a6e14dff54e",
+              "image_sha256": "717c46ad97825d002ea0cc01ccb7a9d9b242767e00a7170b69eabcb27f6e713c"
+            },
+            {
+              "id": "umm_000093",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000093.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/umm_000093.png",
+              "category": "umm",
+              "raw_frame": "0000000150",
+              "mask_sha256": "061c4d78b335c8114b98a4949ae803f3eee1619177d6c52cd36759b8bcbf8f0d",
+              "image_sha256": "b63fb221e27d7c72761c7b0e2b513c61365148bc522b9a1988f306644b2331f1"
+            },
+            {
+              "id": "umm_000094",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000094.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/umm_000094.png",
+              "category": "umm",
+              "raw_frame": "0000000177",
+              "mask_sha256": "38bfbadb34dfc643fd0d612ce474b83d9cf2de3fbaf67223d2a8f75b7cedd7cd",
+              "image_sha256": "ef8e49fa4200c54272257531b4c58b6634827630125e9e4e30354bc6c825373b"
+            },
+            {
+              "id": "umm_000095",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000095.png",
+              "group": "2011_10_03_drive_0042",
+              "image": "datasets/kitti-full-v1/image_2/umm_000095.png",
+              "category": "umm",
+              "raw_frame": "0000000185",
+              "mask_sha256": "c02b2dbc426316f384e91e68dea595cbcf1acd2a05bdc89ef84c7c7971292cfb",
+              "image_sha256": "1b602724c0e2b0030f413fc13f7190028dbefae5a3572653a6231dd0a65c4967"
+            },
+            {
+              "id": "uu_000000",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000000.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000000.png",
+              "category": "uu",
+              "raw_frame": "0000000019",
+              "mask_sha256": "3f82991f0cd03b82b5761046fba3c8301b46223ee8be4d889e924ca1c16ce769",
+              "image_sha256": "8dd1251e0751ad6f7e651a192e51f881c2d40a5b2cb4a051c9a89a057a99a92c"
+            },
+            {
+              "id": "uu_000001",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000001.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000001.png",
+              "category": "uu",
+              "raw_frame": "0000000038",
+              "mask_sha256": "5bc47fd2d1b7353cb10a3ba953876391c9bf2d2a5ad1c565ea261473eedb7009",
+              "image_sha256": "d7bb63f8e8b14c6e33747701e7adf8b6b829b784452f722c4d2506b800a371c5"
+            },
+            {
+              "id": "uu_000002",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000002.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000002.png",
+              "category": "uu",
+              "raw_frame": "0000000056",
+              "mask_sha256": "f0c1b1d50ec99a7ae420258e2fa307b33fc23256e257773f62484a01eed5b2ca",
+              "image_sha256": "b962be3de5b14aed62ec413b7d75cab324536e6b403dda36d9158e404956cab3"
+            },
+            {
+              "id": "uu_000003",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000003.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000003.png",
+              "category": "uu",
+              "raw_frame": "0000000074",
+              "mask_sha256": "5354ae4a2b81c077d92fd5c14b9ffa62ff8e22e8879c969ca982a569b37e87ee",
+              "image_sha256": "55c7c976f14c637e9da579e03d7b73d8c958b4d0415f6b1687343c1b9a21fd32"
+            },
+            {
+              "id": "uu_000004",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000004.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000004.png",
+              "category": "uu",
+              "raw_frame": "0000000092",
+              "mask_sha256": "1d2a290ae863d064e4cc87030a9ca9545e353b7e912203e0b3f313b0d71ca7a5",
+              "image_sha256": "2e8fe3f28e61272da6ff76c20e18189eeebe17203797809d955ed8c5d0ca31b3"
+            },
+            {
+              "id": "uu_000005",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000005.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000005.png",
+              "category": "uu",
+              "raw_frame": "0000000110",
+              "mask_sha256": "525230f5733c50f1132ec8f00b3c32851025ad3b477df0f07d70b4a514e37d37",
+              "image_sha256": "d41b3761872063c3eef968e492ffee1476bc5ab7fc3dfb294e43e14b6e5aad28"
+            },
+            {
+              "id": "uu_000006",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000006.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000006.png",
+              "category": "uu",
+              "raw_frame": "0000000241",
+              "mask_sha256": "746ced10c55a5bae8e9e9fc7cdee9000c1295bee617025daaf1ca18bfc443e3a",
+              "image_sha256": "1c0e29949b364ce8636062c81873956eefa5b66f69565cf93a6f4d4b8feef95e"
+            },
+            {
+              "id": "uu_000007",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000007.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000007.png",
+              "category": "uu",
+              "raw_frame": "0000000265",
+              "mask_sha256": "cd72b3dd097b44c0fa001ef243fa0c331ee49b18582e1cb8d78572434a36766a",
+              "image_sha256": "1d2247b06669f669cd04f7a8508d314d223e9a77f1d3bbb9b92a4d67f91887ea"
+            },
+            {
+              "id": "uu_000008",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000008.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000008.png",
+              "category": "uu",
+              "raw_frame": "0000000286",
+              "mask_sha256": "23281dcb206432f3c1556739bafa84cb0946cca16f5ca7a9e2562ea13c7104b6",
+              "image_sha256": "3446bf8d1da2845a8f1a71b277edb9188325aafcb5d2153bcae90680ba5626f7"
+            },
+            {
+              "id": "uu_000009",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000009.png",
+              "group": "2011_09_26_drive_0009",
+              "image": "datasets/kitti-full-v1/image_2/uu_000009.png",
+              "category": "uu",
+              "raw_frame": "0000000306",
+              "mask_sha256": "028ba901c56f1e486920d1974e2b1f0e37effeb34b7482424c92e6723198feca",
+              "image_sha256": "085c7ca7f276c3d3ed40589fe88430f3404a8cb8a812e9d8aec0f60431736ada"
+            },
+            {
+              "id": "uu_000027",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000027.png",
+              "group": "2011_09_26_drive_0039",
+              "image": "datasets/kitti-full-v1/image_2/uu_000027.png",
+              "category": "uu",
+              "raw_frame": "0000000129",
+              "mask_sha256": "1919cae7f31563602d5e1b8d86cc6f6fb711606011b16b28523474d71aaaccf9",
+              "image_sha256": "c82c2d23ce11c52b9d776cf884c1e63d3fd521954396469c43f6c2894cec8a87"
+            },
+            {
+              "id": "uu_000036",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000036.png",
+              "group": "2011_09_26_drive_0104",
+              "image": "datasets/kitti-full-v1/image_2/uu_000036.png",
+              "category": "uu",
+              "raw_frame": "0000000104",
+              "mask_sha256": "e8872e7b5eb3a0c8c90107a4cf6b7dcfe983398468b32b50f88c2043ada797dd",
+              "image_sha256": "ab0751a16cac2d82019a0e3eabe78ea16edb3213f7bfc5b9c017dc9544b94b36"
+            },
+            {
+              "id": "uu_000037",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000037.png",
+              "group": "2011_09_26_drive_0104",
+              "image": "datasets/kitti-full-v1/image_2/uu_000037.png",
+              "category": "uu",
+              "raw_frame": "0000000256",
+              "mask_sha256": "5d8a5819b8cdaf76f57b5e6e667a27741c040ad2cbf5e5cfe48606b738a6e775",
+              "image_sha256": "49eaf33488e58275e036fdb35831f0bcc213b829a637995592f305a7494e4c71"
+            },
+            {
+              "id": "um_000061",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000061.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000061.png",
+              "category": "um",
+              "raw_frame": "0000000208",
+              "mask_sha256": "d0109497b2aa2191d638e7eab710b6fd8d1155b223180e4b7fa6fd7fdf179c5d",
+              "image_sha256": "2e2df2c20919b29bc75cee10b2bcc6dd30c241fee2915f3c3a98dfca3ad410ad"
+            },
+            {
+              "id": "um_000062",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000062.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000062.png",
+              "category": "um",
+              "raw_frame": "0000000220",
+              "mask_sha256": "89e9a82c78843304349ce01ab788ea4e871111731cfa4e7f3a0d45b94de216ca",
+              "image_sha256": "95cee3d0439e48f640fa39f4c63309638d2787b43a19d7f3507d0d58ed9573be"
+            },
+            {
+              "id": "um_000063",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000063.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000063.png",
+              "category": "um",
+              "raw_frame": "0000000323",
+              "mask_sha256": "644636e74ce20eca3ac5d9479dcdb077fa58d0a720cfbdb43d43d44b42dfb043",
+              "image_sha256": "915b5851a02f2015749e41bc32f7ebb3dca68ad7cb653ee86e67bf3ead0f5220"
+            },
+            {
+              "id": "um_000064",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000064.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000064.png",
+              "category": "um",
+              "raw_frame": "0000000333",
+              "mask_sha256": "fe0276847dca3857b95ea4dc3ba2cc789167b2603184799e86b68abb093f22d6",
+              "image_sha256": "64cc2080a6a1f0fefd43cb040f7acde06c73fb62f8ad4032b2357914877df90a"
+            },
+            {
+              "id": "um_000065",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000065.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000065.png",
+              "category": "um",
+              "raw_frame": "0000000343",
+              "mask_sha256": "31248d2371b5224f41454a50c75cbdcf97734c82578c318adf79def8905ea85e",
+              "image_sha256": "d3f0159790a8d522dabea3598cd12bd0da1aef4dc2377b511f481643915baf63"
+            },
+            {
+              "id": "um_000066",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000066.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000066.png",
+              "category": "um",
+              "raw_frame": "0000000354",
+              "mask_sha256": "24fe3d2ba792537c9a1103bcfdfe3b724670821cd7b45ac3bb8de7e6056c85e6",
+              "image_sha256": "23b029cf66660067432bfe7369a199313d3c8934e3d06a2999a9f83a51ff8c7c"
+            },
+            {
+              "id": "um_000067",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000067.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000067.png",
+              "category": "um",
+              "raw_frame": "0000000365",
+              "mask_sha256": "6f6ca69ef34e0c6336b0f936ef8ff9b7aa2238b1f574c36131fa1368a84febfd",
+              "image_sha256": "b79dd4162beb3aef4aa167b966b4f3d448b2e865faceead3f7423bf56d79009f"
+            },
+            {
+              "id": "um_000068",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000068.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000068.png",
+              "category": "um",
+              "raw_frame": "0000000375",
+              "mask_sha256": "b765963f4f7779d6400602cb47c6265d61808367236979dfb56d9a962a2d1da9",
+              "image_sha256": "bb04371228c707342f3b6e750fde3b07360b0fcb5edd6876d8d5feec5c9e3029"
+            },
+            {
+              "id": "um_000069",
+              "mask": "datasets/kitti-full-v1/gt_image_2/um_road_000069.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/um_000069.png",
+              "category": "um",
+              "raw_frame": "0000000385",
+              "mask_sha256": "07c3dbb005f3930879ae6d97e364e8f74d71cec5f772b176e19c390cadc93a12",
+              "image_sha256": "ed9a5646a7b4bc4d04bedfedc5465567f7983f0e73b8ab81978f05269ad8966a"
+            },
+            {
+              "id": "umm_000041",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000041.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000041.png",
+              "category": "umm",
+              "raw_frame": "0000000232",
+              "mask_sha256": "5ec41aecfaa3366fd8b308cf1cf8bc6811923362e5dd20aabbe4d82ed9c7169b",
+              "image_sha256": "aaac9e2731720010e684d2659b10ca8094952eb593a3a26ac8b56aff00bdfbb7"
+            },
+            {
+              "id": "umm_000042",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000042.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000042.png",
+              "category": "umm",
+              "raw_frame": "0000000244",
+              "mask_sha256": "98f21bab8ae970de452e3f22a0a8c8ed2252c1c2f8afa480e4650624c8114621",
+              "image_sha256": "f5a3b05bcf75e07d88f867ca8497d509d10058584abf7b2263de4a58f96693cf"
+            },
+            {
+              "id": "umm_000043",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000043.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000043.png",
+              "category": "umm",
+              "raw_frame": "0000000256",
+              "mask_sha256": "296cca25b8d16a1d1309a43967654cdb8338759a7e2b37ab50006c3ba7d6bc3a",
+              "image_sha256": "1d2dcc97da08bdcb67e85e1940ac12d15b27551de93e8596a88d8b9c8657ced7"
+            },
+            {
+              "id": "umm_000044",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000044.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000044.png",
+              "category": "umm",
+              "raw_frame": "0000000268",
+              "mask_sha256": "0ae4755b298f1c44becac854cb314f8c23c4016d012cdc9f84c5bb3914d3e13d",
+              "image_sha256": "525205af294d342bd70d988d8aee07eed432aa06fca8178b7e99be07dced5154"
+            },
+            {
+              "id": "umm_000045",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000045.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000045.png",
+              "category": "umm",
+              "raw_frame": "0000000279",
+              "mask_sha256": "465aaad7b31a8b877dea473594deed7b84683927e563ab25dfbe90293ff6f8ab",
+              "image_sha256": "1ecabd7a7d673eaf5aab25f0caf899d6e3ffc274fd343beff95ee8ec35fcc723"
+            },
+            {
+              "id": "umm_000046",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000046.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000046.png",
+              "category": "umm",
+              "raw_frame": "0000000290",
+              "mask_sha256": "2a12c05ffe66fa012b8f875ffd1cff7c1cd5ff6b3f48fdaff65f9bbc4cfbf085",
+              "image_sha256": "ed96412295b58b7dd18a3c86a899683c7568b7efd276e3c41fd10d802aad9c39"
+            },
+            {
+              "id": "umm_000047",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000047.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000047.png",
+              "category": "umm",
+              "raw_frame": "0000000301",
+              "mask_sha256": "f5179648720d2d0dd54ae42a436d28de962ab6f7c91bbeac46363f7d1bd67cd9",
+              "image_sha256": "d5cd61ccde1532e374e39c2982fa6d44c0dbcae98a3d9f2b9839e160e6e0612e"
+            },
+            {
+              "id": "umm_000048",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000048.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000048.png",
+              "category": "umm",
+              "raw_frame": "0000000312",
+              "mask_sha256": "64e7ddbe369e294754eb17ca8840cb34ba410d18e7677c14d4ab04442e88034d",
+              "image_sha256": "b2bb190a36495c712052dbc1f2444496f9715a16eaf0719411f567c2063e6174"
+            },
+            {
+              "id": "umm_000049",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000049.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000049.png",
+              "category": "umm",
+              "raw_frame": "0000000407",
+              "mask_sha256": "43a8cd0df00d6b921cf2618cae7e42500ff89a91602112873c95cca98ca79d1b",
+              "image_sha256": "55b41f072b1d9b561a7087d87827e9e10537da9d203b1297c4199546dd0b2143"
+            },
+            {
+              "id": "umm_000050",
+              "mask": "datasets/kitti-full-v1/gt_image_2/umm_road_000050.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/umm_000050.png",
+              "category": "umm",
+              "raw_frame": "0000000418",
+              "mask_sha256": "e7779fb385365e870b1f93cdb8eb45ba3014a5a573e5c2033cce17199f8bf0c7",
+              "image_sha256": "a9269b16f2c05359be8091fbc8183d888a8397c33ebc00a93072ff9d9d733d9d"
+            },
+            {
+              "id": "uu_000031",
+              "mask": "datasets/kitti-full-v1/gt_image_2/uu_road_000031.png",
+              "group": "2011_09_26_drive_0070",
+              "image": "datasets/kitti-full-v1/image_2/uu_000031.png",
+              "category": "uu",
+              "raw_frame": "0000000183",
+              "mask_sha256": "f115354936468a9fac67a073ccd1df590964622254962bff86a5c2a2d93837d7",
+              "image_sha256": "047d81b9b4b8c7db28ad301a683c9867e266f6544691804c1d0750f565b5754c"
+            }
+          ],
+          "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+          "split_policy": "Category-covered recording groups, metadata-only fixed candidate search",
+          "split_search": {
+            "seed": 2026,
+            "candidates": 1000,
+            "metadata_cost": 0.007099115309436186,
+            "chosen_candidate": 437
+          },
+          "preprocessing": {
+            "rgb": "uint8/255",
+            "width": 384,
+            "height": 128,
+            "padding": "center; black RGB; invalid label",
+            "mask_resize": "nearest",
+            "resize_mode": "letterbox",
+            "image_resize": "bilinear"
+          },
+          "synthetic_demo": false,
+          "evaluation_note": "Versioned exploratory internal split; data appeared in earlier experiments. Train fresh models; old checkpoints are not compatible baselines.",
+          "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+          "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+          "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+          "source_manifest_sha256": {
+            "train": "aff56a22802748c3ef208bdc38d9ae68c8c428fcfda254ab99e16d2d4fb6fee0",
+            "validation": "15cc0e434b834f1b425de713ce6bfecf5f89a1e127ed419b5900e6cc0abced8e",
+            "internal_test": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764"
+          }
+        },
+        "dataset_sha256": "a22c4cddb236629f07b6839309dca3cac2d9077c6983b32a52c2f5eecb2e00dd",
+        "synthetic_demo": false,
+        "model_manifest_sha256": "e8ef079afd26a39ef2fe7bc9c61dc3cec2e96134112c8f044739ec6becc0de10"
+      },
+      "state": "succeeded",
+      "attempt": 1,
+      "max_attempts": 3,
+      "token": "fd3c21322bc1fdcbf9804072d1d9bd56",
+      "lease_until": null,
+      "created_at": "2026-11-09T18:16:30.430507-05:00",
+      "updated_at": "2026-11-09T18:16:32.58825-05:00",
+      "available_at": "2026-11-09T18:16:30.430507-05:00",
+      "progress": 1,
+      "error": "",
+      "result_sha256": "515b29ea3a8ba3ae313e0c4aee097d9c0a8c5bf9f8dfec6d7af87f5b88f549e0"
+    },
+    "result": {
+      "kind": "evaluation",
+      "label": "internal image-space evaluation",
+      "synthetic_demo": false,
+      "dataset_sha256": "a22c4cddb236629f07b6839309dca3cac2d9077c6983b32a52c2f5eecb2e00dd",
+      "metric_config": {
+        "version": "road-micro-v1",
+        "threshold": 0.5,
+        "space": "resized-image",
+        "empty_union": 1,
+        "undefined_precision_recall": null
+      },
+      "preprocessing": {
+        "rgb": "uint8/255",
+        "width": 384,
+        "height": 128,
+        "padding": "center; black RGB; invalid label",
+        "mask_resize": "nearest",
+        "resize_mode": "letterbox",
+        "image_resize": "bilinear"
+      },
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 373046,
+        "tn": 1529637
+      },
+      "by_category": {
+        "um": {
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 111292,
+            "tn": 464060
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          }
+        },
+        "umm": {
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 157816,
+            "tn": 546346
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          }
+        },
+        "uu": {
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 103938,
+            "tn": 519231
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          }
+        }
+      },
+      "metrics": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0
+      },
+      "mean_image_iou": 0.0,
+      "images": [
+        {
+          "id": "um_000004",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8938,
+            "tn": 35606
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0000_original.png",
+            "ground_truth": "0000_ground_truth.png",
+            "prediction": "0000_prediction.png",
+            "gt_overlay": "0000_gt_overlay.png",
+            "overlay": "0000_overlay.png"
+          }
+        },
+        {
+          "id": "um_000005",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10423,
+            "tn": 34121
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0001_original.png",
+            "ground_truth": "0001_ground_truth.png",
+            "prediction": "0001_prediction.png",
+            "gt_overlay": "0001_gt_overlay.png",
+            "overlay": "0001_overlay.png"
+          }
+        },
+        {
+          "id": "um_000093",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9031,
+            "tn": 33504
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0002_original.png",
+            "ground_truth": "0002_ground_truth.png",
+            "prediction": "0002_prediction.png",
+            "gt_overlay": "0002_gt_overlay.png",
+            "overlay": "0002_overlay.png"
+          }
+        },
+        {
+          "id": "um_000094",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8549,
+            "tn": 34335
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0003_original.png",
+            "ground_truth": "0003_ground_truth.png",
+            "prediction": "0003_prediction.png",
+            "gt_overlay": "0003_gt_overlay.png",
+            "overlay": "0003_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000090",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9269,
+            "tn": 33555
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0004_original.png",
+            "ground_truth": "0004_ground_truth.png",
+            "prediction": "0004_prediction.png",
+            "gt_overlay": "0004_gt_overlay.png",
+            "overlay": "0004_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000091",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8842,
+            "tn": 34646
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0005_original.png",
+            "ground_truth": "0005_ground_truth.png",
+            "prediction": "0005_prediction.png",
+            "gt_overlay": "0005_gt_overlay.png",
+            "overlay": "0005_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000092",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9243,
+            "tn": 33992
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0006_original.png",
+            "ground_truth": "0006_ground_truth.png",
+            "prediction": "0006_prediction.png",
+            "gt_overlay": "0006_gt_overlay.png",
+            "overlay": "0006_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000093",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9690,
+            "tn": 33217
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0007_original.png",
+            "ground_truth": "0007_ground_truth.png",
+            "prediction": "0007_prediction.png",
+            "gt_overlay": "0007_gt_overlay.png",
+            "overlay": "0007_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000094",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9837,
+            "tn": 33423
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0008_original.png",
+            "ground_truth": "0008_ground_truth.png",
+            "prediction": "0008_prediction.png",
+            "gt_overlay": "0008_gt_overlay.png",
+            "overlay": "0008_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000095",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9751,
+            "tn": 33416
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0009_original.png",
+            "ground_truth": "0009_ground_truth.png",
+            "prediction": "0009_prediction.png",
+            "gt_overlay": "0009_gt_overlay.png",
+            "overlay": "0009_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000000",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 6891,
+            "tn": 37653
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0010_original.png",
+            "ground_truth": "0010_ground_truth.png",
+            "prediction": "0010_prediction.png",
+            "gt_overlay": "0010_gt_overlay.png",
+            "overlay": "0010_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000001",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7117,
+            "tn": 37427
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0011_original.png",
+            "ground_truth": "0011_ground_truth.png",
+            "prediction": "0011_prediction.png",
+            "gt_overlay": "0011_gt_overlay.png",
+            "overlay": "0011_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000002",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 6621,
+            "tn": 37923
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0012_original.png",
+            "ground_truth": "0012_ground_truth.png",
+            "prediction": "0012_prediction.png",
+            "gt_overlay": "0012_gt_overlay.png",
+            "overlay": "0012_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000003",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7154,
+            "tn": 37390
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0013_original.png",
+            "ground_truth": "0013_ground_truth.png",
+            "prediction": "0013_prediction.png",
+            "gt_overlay": "0013_gt_overlay.png",
+            "overlay": "0013_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000004",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7014,
+            "tn": 37530
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0014_original.png",
+            "ground_truth": "0014_ground_truth.png",
+            "prediction": "0014_prediction.png",
+            "gt_overlay": "0014_gt_overlay.png",
+            "overlay": "0014_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000005",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7139,
+            "tn": 37405
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0015_original.png",
+            "ground_truth": "0015_ground_truth.png",
+            "prediction": "0015_prediction.png",
+            "gt_overlay": "0015_gt_overlay.png",
+            "overlay": "0015_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000006",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8864,
+            "tn": 35680
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0016_original.png",
+            "ground_truth": "0016_ground_truth.png",
+            "prediction": "0016_prediction.png",
+            "gt_overlay": "0016_gt_overlay.png",
+            "overlay": "0016_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000007",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9313,
+            "tn": 35231
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0017_original.png",
+            "ground_truth": "0017_ground_truth.png",
+            "prediction": "0017_prediction.png",
+            "gt_overlay": "0017_gt_overlay.png",
+            "overlay": "0017_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000008",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10099,
+            "tn": 34445
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0018_original.png",
+            "ground_truth": "0018_ground_truth.png",
+            "prediction": "0018_prediction.png",
+            "gt_overlay": "0018_gt_overlay.png",
+            "overlay": "0018_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000009",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9304,
+            "tn": 35240
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0019_original.png",
+            "ground_truth": "0019_ground_truth.png",
+            "prediction": "0019_prediction.png",
+            "gt_overlay": "0019_gt_overlay.png",
+            "overlay": "0019_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000027",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 5826,
+            "tn": 38718
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0020_original.png",
+            "ground_truth": "0020_ground_truth.png",
+            "prediction": "0020_prediction.png",
+            "gt_overlay": "0020_gt_overlay.png",
+            "overlay": "0020_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000036",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 5188,
+            "tn": 39356
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0021_original.png",
+            "ground_truth": "0021_ground_truth.png",
+            "prediction": "0021_prediction.png",
+            "gt_overlay": "0021_gt_overlay.png",
+            "overlay": "0021_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000037",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 4946,
+            "tn": 39151
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0022_original.png",
+            "ground_truth": "0022_ground_truth.png",
+            "prediction": "0022_prediction.png",
+            "gt_overlay": "0022_gt_overlay.png",
+            "overlay": "0022_overlay.png"
+          }
+        },
+        {
+          "id": "um_000061",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7953,
+            "tn": 36591
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0023_original.png",
+            "ground_truth": "0023_ground_truth.png",
+            "prediction": "0023_prediction.png",
+            "gt_overlay": "0023_gt_overlay.png",
+            "overlay": "0023_overlay.png"
+          }
+        },
+        {
+          "id": "um_000062",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8020,
+            "tn": 36524
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0024_original.png",
+            "ground_truth": "0024_ground_truth.png",
+            "prediction": "0024_prediction.png",
+            "gt_overlay": "0024_gt_overlay.png",
+            "overlay": "0024_overlay.png"
+          }
+        },
+        {
+          "id": "um_000063",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9030,
+            "tn": 35514
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0025_original.png",
+            "ground_truth": "0025_ground_truth.png",
+            "prediction": "0025_prediction.png",
+            "gt_overlay": "0025_gt_overlay.png",
+            "overlay": "0025_overlay.png"
+          }
+        },
+        {
+          "id": "um_000064",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7837,
+            "tn": 36707
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0026_original.png",
+            "ground_truth": "0026_ground_truth.png",
+            "prediction": "0026_prediction.png",
+            "gt_overlay": "0026_gt_overlay.png",
+            "overlay": "0026_overlay.png"
+          }
+        },
+        {
+          "id": "um_000065",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8162,
+            "tn": 36331
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0027_original.png",
+            "ground_truth": "0027_ground_truth.png",
+            "prediction": "0027_prediction.png",
+            "gt_overlay": "0027_gt_overlay.png",
+            "overlay": "0027_overlay.png"
+          }
+        },
+        {
+          "id": "um_000066",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8367,
+            "tn": 36177
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0028_original.png",
+            "ground_truth": "0028_ground_truth.png",
+            "prediction": "0028_prediction.png",
+            "gt_overlay": "0028_gt_overlay.png",
+            "overlay": "0028_overlay.png"
+          }
+        },
+        {
+          "id": "um_000067",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9375,
+            "tn": 35169
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0029_original.png",
+            "ground_truth": "0029_ground_truth.png",
+            "prediction": "0029_prediction.png",
+            "gt_overlay": "0029_gt_overlay.png",
+            "overlay": "0029_overlay.png"
+          }
+        },
+        {
+          "id": "um_000068",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7736,
+            "tn": 36808
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0030_original.png",
+            "ground_truth": "0030_ground_truth.png",
+            "prediction": "0030_prediction.png",
+            "gt_overlay": "0030_gt_overlay.png",
+            "overlay": "0030_overlay.png"
+          }
+        },
+        {
+          "id": "um_000069",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 7871,
+            "tn": 36673
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0031_original.png",
+            "ground_truth": "0031_ground_truth.png",
+            "prediction": "0031_prediction.png",
+            "gt_overlay": "0031_gt_overlay.png",
+            "overlay": "0031_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000041",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8563,
+            "tn": 35981
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0032_original.png",
+            "ground_truth": "0032_ground_truth.png",
+            "prediction": "0032_prediction.png",
+            "gt_overlay": "0032_gt_overlay.png",
+            "overlay": "0032_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000042",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9854,
+            "tn": 34690
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0033_original.png",
+            "ground_truth": "0033_ground_truth.png",
+            "prediction": "0033_prediction.png",
+            "gt_overlay": "0033_gt_overlay.png",
+            "overlay": "0033_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000043",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10068,
+            "tn": 34476
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0034_original.png",
+            "ground_truth": "0034_ground_truth.png",
+            "prediction": "0034_prediction.png",
+            "gt_overlay": "0034_gt_overlay.png",
+            "overlay": "0034_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000044",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10532,
+            "tn": 33935
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0035_original.png",
+            "ground_truth": "0035_ground_truth.png",
+            "prediction": "0035_prediction.png",
+            "gt_overlay": "0035_gt_overlay.png",
+            "overlay": "0035_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000045",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10451,
+            "tn": 34050
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0036_original.png",
+            "ground_truth": "0036_ground_truth.png",
+            "prediction": "0036_prediction.png",
+            "gt_overlay": "0036_gt_overlay.png",
+            "overlay": "0036_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000046",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 11577,
+            "tn": 32928
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0037_original.png",
+            "ground_truth": "0037_ground_truth.png",
+            "prediction": "0037_prediction.png",
+            "gt_overlay": "0037_gt_overlay.png",
+            "overlay": "0037_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000047",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 11049,
+            "tn": 33495
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0038_original.png",
+            "ground_truth": "0038_ground_truth.png",
+            "prediction": "0038_prediction.png",
+            "gt_overlay": "0038_gt_overlay.png",
+            "overlay": "0038_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000048",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10867,
+            "tn": 33677
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0039_original.png",
+            "ground_truth": "0039_ground_truth.png",
+            "prediction": "0039_prediction.png",
+            "gt_overlay": "0039_gt_overlay.png",
+            "overlay": "0039_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000049",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8505,
+            "tn": 36039
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0040_original.png",
+            "ground_truth": "0040_ground_truth.png",
+            "prediction": "0040_prediction.png",
+            "gt_overlay": "0040_gt_overlay.png",
+            "overlay": "0040_overlay.png"
+          }
+        },
+        {
+          "id": "umm_000050",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 9718,
+            "tn": 34826
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0041_original.png",
+            "ground_truth": "0041_ground_truth.png",
+            "prediction": "0041_prediction.png",
+            "gt_overlay": "0041_gt_overlay.png",
+            "overlay": "0041_overlay.png"
+          }
+        },
+        {
+          "id": "uu_000031",
+          "counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8462,
+            "tn": 36082
+          },
+          "metrics": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0
+          },
+          "artifacts": {
+            "original": "0042_original.png",
+            "ground_truth": "0042_ground_truth.png",
+            "prediction": "0042_prediction.png",
+            "gt_overlay": "0042_gt_overlay.png",
+            "overlay": "0042_overlay.png"
+          }
+        }
+      ],
+      "worst_ids": [
+        "um_000004",
+        "um_000005",
+        "um_000093",
+        "um_000094",
+        "umm_000090",
+        "umm_000091",
+        "umm_000092",
+        "umm_000093",
+        "umm_000094",
+        "umm_000095"
+      ],
+      "provenance": {
+        "model": {
+          "kind": "all_background",
+          "name": "kitti-balanced-v2-background",
+          "checkpoint": null,
+          "architecture": "all_background-v1",
+          "preprocessing": {
+            "rgb": "uint8/255",
+            "width": 384,
+            "height": 128,
+            "padding": "center; black RGB; invalid label",
+            "mask_resize": "nearest",
+            "resize_mode": "letterbox",
+            "image_resize": "bilinear"
+          },
+          "checkpoint_sha256": null
+        },
+        "model_manifest_sha256": "e8ef079afd26a39ef2fe7bc9c61dc3cec2e96134112c8f044739ec6becc0de10",
+        "worker_code_sha256": "8e24f4c4b602934a7c9820256eb9a3484f896299abd082f5330b467d6edd8049",
+        "python": "3.12.11",
+        "numpy": "2.2.6",
+        "device_requested": "cpu",
+        "dataset": {
+          "name": "KITTI grouped v2 / internal_test",
+          "role": "internal_test",
+          "seed": 2026,
+          "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+          "license": "CC BY-NC-SA 3.0; KITTI authors",
+          "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+          "split_policy": "Category-covered recording groups, metadata-only fixed candidate search",
+          "split_search": {
+            "seed": 2026,
+            "candidates": 1000,
+            "metadata_cost": 0.007099115309436186,
+            "chosen_candidate": 437
+          },
+          "preprocessing": {
+            "rgb": "uint8/255",
+            "width": 384,
+            "height": 128,
+            "padding": "center; black RGB; invalid label",
+            "mask_resize": "nearest",
+            "resize_mode": "letterbox",
+            "image_resize": "bilinear"
+          },
+          "synthetic_demo": false,
+          "evaluation_note": "Versioned exploratory internal split; data appeared in earlier experiments. Train fresh models; old checkpoints are not compatible baselines.",
+          "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+          "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+          "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+          "source_manifest_sha256": {
+            "train": "aff56a22802748c3ef208bdc38d9ae68c8c428fcfda254ab99e16d2d4fb6fee0",
+            "validation": "15cc0e434b834f1b425de713ce6bfecf5f89a1e127ed419b5900e6cc0abced8e",
+            "internal_test": "433e899da46ab6dfcec3c6ed8b4cc0fe927a5e2477768d2c5df11a5712df5764"
+          }
+        }
+      }
+    }
+  }
+}

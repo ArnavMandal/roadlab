@@ -1,0 +1,16 @@
+{
+  "name": "kitti-balanced-v2-background",
+  "kind": "all_background",
+  "architecture": "all_background-v1",
+  "checkpoint": null,
+  "checkpoint_sha256": null,
+  "preprocessing": {
+    "height": 128,
+    "width": 384,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest",
+    "resize_mode": "letterbox",
+    "padding": "center; black RGB; invalid label"
+  }
+}

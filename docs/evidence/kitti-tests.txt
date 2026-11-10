@@ -1,0 +1,12 @@
+test_mapping_rows_follow_category_indices (worker.test_kitti_subset.SubsetTests.test_mapping_rows_follow_category_indices) ... ok
+test_recordings_remain_disjoint_across_categories (worker.test_kitti_subset.SubsetTests.test_recordings_remain_disjoint_across_categories) ... ok
+test_unavailable_sample_count_rejected (worker.test_kitti_subset.SubsetTests.test_unavailable_sample_count_rejected) ... ok
+test_metrics_and_empty_cases (worker.test_science.ScienceTests.test_metrics_and_empty_cases) ... ok
+test_nearest_preserves_label_values (worker.test_science.ScienceTests.test_nearest_preserves_label_values) ... ok
+test_official_rgb_decoding (worker.test_science.ScienceTests.test_official_rgb_decoding) ... ok
+test_unet_shape_and_gradient (worker.test_science.ScienceTests.test_unet_shape_and_gradient) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.960s
+
+OK

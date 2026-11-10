@@ -19,3 +19,7 @@ storage/
 scripts/workspace-env.sh
 docs/local-workspace.md
 registry/models/synthetic-smoke.json
+registry/models/kitti-small-unet-v1.json
+registry/models/kitti-full-unet-v1.json
+registry/models/kitti-unet-v2.json
+registry/models/kitti-local-unet-*.json

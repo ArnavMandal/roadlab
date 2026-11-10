@@ -1,0 +1,107 @@
+{
+  "name": "KITTI small / validation",
+  "role": "validation",
+  "synthetic_demo": false,
+  "provenance": "Official KITTI Road labeled training archive; all-road RGB labels",
+  "road_archive_sha256": "45508c51ba09020235eb714e71c7d3ef15b4551be06d996772ecc8a20fc34a34",
+  "mapping_archive_sha256": "cd75648c0825832c045723ec009386d8495804b5ec1f2b428d2cd61da070fdb6",
+  "mapping_convention": "zero-based row i of category_mapping.txt corresponds to category_i.png; fields are raw drive and frame",
+  "license": "CC BY-NC-SA 3.0; KITTI authors",
+  "source": "https://www.cvlibs.net/datasets/kitti/eval_road.php",
+  "seed": 2026,
+  "preprocessing": {
+    "height": 64,
+    "width": 128,
+    "rgb": "uint8/255",
+    "image_resize": "bilinear",
+    "mask_resize": "nearest"
+  },
+  "split_policy": "Globally partition raw drives 70/15/15, then seeded sample within each split; no recording crosses splits",
+  "subset_counts": {
+    "train": 24,
+    "validation": 8,
+    "internal_test": 8
+  },
+  "examples": [
+    {
+      "id": "um_000061",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000208",
+      "image": "datasets/kitti-small-v1/image_2/um_000061.png",
+      "image_sha256": "2e2df2c20919b29bc75cee10b2bcc6dd30c241fee2915f3c3a98dfca3ad410ad",
+      "mask": "datasets/kitti-small-v1/gt_image_2/um_road_000061.png",
+      "mask_sha256": "d0109497b2aa2191d638e7eab710b6fd8d1155b223180e4b7fa6fd7fdf179c5d"
+    },
+    {
+      "id": "um_000064",
+      "category": "um",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000333",
+      "image": "datasets/kitti-small-v1/image_2/um_000064.png",
+      "image_sha256": "64cc2080a6a1f0fefd43cb040f7acde06c73fb62f8ad4032b2357914877df90a",
+      "mask": "datasets/kitti-small-v1/gt_image_2/um_road_000064.png",
+      "mask_sha256": "fe0276847dca3857b95ea4dc3ba2cc789167b2603184799e86b68abb093f22d6"
+    },
+    {
+      "id": "umm_000026",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000061",
+      "image": "datasets/kitti-small-v1/image_2/umm_000026.png",
+      "image_sha256": "59439badcc94a5a80e3a7af9e49765a22d43e64e64679d6d3d2e0a64a3cc8d42",
+      "mask": "datasets/kitti-small-v1/gt_image_2/umm_road_000026.png",
+      "mask_sha256": "f0e6346349ac6e12c6ab4f5d10b849f59ff2122a30c2c9c770ae2ec91b4532bf"
+    },
+    {
+      "id": "umm_000038",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000274",
+      "image": "datasets/kitti-small-v1/image_2/umm_000038.png",
+      "image_sha256": "70c8af122ca8483b9836bd0c66915bdd195a553a3db7a61cdf770a074c6a1622",
+      "mask": "datasets/kitti-small-v1/gt_image_2/umm_road_000038.png",
+      "mask_sha256": "8b60db0a9aa543523451a1d183fb5c5b4f150716569915f7669a25ab468c63d2"
+    },
+    {
+      "id": "umm_000039",
+      "category": "umm",
+      "group": "2011_09_26_drive_0056",
+      "raw_frame": "0000000288",
+      "image": "datasets/kitti-small-v1/image_2/umm_000039.png",
+      "image_sha256": "0c4b71b5cf7ee312c4691a88c3fcf5037b0a1d16cc19f098d2b279c570a8702d",
+      "mask": "datasets/kitti-small-v1/gt_image_2/umm_road_000039.png",
+      "mask_sha256": "4e3114d0e338296242dbf2ba6c3cff8943cc8df1eadb8b3ea6ac2bb709c91d2e"
+    },
+    {
+      "id": "umm_000042",
+      "category": "umm",
+      "group": "2011_09_26_drive_0070",
+      "raw_frame": "0000000244",
+      "image": "datasets/kitti-small-v1/image_2/umm_000042.png",
+      "image_sha256": "f5a3b05bcf75e07d88f867ca8497d509d10058584abf7b2263de4a58f96693cf",
+      "mask": "datasets/kitti-small-v1/gt_image_2/umm_road_000042.png",
+      "mask_sha256": "98f21bab8ae970de452e3f22a0a8c8ed2252c1c2f8afa480e4650624c8114621"
+    },
+    {
+      "id": "uu_000052",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000000382",
+      "image": "datasets/kitti-small-v1/image_2/uu_000052.png",
+      "image_sha256": "1524a2f3ba4e92fba1871b92f411b03121cded5171cbd0c3eed8383af1752d41",
+      "mask": "datasets/kitti-small-v1/gt_image_2/uu_road_000052.png",
+      "mask_sha256": "36d3f27bd94e951352310a127587474c466eaf5b3f7cf8e076d48c66c5434bed"
+    },
+    {
+      "id": "uu_000057",
+      "category": "uu",
+      "group": "2011_09_30_drive_0020",
+      "raw_frame": "0000001009",
+      "image": "datasets/kitti-small-v1/image_2/uu_000057.png",
+      "image_sha256": "134fb7537d650f75a9937b982382e86080e8e38dcdcf0650ef94cdc030b1ac68",
+      "mask": "datasets/kitti-small-v1/gt_image_2/uu_road_000057.png",
+      "mask_sha256": "40c5607cf6523a99ba4bc02b8dc6f92d46c365c88f8f9a7564bfe10007250668"
+    }
+  ]
+}

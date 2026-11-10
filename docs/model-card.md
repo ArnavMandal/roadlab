@@ -1,5 +1,7 @@
 # Model card and metric definitions
 
+**Real-data update:** subsequent work completed both a [40-image subset run](kitti-small-run.md) and an [all-289-image run](kitti-full-run.md), including official sequence mapping, overlay inspection, CPU training and held-out evaluation. Earlier no-KITTI statements below describe the initial synthetic-only milestone. The full report records current coverage limitations. The [v2 run](kitti-v2-run.md) adds category coverage in every split, aspect-preserving input and per-category scores.
+
 ## Readable RGB-only baseline
 
 `worker/model.py` implements a two-level U-Net with channel widths 8, 16 and 32. Each block has two 3×3 convolutions and ReLUs. Max-pooling shrinks the spatial grid. Bilinear upsampling restores spatial size; skip connections concatenate encoder features with decoder features so fine edges need not be reconstructed from the bottleneck alone. A final 1×1 convolution produces one logit per pixel. There is no pretrained backbone or depth input.
